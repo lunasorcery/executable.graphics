@@ -43,6 +43,8 @@ prods = [
 		'title': 'The Engineer',
 		'party': 'Solskogen 2020',
 		'platform': 'Windows',
+		'meteorik-year': 2021,
+		'meteorik-type': 'nominee',
 	},
 	{
 		'slug': 'wrigher-siaphalis',
@@ -91,6 +93,8 @@ prods = [
 		'title': 'Narcissus',
 		'party': 'Revision Online 2020',
 		'platform': 'Windows',
+		'meteorik-year': 2021,
+		'meteorik-type': 'nominee',
 	},
 	{
 		'slug': 'cpdt-backbone',
@@ -115,6 +119,8 @@ prods = [
 		'title': 'Hoody',
 		'party': 'Revision Online 2020',
 		'platform': 'Windows',
+		'meteorik-year': 2021,
+		'meteorik-type': 'winner',
 	},
 	{
 		'slug': 'fizzer-the-real-party-is-in-your-pocket',
@@ -139,6 +145,8 @@ prods = [
 		'title': 'Primitive Portrait',
 		'party': 'Revision Online 2020',
 		'platform': 'Windows',
+		'meteorik-year': 2021,
+		'meteorik-type': 'nominee',
 	},
 	{
 		'slug': 'yx-long-way-from-home',
@@ -325,25 +333,51 @@ shutil.copyfile('style.css', 'gen/style.css')
 shutil.copyfile('about.html', 'gen/about.html')
 shutil.copyfile('favicon.ico', 'gen/favicon.ico')
 
+for idx,prod in enumerate(prods):
+	slug = prod['slug']
+	src_jpg = f"raw-images/{slug}.jpg"
+	src_png = f"raw-images/{slug}.png"
+	dst_jpg = f"gen/img/{slug}.jpg"
+	dst_png = f"gen/img/{slug}.png"
+
+	if os.path.exists(dst_jpg):
+		prods[idx]['image_url'] = f"img/{slug}.jpg"
+		continue
+	elif os.path.exists(dst_png):
+		prods[idx]['image_url'] = f"img/{slug}.png"
+		continue
+
+	if os.path.exists(src_jpg):
+		# if there source is a jpg, use that
+		shutil.copyfile(src_jpg, dst_jpg)
+		prods[idx]['image_url'] = f"img/{slug}.jpg"
+	elif os.path.exists(src_png):
+		# if the source is a png, resave it as a jpg
+		with Image(filename=src_png) as img:
+			img.compression_quality = 95
+			img.save(filename=dst_jpg)
+
+		# ...and use the smaller one
+		if os.path.getsize(dst_jpg) < os.path.getsize(src_png):
+			prods[idx]['image_url'] = f"img/{slug}.jpg"
+		else:
+			os.remove(dst_jpg)
+			shutil.copyfile(src_png, dst_png)
+			prods[idx]['image_url'] = f"img/{slug}.png"
+	else:
+		print(f"missing raw image for {slug}!")
+		raise hell
+
+for idx,prod in enumerate(prods):
+	if 'meteorik-type' in prod:
+		prods[idx]['meteorik-winner']  = (prod['meteorik-type'] == 'winner')
+		prods[idx]['meteorik-nominee'] = (prod['meteorik-type'] == 'nominee')
+
 with open('index.mustache', 'r') as f:
 	with open('gen/index.html', 'w') as fout:
 		fout.write(chevron.render(f, { 'entries': prods }))
 
+meteorikProds = sorted([prod for prod in prods if 'meteorik-year' in prod], key = lambda x: (x['meteorik-year'], x['meteorik-type']), reverse=True)
 with open('meteoriks.mustache', 'r') as f:
 	with open('gen/meteoriks.html', 'w') as fout:
-		fout.write(chevron.render(f, { 'entries': [prod for prod in prods if 'meteorik-nominee' in prod] }))
-
-for prod in prods:
-	slug = prod['slug']
-	src_jpg = f"raw-images/{slug}.jpg"
-	src_png = f"raw-images/{slug}.png"
-	dst = f"gen/img/{slug}.jpg"
-	if not os.path.exists(dst):
-		if os.path.exists(src_png):
-			with Image(filename=src_png) as img:
-				img.save(filename=dst)
-		elif os.path.exists(src_jpg):
-			shutil.copyfile(src_jpg, dst)
-		else:
-			print(f"missing raw image for {slug}!")
-			raise hell
+		fout.write(chevron.render(f, { 'entries': meteorikProds }))

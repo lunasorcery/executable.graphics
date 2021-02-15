@@ -1,5 +1,11 @@
 <div class="content-thing">
 	<a href="{{demozoo_url}}">
+		{{#meteorik-nominee}}
+			<div class="meteorik meteorik-nominee">Meteoriks {{meteorik-year}} Nominee</div>
+		{{/meteorik-nominee}}
+		{{#meteorik-winner}}
+			<div class="meteorik meteorik-winner">Meteoriks {{meteorik-year}} Winner</div>
+		{{/meteorik-winner}}
 		<span class="author">{{author}}</span>
 		<br/>
 		<span class="title">{{title}}</span>, <span class="party">{{party}}</span>
@@ -7,6 +13,6 @@
 		<span class="subtitle">{{platform}} executable</span>
 		<br/>
 		<!--<img class="thumb" src="{{thumb_url}}" loading="lazy"/>-->
-		<img class="thumb" src="img/{{slug}}.jpg" loading="lazy"/>
+		<img class="thumb" src="{{image_url}}" loading="lazy"/>
 	</a>
 </div>
