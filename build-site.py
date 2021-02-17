@@ -375,13 +375,21 @@ for idx,prod in enumerate(prods):
 
 with open('index.mustache', 'r') as f:
 	with open('gen/index.html', 'w') as fout:
-		fout.write(chevron.render(f, { 'page-gallery': True, 'entries': prods }))
+		fout.write(chevron.render(f, {
+			'meteoriks-visible': True,
+			'page-gallery': True,
+			'entries': prods }))
 
 meteorikProds = sorted([prod for prod in prods if 'meteorik-year' in prod], key = lambda x: (x['meteorik-year'], x['meteorik-type']), reverse=True)
 with open('meteoriks.mustache', 'r') as f:
 	with open('gen/meteoriks.html', 'w') as fout:
-		fout.write(chevron.render(f, { 'page-meteoriks': True, 'entries': meteorikProds }))
+		fout.write(chevron.render(f, {
+			'meteoriks-visible': True,
+			'page-meteoriks': True,
+			'entries': meteorikProds }))
 
 with open('about.mustache', 'r') as f:
 	with open('gen/about.html', 'w') as fout:
-		fout.write(chevron.render(f, { 'page-about': True }))
+		fout.write(chevron.render(f, {
+			'meteoriks-visible': True,
+			'page-about': True }))

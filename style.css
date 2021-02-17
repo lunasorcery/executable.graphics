@@ -213,6 +213,15 @@ a {
 	margin-block-end: 0;
 }
 
+.content-thing p a[href] {
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-decoration-thickness: from-font;
+}
+.content-thing p a[href]:hover {
+	text-decoration-style: solid;
+}
+
 .footer {
 	padding-bottom: 24px;
 }
