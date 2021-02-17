@@ -1,18 +1,4 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>executable.graphics</title>
-		<link href="https://fonts.googleapis.com/css?family=Muli:100,300,400,800" rel="stylesheet"/>
-		<link href="style.css" rel="stylesheet"/>
-	</head>
-	<body>
-		<div class="navbar">
-			<a href="/" class="entry">Gallery</a>
-			<a href="meteoriks.html" class="entry active">Meteoriks</a>
-			<a href="about.html" class="entry">About</a>
-		</div>
+{{> header}}
 		<div class="content">
 			<div class="content-thing slim">
 				<span class="question">What are the Meteoriks?</span>
@@ -23,6 +9,7 @@
 					<p>
 						A category for Best Executable Graphics has been introduced in 2021, the nominees for which are listed below.
 					</p>
+					<p><strong>ALL NOMINATIONS CURRENTLY LISTED BELOW ARE PLACEHOLDERS TO TEST THE SITE UI</strong></p>
 				</div>
 			</div>
 		</div>
@@ -31,9 +18,4 @@
 			{{> artwork}}
 {{/entries}}
 		</div>
-		<div class="footer">
-			Website © yx.<br/>
-			All artworks © their respective authors.
-		</div>
-	</body>
-</html>
+{{> footer}}

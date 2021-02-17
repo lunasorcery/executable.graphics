@@ -7,19 +7,45 @@
 	--darkmode-panel-bg-color: #303030;
 	--darkmode-main-bg-color: #202020;
 
-	--meteorik-nominee-bg-color:     rgba(204,204,204,0.2);
-	--meteorik-winner-bg-color:      rgba(255,204,85,0.2);
-	--meteorik-nominee-border-color: #cccccc;
-	--meteorik-winner-border-color:  #ffcc55;
+	--lightmode-meteorik-nominee-bg-color:     rgba(187,187,187,0.4);
+	--lightmode-meteorik-winner-bg-color:      rgba(255,204,85,0.5);
+	--lightmode-meteorik-nominee-border-color: #aaaaaa;
+	--lightmode-meteorik-winner-border-color:  #ffcc55;
+
+	--darkmode-meteorik-nominee-bg-color:     rgba(224,224,224,0.2);
+	--darkmode-meteorik-winner-bg-color:      rgba(255,204,85,0.2);
+	--darkmode-meteorik-nominee-border-color: #cccccc;
+	--darkmode-meteorik-winner-border-color:  #ffcc55;
 
 	--main-text-color: var(--lightmode-main-text-color);
 	--panel-bg-color:  var(--lightmode-panel-bg-color);
 	--main-bg-color:   var(--lightmode-main-bg-color);
+
+	--meteorik-nominee-bg-color:     var(--lightmode-meteorik-nominee-bg-color);
+	--meteorik-winner-bg-color:      var(--lightmode-meteorik-winner-bg-color);
+	--meteorik-nominee-border-color: var(--lightmode-meteorik-nominee-border-color);
+	--meteorik-winner-border-color:  var(--lightmode-meteorik-winner-border-color);
+}
+
+[data-theme="dark"] {
+	--main-text-color: var(--darkmode-main-text-color);
+	--panel-bg-color:  var(--darkmode-panel-bg-color);
+	--main-bg-color:   var(--darkmode-main-bg-color);
+
+	--meteorik-nominee-bg-color:     var(--darkmode-meteorik-nominee-bg-color);
+	--meteorik-winner-bg-color:      var(--darkmode-meteorik-winner-bg-color);
+	--meteorik-nominee-border-color: var(--darkmode-meteorik-nominee-border-color);
+	--meteorik-winner-border-color:  var(--darkmode-meteorik-winner-border-color);
 }
 
 * {
 	box-sizing: border-box;
 	color: var(--main-text-color);
+
+	transition:
+		color 200ms ease-in-out,
+		background-color 200ms ease-in-out,
+		border-color 200ms ease-in-out;
 }
 
 html {
@@ -50,6 +76,8 @@ a {
 	font-size: 12pt;
 }
 
+
+
 .navbar {
 	margin-left: auto;
 	margin-right: auto;
@@ -63,7 +91,6 @@ a {
 .navbar,
 .content {
 	width: 100%;
-	/*max-width: 1304px;*/
 }
 
 .navbar .entry {
@@ -79,6 +106,32 @@ a {
 	border-bottom: 1px solid var(--main-text-color);
 }
 
+
+.theme-switch {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	padding: 4px;
+
+	cursor: pointer;
+
+	/*align text*/
+	display: flex;
+	align-items: center;
+}
+.theme-switch span {
+	padding-right: 8px;
+	opacity: 0;
+	transition: opacity 200ms ease-in-out;
+}
+.theme-switch:hover span {
+	opacity: 0.75;
+}
+.theme-switch input {
+	display: none;
+}
+
+
 .preamble {
 	margin: 32px auto;
 }
@@ -93,7 +146,6 @@ a {
 .content-thing {
 	text-align: left;
 	font-size: 12pt;
-	/*font-weight: 100;*/
 	padding: 12px;
 	margin: 0 auto 32px;
 	background: var(--panel-bg-color);
@@ -110,20 +162,22 @@ a {
 
 .content-thing .meteorik {
 	margin: -12px;
+	margin-bottom: 12px;
 	padding: 8px;
 	text-align: center;
 	font-weight: 600;
 	float: right;
+	border: 0px solid transparent;
+	border-bottom-width: 1px;
+	border-left-width:   1px;
 }
 .content-thing .meteorik-nominee {
 	background: var(--meteorik-nominee-bg-color);
-	border-bottom: 1px solid var(--meteorik-nominee-border-color);
-	border-left:   1px solid var(--meteorik-nominee-border-color);
+	border-color: var(--meteorik-nominee-border-color);
 }
 .content-thing .meteorik-winner {
 	background: var(--meteorik-winner-bg-color);
-	border-bottom: 1px solid var(--meteorik-winner-border-color);
-	border-left:   1px solid var(--meteorik-winner-border-color);
+	border-color: var(--meteorik-winner-border-color);
 }
 
 .content-thing .author {
@@ -145,7 +199,7 @@ a {
 	margin-top: 0.3em;
 	display: block;
 	max-width: 100%;
-	max-height: 85vh;
+	max-height: 80vh;
 }
 .content-thing:hover .title {
 	text-decoration: underline;
@@ -161,4 +215,17 @@ a {
 
 .footer {
 	padding-bottom: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+	:root {
+		--lightmode-meteorik-nominee-bg-color: rgba(150,150,150,0.4);
+	}
+	.content-thing .meteorik {
+		float: none;
+		border-left-width: 0px;
+	}
+	.theme-switch span {
+		display: none;
+	}
 }
