@@ -7,7 +7,7 @@
 	--darkmode-panel-bg-color: #303030;
 	--darkmode-main-bg-color: #202020;
 
-	--lightmode-meteorik-nominee-bg-color:     rgba(187,187,187,0.4);
+	--lightmode-meteorik-nominee-bg-color:     rgba(187,187,187,0.3);
 	--lightmode-meteorik-winner-bg-color:      rgba(255,204,85,0.5);
 	--lightmode-meteorik-nominee-border-color: #aaaaaa;
 	--lightmode-meteorik-winner-border-color:  #ffcc55;
@@ -137,7 +137,9 @@ a {
 	padding: 12px;
 	margin: 0 auto 32px;
 	background: var(--panel-bg-color);
-	box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+	box-shadow:
+		0px 1px 2px rgba(0,0,0,0.3),
+		0px 2px 5px rgba(0,0,0,0.05);
 	width: fit-content;
 	width: -moz-fit-content;
 	max-width: 100%;
@@ -215,17 +217,42 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-	:root {
+	/*:root {
 		--lightmode-meteorik-nominee-bg-color: rgba(150,150,150,0.4);
-	}
+	}*/
 	* {
 		transition: none;
 	}
 	.content-thing .meteorik {
 		float: none;
-		border-left-width: 0px;
+		border-width: 0px;
+		border-top-width: 1px;
 	}
 	.theme-switch span {
 		display: none;
 	}
+
+	/* yucky gradient experiment */
+	/*.content-thing .meteorik-nominee {
+		background: linear-gradient(var(--meteorik-nominee-bg-color), transparent);
+	}
+	.content-thing .meteorik-winner {
+		background: linear-gradient(var(--meteorik-winner-bg-color), transparent);
+	}*/
 }
+
+
+/* silly rounded-corner mode */
+/*.content-thing {
+	border-radius: 20px;
+}
+.content-thing .meteorik {
+	border-radius: 16px;
+	border-width: 1px;
+	margin-top: -8px;
+	margin-right: -8px;
+	margin-left: -8px;
+}
+.content-thing img {
+	border-radius: 8px;
+}*/
