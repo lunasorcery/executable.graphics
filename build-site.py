@@ -7,7 +7,7 @@ import chevron
 from wand.image import Image
 
 
-def maybemkdir(path):
+def maybe_mkdir(path):
 	if not os.path.exists(path):
 		os.mkdir(path)
 
@@ -26,11 +26,14 @@ for idx,prod in enumerate(prods):
 	if 'meteorik-type' in prod:
 		prods[idx]['meteorik-winner']  = (prod['meteorik-type'] == 'winner')
 		prods[idx]['meteorik-nominee'] = (prod['meteorik-type'] == 'nominee')
-meteorikProds = sorted([prod for prod in prods if 'meteorik-year' in prod], key = lambda x: (x['meteorik-year'], x['meteorik-type']), reverse=True)
+meteorikProds = sorted(
+	[prod for prod in prods if 'meteorik-year' in prod],
+	key = lambda x: (x['meteorik-year'], x['meteorik-type']),
+	reverse=True)
 
 
-maybemkdir('gen/')
-maybemkdir('gen/img/')
+maybe_mkdir('gen/')
+maybe_mkdir('gen/img/')
 
 
 print("copying static assets...")
