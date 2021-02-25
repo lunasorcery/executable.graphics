@@ -37,9 +37,17 @@ maybe_mkdir('gen/img/')
 
 
 print("copying static assets...")
-shutil.copyfile('style.css', 'gen/style.css')
-shutil.copyfile('script.js', 'gen/script.js')
-shutil.copyfile('favicon.ico', 'gen/favicon.ico')
+staticAssets = [
+	'fonts.css',
+	'style.css',
+	'script.js',
+	'favicon.ico',
+	'muli-300.ttf',
+	'muli-400.ttf',
+	'muli-800.ttf',
+]
+for asset in staticAssets:
+	shutil.copyfile(asset, f'gen/{asset}')
 
 
 print("converting images...")
