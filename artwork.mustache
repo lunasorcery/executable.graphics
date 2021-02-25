@@ -9,12 +9,15 @@
 				<div class="meteorik meteorik-winner">Meteoriks {{meteorik-year}} Winner</div>
 			{{/meteorik-winner}}
 		{{/meteoriks-visible}}
-		<span class="author">{{author}}</span>
-		<br/>
-		<span class="title">{{title}}</span>, <span class="party">{{party}}</span>
-		<br/>
-		<span class="subtitle">{{platform}} executable</span>
-		<br/>
-		<img class="thumb" src="{{image_url}}" loading="lazy"/>
+		<div class="text">
+			<span class="author">{{author}}</span>
+			<br/>
+			<span class="title">{{title}}</span>, <span class="party">{{party}}</span>
+			<br/>
+			<span class="subtitle">{{platform}} executable</span>
+		</div>
+		<div class="image">
+			<img src="{{image_url}}" loading="lazy"/>
+		</div>
 	</a>
 </div>

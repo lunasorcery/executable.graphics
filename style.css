@@ -25,6 +25,8 @@
 	--meteorik-winner-bg-color:      var(--lightmode-meteorik-winner-bg-color);
 	--meteorik-nominee-border-color: var(--lightmode-meteorik-nominee-border-color);
 	--meteorik-winner-border-color:  var(--lightmode-meteorik-winner-border-color);
+
+	--image-margin: 0px;
 }
 
 [data-theme="dark"] {
@@ -120,21 +122,9 @@ a {
 }
 
 
-.preamble {
-	margin: 32px auto;
-}
-.preamble a {
-	text-decoration: underline;
-	text-decoration-style: dotted;
-}
-.preamble a:hover {
-	text-decoration-style: solid;
-}
-
 .content-thing {
 	text-align: left;
 	font-size: 12pt;
-	padding: 12px;
 	margin: 0 auto 32px;
 	background: var(--panel-bg-color);
 	box-shadow:
@@ -151,8 +141,6 @@ a {
 }
 
 .content-thing .meteorik {
-	margin: -12px;
-	margin-bottom: 12px;
 	padding: 8px;
 	text-align: center;
 	font-weight: 600;
@@ -170,45 +158,56 @@ a {
 	border-color: var(--meteorik-winner-border-color);
 }
 
-.content-thing .author {
+.content-thing .text {
+	padding: 12px;
+}
+
+.content-thing .text .author {
 	font-weight: 400;
 }
-.content-thing .title {
+.content-thing .text .title {
 	font-size: 14pt;
 	font-weight: 800;
 	font-style: italic;
 }
-.content-thing .author,
-.content-thing .title,
-.content-thing .party,
-.content-thing .subtitle {
+.content-thing .text .author,
+.content-thing .text .title,
+.content-thing .text .party,
+.content-thing .text .subtitle {
 	margin-bottom: 0.3em;
 	display: inline-block;
 }
-.content-thing .thumb {
-	margin-top: 0.3em;
+.content-thing .text > *:last-child {
+	margin-bottom: 0;
+}
+.content-thing:hover .text .title {
+	text-decoration: underline;
+}
+
+.content-thing .image {
+	padding: var(--image-margin);
+	padding-top: 0;
+}
+.content-thing .image img {
 	display: block;
 	max-width: 100%;
 	max-height: 80vh;
 }
-.content-thing:hover .title {
-	text-decoration: underline;
-}
 
-.content-thing .question {
+.content-thing .text .question {
 	font-size: 14pt;
 	font-weight: 800;
 }
-.content-thing .answer p {
+.content-thing .text .answer p {
 	margin-block-end: 0;
 }
 
-.content-thing p a[href] {
+.content-thing .text p a[href] {
 	text-decoration: underline;
 	text-decoration-style: dotted;
 	text-decoration-thickness: from-font;
 }
-.content-thing p a[href]:hover {
+.content-thing .text p a[href]:hover {
 	text-decoration-style: solid;
 }
 
