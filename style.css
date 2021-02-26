@@ -4,8 +4,8 @@
 	--lightmode-panel-bg-color: #ffffff;
 
 	--darkmode-main-text-color: #f0f0f0;
-	--darkmode-panel-bg-color: #303030;
-	--darkmode-main-bg-color: #202020;
+	--darkmode-panel-bg-color: #202020;
+	--darkmode-main-bg-color: #303030;
 
 	--lightmode-meteorik-nominee-bg-color:     rgba(187,187,187,0.3);
 	--lightmode-meteorik-winner-bg-color:      rgba(255,204,85,0.5);
@@ -13,7 +13,7 @@
 	--lightmode-meteorik-winner-border-color:  #ffcc55;
 
 	--darkmode-meteorik-nominee-bg-color:     rgba(224,224,224,0.2);
-	--darkmode-meteorik-winner-bg-color:      rgba(255,204,85,0.2);
+	--darkmode-meteorik-winner-bg-color:      rgba(255,204,85,0.3);
 	--darkmode-meteorik-nominee-border-color: #cccccc;
 	--darkmode-meteorik-winner-border-color:  #ffcc55;
 
@@ -222,15 +222,16 @@ a {
 	* {
 		transition: none;
 	}
-	.content-thing .meteorik {
-		float: none;
-		border-width: 0px;
-		border-top-width: 1px;
-	}
 	.theme-switch span {
 		display: none;
 	}
 
+	/* old-style wide bar stuck on top of the card */
+	/*.content-thing .meteorik {
+		float: none;
+		border-width: 0px;
+		border-top-width: 1px;
+	}*/
 	/* yucky gradient experiment */
 	/*.content-thing .meteorik-nominee {
 		background: linear-gradient(var(--meteorik-nominee-bg-color), transparent);
@@ -238,6 +239,13 @@ a {
 	.content-thing .meteorik-winner {
 		background: linear-gradient(var(--meteorik-winner-bg-color), transparent);
 	}*/
+
+	/* new-style corner banner with reduced font size */
+	.content-thing .meteorik {
+		font-size: 10pt;
+		padding: 4px;
+		max-width: 120px;
+	}
 }
 
 
@@ -247,11 +255,12 @@ a {
 }
 .content-thing .meteorik {
 	border-radius: 16px;
-	border-width: 1px;
-	margin-top: -8px;
-	margin-right: -8px;
-	margin-left: -8px;
+	border-width: 0px;
+	margin: 4px;
+}
+.content-thing .image {
+	padding: 4px;
 }
 .content-thing img {
-	border-radius: 8px;
+	border-radius: 16px;
 }*/
