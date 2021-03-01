@@ -4,12 +4,19 @@ import os
 import json
 import shutil
 import chevron
+import binascii
 from wand.image import Image
 
 
 def maybe_mkdir(path):
 	if not os.path.exists(path):
 		os.mkdir(path)
+
+
+def crc32_file(filename):
+	buf = open(filename,'rb').read()
+	buf = (binascii.crc32(buf) & 0xffffffff)
+	return f"{buf:08x}"
 
 
 # disable meteoriks from view for now
@@ -107,24 +114,28 @@ for idx,prod in enumerate(prods):
 		raise hell
 
 
+sharedTemplate = {
+	'meteoriks-visible': meteoriksVisible,
+	'hash-fonts-css': crc32_file('fonts.css'),
+	'hash-style-css': crc32_file('style.css'),
+}
+
+
 print("applying templates...")
 with open('index.mustache', 'r') as f:
 	with open('gen/index.html', 'w') as fout:
-		fout.write(chevron.render(f, {
-			'meteoriks-visible': meteoriksVisible,
+		fout.write(chevron.render(f, sharedTemplate | {
 			'page-gallery': True,
 			'entries': prods }))
 
 if meteoriksVisible:
 	with open('meteoriks.mustache', 'r') as f:
 		with open('gen/meteoriks.html', 'w') as fout:
-			fout.write(chevron.render(f, {
-				'meteoriks-visible': meteoriksVisible,
+			fout.write(chevron.render(f, sharedTemplate | {
 				'page-meteoriks': True,
 				'entries': meteorikProds }))
 
 with open('about.mustache', 'r') as f:
 	with open('gen/about.html', 'w') as fout:
-		fout.write(chevron.render(f, {
-			'meteoriks-visible': meteoriksVisible,
+		fout.write(chevron.render(f, sharedTemplate | {
 			'page-about': True }))
