@@ -88,7 +88,7 @@ a {
 	color: var(--main-text-color);
 }
 .navbar .entry.active {
-	font-weight: 800;
+	font-weight: 600;
 }
 
 .navbar .entry.active,
@@ -166,7 +166,7 @@ a {
 	font-weight: 400;
 }
 .content-thing .text .title {
-	font-size: 14pt;
+	font-size: 15pt;
 	font-weight: 800;
 	font-style: italic;
 }
@@ -196,7 +196,7 @@ a {
 
 .content-thing .text .question {
 	font-size: 14pt;
-	font-weight: 800;
+	font-weight: 600;
 }
 .content-thing .text .answer p {
 	margin-block-end: 0;

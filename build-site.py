@@ -42,9 +42,9 @@ staticAssets = [
 	'style.css',
 	'script.js',
 	'favicon.ico',
-	'muli-300.ttf',
-	'muli-400.ttf',
-	'muli-800.ttf',
+	'Muli-Regular.ttf',
+	'Muli-Bold.ttf',
+	'Muli-ExtraBoldItalic.ttf',
 ]
 for asset in staticAssets:
 	shutil.copyfile(asset, f'gen/{asset}')
