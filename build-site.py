@@ -5,7 +5,6 @@ import json
 import shutil
 import chevron
 import binascii
-from wand.image import Image
 
 
 def maybe_mkdir(path):
@@ -94,10 +93,6 @@ for idx,prod in enumerate(prods):
 	elif os.path.exists(src_png):
 		# if the source is a png, resave it as a jpg
 		os.system(f"convert -interlace Plane -quality 95 {src_png} {dst_jpg}")
-		#with Image(filename=src_png) as img:
-		#	img.compression_quality = 95
-		#	#img.interlace_scheme = 'plane' # why doesn't this work?!
-		#	img.save(filename=dst_jpg)
 
 		# ...and use the smaller one
 		print(f"   src_png: {os.path.getsize(src_png): 10,}b")
