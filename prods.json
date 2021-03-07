@@ -29,9 +29,7 @@
 		"author": "Bitnenfer / Latitude Independent Association",
 		"title": "The Engineer",
 		"party": "Solskogen 2020",
-		"platform": "Windows",
-		"meteorik-year": 2021,
-		"meteorik-type": "nominee"
+		"platform": "Windows"
 	},
 	{
 		"slug": "wrigher-siaphalis",
@@ -71,7 +69,9 @@
 		"author": "Mercury",
 		"title": "Mathketball",
 		"party": "Revision Online 2020",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2021,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "pbr-narcissus",
@@ -79,9 +79,7 @@
 		"author": "Beople / Prismbeings",
 		"title": "Narcissus",
 		"party": "Revision Online 2020",
-		"platform": "Windows",
-		"meteorik-year": 2021,
-		"meteorik-type": "nominee"
+		"platform": "Windows"
 	},
 	{
 		"slug": "cpdt-backbone",
@@ -115,7 +113,9 @@
 		"author": "Fizzer",
 		"title": "The Real Party is in Your Pocket",
 		"party": "Revision Online 2020",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2021,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "nusan-waterfall",
@@ -123,7 +123,9 @@
 		"author": "NuSan",
 		"title": "Waterfall",
 		"party": "Revision Online 2020",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2021,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "yx-primitive-portrait",

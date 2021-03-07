@@ -18,8 +18,8 @@ def crc32_file(filename):
 	return f"{buf:08x}"
 
 
-# disable meteoriks from view for now
-meteoriksVisible = False
+# nominees are up!
+meteoriksVisible = True
 
 
 # load prods
