@@ -26,6 +26,7 @@ meteoriksVisible = True
 with open('prods.json') as file:
 	prods = json.load(file)
 
+prods = [prod for prod in prods if (not ('hidden' in prod)) or (not prod['hidden'])]
 
 # figure out the meteorik prods
 for idx,prod in enumerate(prods):

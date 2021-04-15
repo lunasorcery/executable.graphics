@@ -1,5 +1,88 @@
 [
 	{
+		"slug": "nusan-red-crash",
+		"demozoo_url": "https://demozoo.org/graphics/292427/",
+		"author": "NuSan",
+		"title": "Red Crash",
+		"party": "Revision Online 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "tdhooper-you-are-here",
+		"demozoo_url": "https://demozoo.org/graphics/292426/",
+		"author": "tdhooper",
+		"title": "You Are Here",
+		"party": "Revision Online 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "fizzer-making-good-progress",
+		"demozoo_url": "https://demozoo.org/graphics/292425/",
+		"author": "Fizzer",
+		"title": "Making Good Progress",
+		"party": "Revision Online 2021",
+		"platform": "Windows",
+		"hidden": true
+	},
+	{
+		"slug": "evilryu-bull",
+		"demozoo_url": "https://demozoo.org/graphics/292424/",
+		"author": "EvilRyu / FLEX",
+		"title": "Bull",
+		"party": "Revision Online 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "pbr-autumn-years",
+		"demozoo_url": "https://demozoo.org/graphics/292423/",
+		"author": "Prismbeings",
+		"title": "Autumn Years",
+		"party": "Revision Online 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "nr4-langen-hold",
+		"demozoo_url": "https://demozoo.org/graphics/292415/",
+		"author": "NR4 / Team210",
+		"title": "Langen Hold",
+		"party": "Revision Online 2021",
+		"platform": "Windows",
+		"hidden": true
+	},
+	{
+		"slug": "alien01-inertial-ink",
+		"demozoo_url": "https://demozoo.org/graphics/292419/",
+		"author": "Alien01",
+		"title": "Inertial Ink",
+		"party": "Revision Online 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "yx-submit",
+		"demozoo_url": "https://demozoo.org/graphics/292417/",
+		"author": "yx",
+		"title": "Submit",
+		"party": "Revision Online 2021",
+		"platform": "Windows",
+		"hidden": true
+	},
+	{
+		"slug": "fairlight-final-girl",
+		"demozoo_url": "https://demozoo.org/graphics/292410/",
+		"author": "Fairlight",
+		"title": "Final Girl",
+		"party": "Revision Online 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "sinmix-tesseract",
+		"demozoo_url": "https://demozoo.org/graphics/292406/",
+		"author": "Sinmix",
+		"title": "Tesseract",
+		"party": "Revision Online 2021",
+		"platform": "Windows"
+	},
+	{
 		"slug": "blackpawn-containment",
 		"demozoo_url": "https://demozoo.org/graphics/284903/",
 		"author": "Blackpawn",
