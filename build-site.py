@@ -40,12 +40,22 @@ maybe_mkdir('gen/')
 maybe_mkdir('gen/img/')
 
 
+print("generating icons...")
+os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png favicon.svg")
+faviconSizes = [16,32,48]
+for size in faviconSizes:
+	os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png favicon.svg")
+faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
+print(f"convert {' '.join(faviconPngs)} gen/favicon.ico")
+for faviconPng in faviconPngs:
+	os.remove(faviconPng)
+
+
 print("copying static assets...")
 staticAssets = [
 	'fonts.css',
 	'style.css',
 	'script.js',
-	'favicon.ico',
 	'Muli-Regular.ttf',
 	'Muli-Bold.ttf',
 	'Muli-ExtraBoldItalic.ttf',
