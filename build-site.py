@@ -41,14 +41,16 @@ maybe_mkdir('gen/img/')
 
 
 print("generating icons...")
-os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png favicon.svg")
-faviconSizes = [16,32,48]
-for size in faviconSizes:
-	os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png favicon.svg")
-faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
-print(f"convert {' '.join(faviconPngs)} gen/favicon.ico")
-for faviconPng in faviconPngs:
-	os.remove(faviconPng)
+if not os.path.exists('gen/apple-touch-icon.png'):
+	os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png favicon.svg")
+if not os.path.exists('gen/favicon.ico'):
+	faviconSizes = [16,32,48]
+	for size in faviconSizes:
+		os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png favicon.svg")
+	faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
+	print(f"convert {' '.join(faviconPngs)} gen/favicon.ico")
+	for faviconPng in faviconPngs:
+		os.remove(faviconPng)
 
 
 print("copying static assets...")
@@ -56,6 +58,7 @@ staticAssets = [
 	'fonts.css',
 	'style.css',
 	'script.js',
+	'manifest.json',
 	'Muli-Regular.ttf',
 	'Muli-Bold.ttf',
 	'Muli-ExtraBoldItalic.ttf',
@@ -118,11 +121,16 @@ for idx,prod in enumerate(prods):
 
 
 sharedTemplate = {
+	'meta-title': "executable.graphics",
+	'meta-image': prods[0]['image_url'],
 	'current-year': datetime.datetime.now().year,
 	'meteoriks-juror-application-open': False,
 	'meteoriks-nominations-open': False,
-	'hash-fonts-css': crc32_file('fonts.css'),
-	'hash-style-css': crc32_file('style.css'),
+	'hash-fonts-css':            crc32_file('fonts.css'),
+	'hash-style-css':            crc32_file('style.css'),
+	'hash-favicon-ico':          crc32_file('gen/favicon.ico'),
+	'hash-apple-touch-icon-png': crc32_file('gen/apple-touch-icon.png'),
+	'hash-manifest-json':        crc32_file('manifest.json'),
 }
 
 
@@ -130,16 +138,24 @@ print("applying templates...")
 with open('index.mustache', 'r') as f:
 	with open('gen/index.html', 'w') as fout:
 		fout.write(chevron.render(f, sharedTemplate | {
+			'meta-description': "A curated gallery of 4K Executable Graphics works from the demoscene.",
+			'meta-twitter-card-type': "summary_large_image",
 			'page-gallery': True,
 			'entries': prods }))
 
 with open('meteoriks.mustache', 'r') as f:
 	with open('gen/meteoriks.html', 'w') as fout:
 		fout.write(chevron.render(f, sharedTemplate | {
+			'meta-subtitle': "Meteoriks",
+			'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
+			'meta-twitter-card-type': "summary",
 			'page-meteoriks': True,
 			'entries': meteorikProds }))
 
 with open('about.mustache', 'r') as f:
 	with open('gen/about.html', 'w') as fout:
 		fout.write(chevron.render(f, sharedTemplate | {
+			'meta-subtitle': "About",
+			'meta-description': "What is Executable Graphics?",
+			'meta-twitter-card-type': "summary",
 			'page-about': True }))

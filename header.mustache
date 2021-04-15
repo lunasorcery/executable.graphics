@@ -2,11 +2,29 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>executable.graphics</title>
-		<link rel="shortcut icon" href="favicon.ico"/>
-		<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
-		<link rel="image_src" href="apple-touch-icon.png"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<title>{{meta-title}}{{#meta-subtitle}} | {{meta-subtitle}}{{/meta-subtitle}}</title>
+		<meta property="og:title" content="{{meta-title}}{{#meta-subtitle}} | {{meta-subtitle}}{{/meta-subtitle}}"/>
+		<meta name="twitter:title" content="{{meta-title}}{{#meta-subtitle}} | {{meta-subtitle}}{{/meta-subtitle}}"/>
+
+		<meta name="apple-mobile-web-app-title" content="exe.gfx"/>
+		<link rel="manifest" href="manifest.json?cache={{hash-manifest-json}}"/>
+
+		<link rel="shortcut icon" href="favicon.ico?cache={{hash-favicon-ico}}"/>
+		<link rel="apple-touch-icon" href="apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
+		<link rel="image_src" href="apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
+
+		<meta name="description" content="{{meta-description}}"/>
+		<meta property="og:description" content="{{meta-description}}"/>
+		<meta name="twitter:description" content="{{meta-description}}"/>
+	
+		<meta property="og:image" content="https://executable.graphics/{{meta-image}}"/>
+		<meta name="twitter:image" content="https://executable.graphics/{{meta-image}}"/>
+	
+		<meta name="twitter:card" content="{{meta-twitter-card-type}}"/>
+		<meta name="twitter:creator" content="@lunasorcery"/>
+
 		<link href="fonts.css?cache={{hash-fonts-css}}" rel="stylesheet"/>
 		<link href="style.css?cache={{hash-style-css}}" rel="stylesheet"/>
 	</head>

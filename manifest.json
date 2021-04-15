@@ -1,0 +1,11 @@
+{
+	"name": "executable.graphics",
+	"short_name": "exe.gfx",
+	"start_url": "/",
+	"display": "browser",
+	"icons": [{
+	  "src": "apple-touch-icon.png",
+	  "sizes": "160x160",
+	  "type": "image/png"
+	}]
+}
