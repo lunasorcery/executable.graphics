@@ -149,6 +149,7 @@ with open('meteoriks.mustache', 'r') as f:
 			'meta-subtitle': "Meteoriks",
 			'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
 			'meta-twitter-card-type': "summary",
+			'meta-image': meteorikProds[0]['image_url'],
 			'page-meteoriks': True,
 			'entries': meteorikProds }))
 
