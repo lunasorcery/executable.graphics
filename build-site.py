@@ -5,6 +5,7 @@ import json
 import shutil
 import chevron
 import binascii
+import datetime
 
 
 def maybe_mkdir(path):
@@ -16,10 +17,6 @@ def crc32_file(filename):
 	buf = open(filename,'rb').read()
 	buf = (binascii.crc32(buf) & 0xffffffff)
 	return f"{buf:08x}"
-
-
-# nominees are up!
-meteoriksVisible = True
 
 
 # load prods
@@ -111,7 +108,9 @@ for idx,prod in enumerate(prods):
 
 
 sharedTemplate = {
-	'meteoriks-visible': meteoriksVisible,
+	'current-year': datetime.datetime.now().year,
+	'meteoriks-juror-application-open': False,
+	'meteoriks-nominations-open': False,
 	'hash-fonts-css': crc32_file('fonts.css'),
 	'hash-style-css': crc32_file('style.css'),
 }
@@ -124,12 +123,11 @@ with open('index.mustache', 'r') as f:
 			'page-gallery': True,
 			'entries': prods }))
 
-if meteoriksVisible:
-	with open('meteoriks.mustache', 'r') as f:
-		with open('gen/meteoriks.html', 'w') as fout:
-			fout.write(chevron.render(f, sharedTemplate | {
-				'page-meteoriks': True,
-				'entries': meteorikProds }))
+with open('meteoriks.mustache', 'r') as f:
+	with open('gen/meteoriks.html', 'w') as fout:
+		fout.write(chevron.render(f, sharedTemplate | {
+			'page-meteoriks': True,
+			'entries': meteorikProds }))
 
 with open('about.mustache', 'r') as f:
 	with open('gen/about.html', 'w') as fout:
