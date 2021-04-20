@@ -4,20 +4,18 @@ const toggleSwitch = document.querySelector('input[type="checkbox"]#checkbox');
 const userDefaultTheme = (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 const currentTheme = localStorage?.getItem('theme') ?? userDefaultTheme;
 
-document.documentElement.setAttribute('data-theme', currentTheme);
-if (currentTheme === 'dark') {
-	toggleSwitch.checked = true;
-}
-
-function switchTheme(e) {
-	if (e.target.checked) {
-		document.documentElement.setAttribute('data-theme', 'dark');
-		localStorage?.setItem('theme', 'dark');
-	}
-	else {
-		document.documentElement.setAttribute('data-theme', 'light');
-		localStorage?.setItem('theme', 'light');
+function setTheme(themeStr, shouldSave=true) {
+	document.documentElement.setAttribute('data-theme', themeStr);
+	if (shouldSave) {
+		localStorage?.setItem('theme', themeStr);
 	}
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+function setThemeFromToggle() {
+	setTheme(toggleSwitch.checked ? 'dark' : 'light');
+}
+
+setTheme(currentTheme);
+toggleSwitch.checked = (currentTheme === 'dark');
+
+toggleSwitch.addEventListener('change', setThemeFromToggle, false);
