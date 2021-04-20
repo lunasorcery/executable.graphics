@@ -264,3 +264,98 @@ a {
 .content-thing img {
 	border-radius: 16px;
 }*/
+
+
+
+/* april fools theme */
+[data-theme="pouet"] {
+	--main-text-color: #ffffff;
+	--panel-bg-color:  #446688;
+	--main-bg-color:   #3a6ea5;
+	font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
+	font-size: 9pt;
+}
+[data-theme="pouet"] body {
+	padding: 12px 0px;
+	background: var(--main-bg-color) url('https://content.pouet.net/styles/001/gfx/trumpet.svg');
+}
+[data-theme="pouet"] .theme-switch {
+	display: none;
+}
+[data-theme="pouet"] .navbar {
+	background-color: #224488;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+	padding: 0px;
+}
+[data-theme="pouet"] .navbar .entry {
+	display: inline-block;
+	border: none;
+	font-weight: bold;
+	padding: 3px 4px;
+}
+[data-theme="pouet"] .navbar .entry:hover {
+	text-decoration: underline solid;
+}
+[data-theme="pouet"] .navbar .entry:first-letter {
+	color: #9FCFFF;
+}
+[data-theme="pouet"] .content {
+	padding: 0px 12px;
+}
+[data-theme="pouet"] .content-thing {
+	box-shadow: none;
+	border: 1px solid #000;
+	max-width: 760px;
+}
+[data-theme="pouet"] .content-thing.slim {
+	max-width: 500px;
+}
+[data-theme="pouet"] .content-thing .text {
+	padding: 3px;
+}
+[data-theme="pouet"] .content-thing .text,
+[data-theme="pouet"] .content-thing .text .author,
+[data-theme="pouet"] .content-thing .text .title,
+[data-theme="pouet"] .content-thing .text .party,
+[data-theme="pouet"] .content-thing .text .subtitle,
+[data-theme="pouet"] .content-thing .text .question {
+	font-size: 9pt;
+	font-weight: normal;
+	font-style: normal;
+}
+[data-theme="pouet"] .content-thing .text .title,
+[data-theme="pouet"] .content-thing .text .question {
+	font-weight: bold;
+}
+[data-theme="pouet"] .content-thing:not(.content-thing.slim) .text {
+	background: #224488;
+}
+[data-theme="pouet"] .content-thing .image {
+	border-top: 1px solid #000000;
+}
+[data-theme="pouet"] .content-thing .meteorik {
+	background: transparent;
+	font-size: 0;
+	border: 0;
+	padding: 0;
+	margin: 8px;
+	width: 16px;
+	height: 16px;
+}
+[data-theme="pouet"] .content-thing .meteorik.meteorik-winner {
+	background-image: url('http://content.pouet.net/gfx/sceneorg/meteorikwinner.gif');
+}
+[data-theme="pouet"] .content-thing .meteorik.meteorik-nominee {
+	background-image: url('http://content.pouet.net/gfx/sceneorg/meteoriknominee.gif');
+}
+[data-theme="pouet"] .content-thing .text .question {
+	display: block;
+	margin: -4px;
+	padding: 3px;
+	border: 1px solid #000000;
+	background: #224488;
+}
+[data-theme="pouet"] .content-thing .text .answer p {
+	margin-block-start: 6px;
+}

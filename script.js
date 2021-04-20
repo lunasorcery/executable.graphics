@@ -15,7 +15,18 @@ function setThemeFromToggle() {
 	setTheme(toggleSwitch.checked ? 'dark' : 'light');
 }
 
-setTheme(currentTheme);
-toggleSwitch.checked = (currentTheme === 'dark');
+function isAprilFoolsDay() {
+	var now = new Date();
+	return (now.getMonth() == 3 && now.getDate() == 1);
+}
 
-toggleSwitch.addEventListener('change', setThemeFromToggle, false);
+if (isAprilFoolsDay()) {
+	setTheme('pouet', false);
+	window.addEventListener('load', ()=>{
+		document.querySelector('div.footer').innerHTML += "<br/>Pouët graphics © mandarine"
+	}, false);
+} else {
+	setTheme(currentTheme);
+	toggleSwitch.checked = (currentTheme === 'dark');
+	toggleSwitch.addEventListener('change', setThemeFromToggle, false);
+}
