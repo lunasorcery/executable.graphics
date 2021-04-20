@@ -305,7 +305,7 @@ a {
 }
 [data-theme="pouet"] .content-thing {
 	box-shadow: none;
-	border: 1px solid #000;
+	border: 2px solid #000000;
 	max-width: 760px;
 }
 [data-theme="pouet"] .content-thing.slim {
