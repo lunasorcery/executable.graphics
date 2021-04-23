@@ -21,9 +21,7 @@ def crc32_file(filename):
 
 # load prods
 with open('prods.json') as file:
-	prods = json.load(file)
-
-prods = [prod for prod in prods if (not ('hidden' in prod)) or (not prod['hidden'])]
+	prods = [prod for prod in json.load(file) if not prod.get('hidden', False)]
 
 # figure out the meteorik prods
 for idx,prod in enumerate(prods):
