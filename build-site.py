@@ -48,7 +48,7 @@ if not os.path.exists('gen/favicon.ico'):
 	for size in faviconSizes:
 		os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png favicon.svg")
 	faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
-	print(f"convert {' '.join(faviconPngs)} gen/favicon.ico")
+	os.system(f"convert {' '.join(faviconPngs)} gen/favicon.ico")
 	for faviconPng in faviconPngs:
 		os.remove(faviconPng)
 
