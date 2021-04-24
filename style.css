@@ -7,15 +7,11 @@
 	--darkmode-panel-bg-color: #202020;
 	--darkmode-main-bg-color: #303030;
 
-	--lightmode-meteorik-nominee-bg-color:     rgba(187,187,187,0.3);
-	--lightmode-meteorik-winner-bg-color:      rgba(255,204,85,0.5);
-	--lightmode-meteorik-nominee-border-color: #aaaaaa;
-	--lightmode-meteorik-winner-border-color:  #ffcc55;
+	--lightmode-meteorik-nominee-bg-color: #e5e5e5;
+	--lightmode-meteorik-winner-bg-color:  #ffe5aa;/*#ffcc55*/;
 
-	--darkmode-meteorik-nominee-bg-color:     rgba(224,224,224,0.2);
-	--darkmode-meteorik-winner-bg-color:      rgba(255,204,85,0.3);
-	--darkmode-meteorik-nominee-border-color: #cccccc;
-	--darkmode-meteorik-winner-border-color:  #ffcc55;
+	--darkmode-meteorik-nominee-bg-color:  #555555;
+	--darkmode-meteorik-winner-bg-color:   #645020;
 
 	--main-text-color: var(--lightmode-main-text-color);
 	--panel-bg-color:  var(--lightmode-panel-bg-color);
@@ -23,8 +19,6 @@
 
 	--meteorik-nominee-bg-color:     var(--lightmode-meteorik-nominee-bg-color);
 	--meteorik-winner-bg-color:      var(--lightmode-meteorik-winner-bg-color);
-	--meteorik-nominee-border-color: var(--lightmode-meteorik-nominee-border-color);
-	--meteorik-winner-border-color:  var(--lightmode-meteorik-winner-border-color);
 
 	--image-margin: 0px;
 }
@@ -36,8 +30,6 @@
 
 	--meteorik-nominee-bg-color:     var(--darkmode-meteorik-nominee-bg-color);
 	--meteorik-winner-bg-color:      var(--darkmode-meteorik-winner-bg-color);
-	--meteorik-nominee-border-color: var(--darkmode-meteorik-nominee-border-color);
-	--meteorik-winner-border-color:  var(--darkmode-meteorik-winner-border-color);
 }
 
 * {
@@ -46,8 +38,7 @@
 
 	transition:
 		color 200ms ease-in-out,
-		background-color 200ms ease-in-out,
-		border-color 200ms ease-in-out;
+		background-color 200ms ease-in-out;
 }
 
 html {
@@ -148,14 +139,17 @@ a {
 	border: 0px solid transparent;
 	border-bottom-width: 1px;
 	border-left-width:   1px;
+	margin-top: -4px;
+	margin-right: 12px;
+	box-shadow:
+		0px 1px 2px rgba(0,0,0,0.3),
+		0px 2px 5px rgba(0,0,0,0.05);
 }
 .content-thing .meteorik-nominee {
 	background: var(--meteorik-nominee-bg-color);
-	border-color: var(--meteorik-nominee-border-color);
 }
 .content-thing .meteorik-winner {
 	background: var(--meteorik-winner-bg-color);
-	border-color: var(--meteorik-winner-border-color);
 }
 
 .content-thing .text {
