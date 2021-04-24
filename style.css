@@ -338,10 +338,10 @@ a {
 	height: 16px;
 }
 [data-theme="pouet"] .content-thing .meteorik.meteorik-winner {
-	background-image: url('http://content.pouet.net/gfx/sceneorg/meteorikwinner.gif');
+	background-image: url('https://content.pouet.net/gfx/sceneorg/meteorikwinner.gif');
 }
 [data-theme="pouet"] .content-thing .meteorik.meteorik-nominee {
-	background-image: url('http://content.pouet.net/gfx/sceneorg/meteoriknominee.gif');
+	background-image: url('https://content.pouet.net/gfx/sceneorg/meteoriknominee.gif');
 }
 [data-theme="pouet"] .content-thing .text .question {
 	display: block;
