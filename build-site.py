@@ -40,7 +40,7 @@ maybe_mkdir('gen/img/')
 
 print("generating icons...")
 if not os.path.exists('gen/apple-touch-icon.png'):
-	os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png favicon.svg")
+	os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png mobile-icon.svg")
 if not os.path.exists('gen/favicon.ico'):
 	faviconSizes = [16,32,48]
 	for size in faviconSizes:
