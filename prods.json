@@ -1,5 +1,21 @@
 [
 	{
+		"slug": "fms_cat-wooden-structure",
+		"demozoo_url": "https://demozoo.org/graphics/294427/",
+		"author": "FMS_Cat",
+		"title": "Wooden Structure",
+		"party": "Outline Online 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "yx-creative-block",
+		"demozoo_url": "https://demozoo.org/graphics/294426/",
+		"author": "yx / Polarity",
+		"title": "Creative Block",
+		"party": "Outline Online 2021",
+		"platform": "Windows"
+	},
+	{
 		"slug": "nusan-red-crash",
 		"demozoo_url": "https://demozoo.org/graphics/292427/",
 		"author": "NuSan",
