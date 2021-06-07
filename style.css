@@ -252,19 +252,27 @@ a {
 
 
 /* silly rounded-corner mode */
-/*.content-thing {
-	border-radius: 20px;
+/*:root {
+	--content-thing-border-radius: 10px;
+	--image-margin: 5px;
+}
+.content-thing {
+	border-radius: var(--content-thing-border-radius);
+	box-shadow: 
+		0px 3px 5px rgba(0,0,0,0.05),
+		0px 6px 10px rgba(0,0,0,0.05);
 }
 .content-thing .meteorik {
-	border-radius: 16px;
+	border-radius: calc(var(--content-thing-border-radius) - var(--image-margin));
 	border-width: 0px;
-	margin: 4px;
-}
-.content-thing .image {
-	padding: 4px;
+	margin: var(--image-margin);
+	box-shadow: none;
 }
 .content-thing img {
-	border-radius: 16px;
+	border-radius: calc(var(--content-thing-border-radius) - var(--image-margin));
+}
+.content-thing .text {
+	padding: 10px;
 }*/
 
 
