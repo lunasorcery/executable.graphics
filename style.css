@@ -345,13 +345,17 @@ a {
 	border-top: 1px solid #000000;
 }
 [data-theme="pouet"] .content-thing .meteorik {
-	background: transparent;
-	font-size: 0;
+	background-color: transparent;
+	background-position: top right;
+	background-repeat: no-repeat;
+	font-size: 11px;
 	border: 0;
 	padding: 0;
+	padding-top: 2px;
+	padding-right: 22px;
 	margin: 8px;
-	width: 16px;
 	height: 16px;
+	box-shadow: none;
 }
 [data-theme="pouet"] .content-thing .meteorik.meteorik-winner {
 	background-image: url('https://content.pouet.net/gfx/sceneorg/meteorikwinner.gif');
