@@ -243,6 +243,14 @@ a {
 }
 
 
+/* disable animated effects for users who prefer reduced motion */
+@media (prefers-reduced-motion) {
+	* {
+		transition: none;
+	}
+}
+
+
 /* silly rounded-corner mode */
 /*.content-thing {
 	border-radius: 20px;
