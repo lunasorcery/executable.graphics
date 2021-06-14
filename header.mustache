@@ -9,42 +9,59 @@
 		<meta name="twitter:title" content="{{meta-title}}{{#meta-subtitle}} | {{meta-subtitle}}{{/meta-subtitle}}"/>
 
 		<meta name="apple-mobile-web-app-title" content="exe.gfx"/>
-		<link rel="manifest" href="manifest.json?cache={{hash-manifest-json}}"/>
+		<link rel="manifest" href="/manifest.json?cache={{hash-manifest-json}}"/>
 
-		<link rel="shortcut icon" href="favicon.ico?cache={{hash-favicon-ico}}"/>
-		<link rel="apple-touch-icon" href="apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
-		<link rel="image_src" href="apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
+		<link rel="shortcut icon" href="/favicon.ico?cache={{hash-favicon-ico}}"/>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
+		<link rel="image_src" href="/apple-touch-icon.png?cache={{hash-apple-touch-icon-png}}"/>
 
 		<meta name="description" content="{{meta-description}}"/>
 		<meta property="og:description" content="{{meta-description}}"/>
 		<meta name="twitter:description" content="{{meta-description}}"/>
 	
-		<meta property="og:image" content="https://executable.graphics/{{meta-image}}"/>
-		<meta name="twitter:image" content="https://executable.graphics/{{meta-image}}"/>
+		<meta property="og:image" content="{{meta-image}}"/>
+		<meta name="twitter:image" content="{{meta-image}}"/>
 	
 		<meta name="twitter:card" content="{{meta-twitter-card-type}}"/>
 		<meta name="twitter:creator" content="@lunasorcery"/>
 
-		<link href="fonts.css?cache={{hash-fonts-css}}" rel="stylesheet"/>
-		<link href="style.css?cache={{hash-style-css}}" rel="stylesheet"/>
+		<link href="/fonts.css?cache={{hash-fonts-css}}" rel="stylesheet"/>
+		<link href="/style.css?cache={{hash-style-css}}" rel="stylesheet"/>
 	</head>
 	<body>
-		<label class="theme-switch" for="checkbox">
-			<span>toggle theme</span>
-			<svg width="28" height="28" alt="Toggle Light/Dark Theme" xmlns="http://www.w3.org/2000/svg">
-				<defs>
-					<mask id="hole">
-						<rect width="100%" height="100%" fill="white"/>
-						<circle r="40%" cx="32%" cy="32%" fill="black"/>
-					</mask>
-				</defs>
-				<circle r="50%" cx="50%" cy="50%" mask="url(#hole)" fill="currentColor"/>
-			</svg>
-			<input type="checkbox" id="checkbox" />
-		</label>
-		<script src="script.js"></script>
-		<div class="navbar">
-			<a href="/" class="entry{{#page-gallery}} active{{/page-gallery}}">Gallery</a>
-			<a href="meteoriks.html" class="entry{{#page-meteoriks}} active{{/page-meteoriks}}">Meteoriks</a>
-			<a href="about.html" class="entry{{#page-about}} active{{/page-about}}">About</a>
+		{{#enable-language-dropdown}}
+		<div class="switch switch-left switch-lang" tabindex="0">
+			<label class="switch-label switch-label-left">
+				{{{svg-globe}}}
+				<span>{{i18n.global.toggle-lang}}</span>
+			</label>
+			<div class="mousetrap">
+				<ul class="dropdown">
+				{{#languages}}
+					{{#page-gallery}}
+						<a href="{{lang-root}}/" class="item" tabindex="0">{{lang-name}}</a>
+					{{/page-gallery}}
+					{{#page-meteoriks}}
+						<a href="{{lang-root}}/meteoriks.html" class="item" tabindex="0">{{lang-name}}</a>
+					{{/page-meteoriks}}
+					{{#page-about}}
+						<a href="{{lang-root}}/about.html" class="item" tabindex="0">{{lang-name}}</a>
+					{{/page-about}}
+				{{/languages}}
+				</ul>
+			</div>
 		</div>
+		{{/enable-language-dropdown}}
+		<div class="navbar">
+			<a href="." class="entry{{#page-gallery}} active{{/page-gallery}}">{{i18n.nav.gallery}}</a>
+			<a href="meteoriks.html" class="entry{{#page-meteoriks}} active{{/page-meteoriks}}">{{i18n.nav.meteoriks}}</a>
+			<a href="about.html" class="entry{{#page-about}} active{{/page-about}}">{{i18n.nav.about}}</a>
+		</div>
+		<div class="switch switch-right switch-theme" tabindex="0">
+			<label class="switch-label switch-label-right" for="theme-checkbox">
+				<span>{{i18n.global.toggle-theme}}</span>
+				{{{svg-moon}}}
+				<input type="checkbox" id="theme-checkbox" />
+			</label>
+		</div>
+		<script src="/script.js"></script>

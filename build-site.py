@@ -19,6 +19,15 @@ def crc32_file(filename):
 	return f"{buf:08x}"
 
 
+# WIP features
+enableLanguageDropdown = False
+enableDebugLanguage = False
+
+
+
+with open('i18n.json') as file:
+	i18n = [lang for lang in json.load(file) if lang.get('enabled', True)]
+
 # load prods
 with open('prods.json') as file:
 	prods = [prod for prod in json.load(file) if not prod.get('hidden', False)]
@@ -76,11 +85,11 @@ for idx,prod in enumerate(prods):
 	print(f"- {slug}")
 
 	if os.path.exists(dst_jpg):
-		prods[idx]['image_url'] = f"img/{slug}.jpg"
+		prods[idx]['image_url'] = f"/img/{slug}.jpg"
 		print("   already exists, skipping...")
 		continue
 	elif os.path.exists(dst_png):
-		prods[idx]['image_url'] = f"img/{slug}.png"
+		prods[idx]['image_url'] = f"/img/{slug}.png"
 		print("   already exists, skipping...")
 		continue
 
@@ -106,16 +115,44 @@ for idx,prod in enumerate(prods):
 		# ...and use the smaller one
 		print(f"   src_png: {os.path.getsize(src_png): 10,}b")
 		if os.path.getsize(dst_jpg) < os.path.getsize(src_png):
-			prods[idx]['image_url'] = f"img/{slug}.jpg"
+			prods[idx]['image_url'] = f"/img/{slug}.jpg"
 			print(f"   dst_jpg: {os.path.getsize(dst_jpg): 10,}b")
 		else:
 			os.remove(dst_jpg)
 			shutil.copyfile(src_png, dst_png)
-			prods[idx]['image_url'] = f"img/{slug}.png"
+			prods[idx]['image_url'] = f"/img/{slug}.png"
 			print(f"   dst_png: {os.path.getsize(dst_png): 10,}b")
 	else:
 		print("   missing raw image!")
 		raise hell
+
+
+
+# add debug lang
+if enableDebugLanguage:
+	devLang = {
+		'id': "i18n-debug",
+		'name': "Debug",
+		'enabled': False,
+		'data': {}
+	}
+	for key in i18n[0]['data'].keys():
+		devLang['data'][key] = {}
+		for key2 in i18n[0]['data'][key].keys():
+			devLang['data'][key][key2] = f"[[{key}.{key2}]]"
+	i18n.append(devLang)
+
+
+# prepare language dropdown
+langDropdown = []
+for lang in i18n:
+	dropdownEntry = {}
+	dropdownEntry['lang-name'] = lang['name']
+	if lang['id'] == 'en':
+		dropdownEntry['lang-root'] = ""
+	else:
+		dropdownEntry['lang-root'] = f"/{lang['id']}"
+	langDropdown.append(dropdownEntry)
 
 
 sharedTemplate = {
@@ -129,32 +166,44 @@ sharedTemplate = {
 	'hash-favicon-ico':          crc32_file('gen/favicon.ico'),
 	'hash-apple-touch-icon-png': crc32_file('gen/apple-touch-icon.png'),
 	'hash-manifest-json':        crc32_file('manifest.json'),
+	'svg-globe': open('globe.svg').read(),
+	'svg-moon':  open('moon.svg').read(),
+	'enable-language-dropdown': enableLanguageDropdown,
+	'languages': langDropdown
 }
 
 
 print("applying templates...")
-with open('index.mustache', 'r') as f:
-	with open('gen/index.html', 'w') as fout:
-		fout.write(chevron.render(f, sharedTemplate | {
-			'meta-description': "A curated gallery of 4K Executable Graphics works from the demoscene.",
-			'meta-twitter-card-type': "summary_large_image",
-			'page-gallery': True,
-			'entries': prods }))
+for lang in i18n:
+	outdir = 'gen'
+	if lang['id'] != 'en':
+		outdir += '/' + lang['id']
+	maybe_mkdir(outdir)
 
-with open('meteoriks.mustache', 'r') as f:
-	with open('gen/meteoriks.html', 'w') as fout:
-		fout.write(chevron.render(f, sharedTemplate | {
-			'meta-subtitle': "Meteoriks",
-			'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
-			'meta-twitter-card-type': "summary",
-			'meta-image': meteorikProds[0]['image_url'],
-			'page-meteoriks': True,
-			'entries': meteorikProds }))
+	langTemplate = { 'i18n': lang['data'] }
 
-with open('about.mustache', 'r') as f:
-	with open('gen/about.html', 'w') as fout:
-		fout.write(chevron.render(f, sharedTemplate | {
-			'meta-subtitle': "About",
-			'meta-description': "What is Executable Graphics?",
-			'meta-twitter-card-type': "summary",
-			'page-about': True }))
+	with open('index.mustache', 'r') as f:
+		with open(f"{outdir}/index.html", 'w') as fout:
+			fout.write(chevron.render(f, sharedTemplate | langTemplate | {
+				'meta-description': "A curated gallery of 4K Executable Graphics works from the demoscene.",
+				'meta-twitter-card-type': "summary_large_image",
+				'page-gallery': True,
+				'entries': prods }))
+
+	with open('meteoriks.mustache', 'r') as f:
+		with open(f"{outdir}/meteoriks.html", 'w') as fout:
+			fout.write(chevron.render(f, sharedTemplate | langTemplate | {
+				'meta-subtitle': "Meteoriks",
+				'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
+				'meta-twitter-card-type': "summary",
+				'meta-image': meteorikProds[0]['image_url'],
+				'page-meteoriks': True,
+				'entries': meteorikProds }))
+
+	with open('about.mustache', 'r') as f:
+		with open(f"{outdir}/about.html", 'w') as fout:
+			fout.write(chevron.render(f, sharedTemplate | langTemplate | {
+				'meta-subtitle': "About",
+				'meta-description': "What is Executable Graphics?",
+				'meta-twitter-card-type': "summary",
+				'page-about': True }))

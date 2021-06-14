@@ -1,0 +1,37 @@
+[
+	{
+		"id": "en",
+		"name": "English",
+		"enabled": true,
+		"data": {
+			"global": {
+				"toggle-theme": "Toggle Theme",
+				"toggle-lang": "Language"
+			},
+			"nav": {
+				"gallery": "Gallery",
+				"meteoriks": "Meteoriks",
+				"about": "About"
+			},
+			"meteoriks": {
+				"what-are-meteoriks": "What are the Meteoriks?"
+			},
+			"about": {
+				"what-is-exegfx": "What is Executable Graphics?",
+				"what-is-exe-dot-gfx": "What is executable.graphics?"
+			}
+		}
+	},
+	{
+		"id": "es",
+		"name": "Español",
+		"enabled": false,
+		"data": { }
+	},
+	{
+		"id": "jp",
+		"name": "日本語",
+		"enabled": false,
+		"data": { }
+	}
+]

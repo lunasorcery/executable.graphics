@@ -13,6 +13,14 @@
 	--darkmode-meteorik-nominee-bg-color:  #555555;
 	--darkmode-meteorik-winner-bg-color:   #645020;
 
+	--lightmode-dropdown-bg-color: #ffffff;
+	--lightmode-dropdown-divider-color: #d0d0d0;
+	--lightmode-dropdown-hover-color: #f0f0f0;
+
+	--darkmode-dropdown-bg-color: #404040;
+	--darkmode-dropdown-divider-color: #101010;
+	--darkmode-dropdown-hover-color: #383838;
+
 	--main-text-color: var(--lightmode-main-text-color);
 	--panel-bg-color:  var(--lightmode-panel-bg-color);
 	--main-bg-color:   var(--lightmode-main-bg-color);
@@ -20,7 +28,14 @@
 	--meteorik-nominee-bg-color:     var(--lightmode-meteorik-nominee-bg-color);
 	--meteorik-winner-bg-color:      var(--lightmode-meteorik-winner-bg-color);
 
+	--dropdown-bg-color:      var(--lightmode-dropdown-bg-color);
+	--dropdown-divider-color: var(--lightmode-dropdown-divider-color);
+	--dropdown-hover-color:   var(--lightmode-dropdown-hover-color);
+
 	--image-margin: 0px;
+
+	--theme-transition-duration: 150ms;
+	--theme-transition-easing: ease-in-out;
 }
 
 [data-theme="dark"] {
@@ -30,15 +45,14 @@
 
 	--meteorik-nominee-bg-color:     var(--darkmode-meteorik-nominee-bg-color);
 	--meteorik-winner-bg-color:      var(--darkmode-meteorik-winner-bg-color);
+
+	--dropdown-bg-color:      var(--darkmode-dropdown-bg-color);
+	--dropdown-divider-color: var(--darkmode-dropdown-divider-color);
+	--dropdown-hover-color:   var(--darkmode-dropdown-hover-color);
 }
 
 * {
 	box-sizing: border-box;
-	color: var(--main-text-color);
-
-	transition:
-		color 200ms ease-in-out,
-		background-color 200ms ease-in-out;
 }
 
 html {
@@ -52,6 +66,7 @@ body {
 	background: var(--main-bg-color);
 	text-align: center;
 	padding: 12px;
+	transition: background-color var(--theme-transition-duration) var(--theme-transition-easing);
 }
 
 a {
@@ -77,53 +92,118 @@ a {
 .navbar .entry {
 	padding: 8px 16px;
 	color: var(--main-text-color);
+	transition: color var(--theme-transition-duration) var(--theme-transition-easing);
 }
 .navbar .entry.active {
 	font-weight: 600;
 }
 
 .navbar .entry.active,
-.navbar .entry:hover {
+.navbar .entry:hover,
+.navbar .entry:focus {
 	border-bottom: 1px solid var(--main-text-color);
+	transition:
+		color var(--theme-transition-duration) var(--theme-transition-easing),
+		border-color var(--theme-transition-duration) var(--theme-transition-easing);
 }
 
 
-.theme-switch {
+.switch {
 	position: absolute;
 	top: 12px;
-	right: 12px;
 	padding: 4px;
-
-	cursor: pointer;
-
-	/*align text*/
+}
+.switch-label {
+	/* vertically center text */
 	display: flex;
 	align-items: center;
+
+	cursor: pointer;
+	text-transform: lowercase;
+
+	color: var(--main-text-color);
+	transition: color var(--theme-transition-duration) var(--theme-transition-easing);
 }
-.theme-switch span {
-	padding-right: 8px;
+.switch span {
 	opacity: 0;
 	transition: opacity 200ms ease-in-out;
 }
-.theme-switch:hover span {
+.switch:hover span,
+.switch:focus-within span,
+.switch:focus span {
 	opacity: 0.75;
 }
-.theme-switch input {
+.switch input {
 	display: none;
 }
+.switch-right { right: 12px; }
+.switch-left { left: 12px; }
+.switch-label-right span { padding-right: 8px; }
+.switch-label-left span { padding-left: 8px; }
+
+
+
+
+/* CSS-only dropdown */
+/* loosely based on https://stackoverflow.com/a/20058341 */
+/* with accessibility notes from https://css-tricks.com/solved-with-css-dropdown-menus/ */
+.switch .mousetrap {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	min-width: 100%;
+	padding-top: 36px;
+	padding-left: 8px;
+}
+.switch .mousetrap:hover,
+.switch:active .mousetrap,
+.switch:focus .mousetrap,
+.switch:focus-within .mousetrap {
+	display: block;
+}
+.switch .dropdown {
+	margin: 0;
+	padding: 0;
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow:
+		0px 1px 2px rgba(0,0,0,0.3),
+		0px 2px 5px rgba(0,0,0,0.05),
+		0px 8px 12px rgba(0,0,0,0.15);
+}
+.switch .dropdown .item {
+	display: block;
+	background-color: var(--dropdown-bg-color);
+	list-style: none;
+	color: var(--main-text-color);
+	padding: 8px 12px;
+	border-bottom: 1px solid var(--dropdown-divider-color);
+}
+.switch .dropdown .item:last-child {
+	border: none;
+}
+.switch .dropdown .item:hover,
+.switch .dropdown .item:focus {
+	background: var(--dropdown-hover-color);
+	outline: none;
+}
+
+
 
 
 .content-thing {
 	text-align: left;
 	font-size: 12pt;
 	margin: 0 auto 32px;
-	background: var(--panel-bg-color);
+	background-color: var(--panel-bg-color);
 	box-shadow:
 		0px 1px 2px rgba(0,0,0,0.3),
 		0px 2px 5px rgba(0,0,0,0.05);
 	width: fit-content;
 	width: -moz-fit-content;
 	max-width: 100%;
+	transition: background-color var(--theme-transition-duration) var(--theme-transition-easing);
 }
 .content-thing.slim {
 	max-width: 760px;
@@ -144,6 +224,10 @@ a {
 	box-shadow:
 		0px 1px 2px rgba(0,0,0,0.3),
 		0px 2px 5px rgba(0,0,0,0.05);
+	color: var(--main-text-color);
+	transition:
+		color var(--theme-transition-duration) var(--theme-transition-easing),
+		background-color var(--theme-transition-duration) var(--theme-transition-easing);
 }
 .content-thing .meteorik-nominee {
 	background: var(--meteorik-nominee-bg-color);
@@ -154,6 +238,12 @@ a {
 
 .content-thing .text {
 	padding: 12px;
+}
+
+.content-thing .text,
+.content-thing .text a {
+	color: var(--main-text-color);
+	transition: color var(--theme-transition-duration) var(--theme-transition-easing);
 }
 
 .content-thing .text .author {
@@ -174,7 +264,8 @@ a {
 .content-thing .text > *:last-child {
 	margin-bottom: 0;
 }
-.content-thing:hover .text .title {
+.content-thing:hover .text .title,
+.content-thing a:focus .text .title {
 	text-decoration: underline;
 }
 
@@ -201,12 +292,15 @@ a {
 	text-decoration-style: dotted;
 	text-decoration-thickness: from-font;
 }
-.content-thing .text p a[href]:hover {
+.content-thing .text p a[href]:hover,
+.content-thing .text p a[href]:focus {
 	text-decoration-style: solid;
 }
 
 .footer {
 	padding-bottom: 24px;
+	color: var(--main-text-color);
+	transition: color var(--theme-transition-duration) var(--theme-transition-easing);
 }
 
 @media only screen and (max-width: 600px) {
@@ -216,7 +310,7 @@ a {
 	* {
 		transition: none;
 	}
-	.theme-switch span {
+	.switch-label span {
 		display: none;
 	}
 
@@ -246,7 +340,7 @@ a {
 /* disable animated effects for users who prefer reduced motion */
 @media (prefers-reduced-motion) {
 	* {
-		transition: none;
+		transition: none !important;
 	}
 }
 
@@ -282,6 +376,9 @@ a {
 	--main-text-color: #ffffff;
 	--panel-bg-color:  #446688;
 	--main-bg-color:   #3a6ea5;
+	--dropdown-bg-color: #224488;
+	--dropdown-hover-color: #224488;
+	--dropdown-divider-color: #000000;
 	font-family: 'Tahoma', 'Verdana', 'Arial', 'Helvetica', sans-serif;
 	font-size: 9pt;
 }
@@ -289,8 +386,35 @@ a {
 	padding: 12px 0px;
 	background: var(--main-bg-color) url('https://content.pouet.net/styles/001/gfx/trumpet.svg');
 }
-[data-theme="pouet"] .theme-switch {
+[data-theme="pouet"] .switch-theme {
 	display: none;
+}
+[data-theme="pouet"] .switch-lang svg {
+	display: none;
+}
+[data-theme="pouet"] .switch-lang span {
+	opacity: 1;
+	font-weight: bold;
+	text-transform: none;
+	display: inline-block !important;
+}
+[data-theme="pouet"] .switch .mousetrap {
+	padding-top: 22px;
+}
+[data-theme="pouet"] .switch .dropdown {
+	border: 1px solid #000000;
+	border-top: none;
+	border-radius: 0px;
+	box-shadow: none;
+}
+[data-theme="pouet"] .switch .dropdown .item {
+	color: #9FCFFF;
+	font-weight: bold;
+	padding: 4px;
+}
+[data-theme="pouet"] .switch .dropdown .item:hover,
+[data-theme="pouet"] .switch .dropdown .item:focus {
+	text-decoration: underline;
 }
 [data-theme="pouet"] .navbar {
 	background-color: #224488;
@@ -304,8 +428,9 @@ a {
 	font-weight: bold;
 	padding: 3px 4px;
 }
-[data-theme="pouet"] .navbar .entry:hover {
-	text-decoration: underline solid;
+[data-theme="pouet"] .navbar .entry:hover,
+[data-theme="pouet"] .navbar .entry:focus {
+	text-decoration: underline;
 }
 [data-theme="pouet"] .navbar .entry:first-letter {
 	color: #9FCFFF;
@@ -333,6 +458,16 @@ a {
 	font-size: 9pt;
 	font-weight: normal;
 	font-style: normal;
+}
+[data-theme="pouet"] .content-thing .text a[href] {
+	font-weight: bold;
+	color: #9FCFFF;
+	text-decoration: none;
+}
+[data-theme="pouet"] .content-thing .text a[href]:hover,
+[data-theme="pouet"] .content-thing .text a[href]:focus {
+	text-decoration: underline;
+	text-decoration-style: solid;
 }
 [data-theme="pouet"] .content-thing .text .title,
 [data-theme="pouet"] .content-thing .text .question {
