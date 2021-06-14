@@ -112,6 +112,9 @@ a {
 	position: absolute;
 	top: 12px;
 	padding: 4px;
+
+	/* faster touch response on mobile */
+	touch-action: manipulation;
 }
 .switch-label {
 	/* vertically center text */
@@ -126,7 +129,7 @@ a {
 }
 .switch span {
 	opacity: 0;
-	transition: opacity 200ms ease-in-out;
+	transition: opacity 150ms ease-in-out;
 }
 .switch:hover span,
 .switch:focus-within span,
@@ -304,29 +307,19 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-	/*:root {
-		--lightmode-meteorik-nominee-bg-color: rgba(150,150,150,0.4);
-	}*/
 	* {
-		transition: none;
+		transition: none !important;
 	}
+
+	/* hide text labels for toggles on smaller screens */
 	.switch-label span {
 		display: none;
 	}
 
-	/* old-style wide bar stuck on top of the card */
-	/*.content-thing .meteorik {
-		float: none;
-		border-width: 0px;
-		border-top-width: 1px;
-	}*/
-	/* yucky gradient experiment */
-	/*.content-thing .meteorik-nominee {
-		background: linear-gradient(var(--meteorik-nominee-bg-color), transparent);
+	/* more compact navbar for smaller screens */
+	.navbar .entry {
+		padding: 8px 8px;
 	}
-	.content-thing .meteorik-winner {
-		background: linear-gradient(var(--meteorik-winner-bg-color), transparent);
-	}*/
 
 	/* new-style corner banner with reduced font size */
 	.content-thing .meteorik {
