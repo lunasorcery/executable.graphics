@@ -21,6 +21,9 @@
 	--darkmode-dropdown-divider-color: #101010;
 	--darkmode-dropdown-hover-color: #383838;
 
+	--lightmode-outline-color: #000000;
+	--darkmode-outline-color: #ffffff;
+
 	--main-text-color: var(--lightmode-main-text-color);
 	--panel-bg-color:  var(--lightmode-panel-bg-color);
 	--main-bg-color:   var(--lightmode-main-bg-color);
@@ -31,6 +34,8 @@
 	--dropdown-bg-color:      var(--lightmode-dropdown-bg-color);
 	--dropdown-divider-color: var(--lightmode-dropdown-divider-color);
 	--dropdown-hover-color:   var(--lightmode-dropdown-hover-color);
+
+	--outline-color: var(--lightmode-outline-color);
 
 	--image-margin: 0px;
 
@@ -49,6 +54,8 @@
 	--dropdown-bg-color:      var(--darkmode-dropdown-bg-color);
 	--dropdown-divider-color: var(--darkmode-dropdown-divider-color);
 	--dropdown-hover-color:   var(--darkmode-dropdown-hover-color);
+
+	--outline-color: var(--darkmode-outline-color);
 }
 
 * {
@@ -111,38 +118,72 @@ a {
 .switch {
 	position: absolute;
 	top: 12px;
-	padding: 4px;
-
-	/* faster touch response on mobile */
-	touch-action: manipulation;
 }
-.switch-label {
+
+.switch .label {
 	/* vertically center text */
 	display: flex;
 	align-items: center;
 
+	padding: 4px;
 	cursor: pointer;
 	text-transform: lowercase;
 
 	color: var(--main-text-color);
 	transition: color var(--theme-transition-duration) var(--theme-transition-easing);
 }
-.switch span {
+.switch .label span {
 	opacity: 0;
 	transition: opacity 150ms ease-in-out;
 }
-.switch:hover span,
-.switch:focus-within span,
-.switch:focus span {
+
+
+/* show the text label... */
+.switch:hover .label span, /* ...on mouseover */
+.switch:focus-visible .label span, /* ...on tab-highlight */
+.switch-dropdown:focus-within .label span, /* ...on tab-highlight of a dropdown child */
+.switch-toggle input[type=checkbox]:focus-visible + .label span { /* ...on tab-highlight of an invisible checkbox */
 	opacity: 0.75;
 }
-.switch input {
-	display: none;
+
+
+/* hide the actual checkbox */
+/* but keep it *technically* visible for tab-navigation */
+.switch-toggle input[type=checkbox] {
+	opacity: 0.00001;
+	width: 0;
+	height: 0;
+	position: absolute;
+	margin: 0;
+}
+
+/* override the focus-visible outline style
+   so we can make the hacky theme toggle
+   look somewhat visually consistent */
+.switch {
+	outline: none;
+}
+.switch .label,
+.switch-dropdown .dropdown .item,
+.navbar .entry {
+	outline-style: solid;
+	outline-color: var(--outline-color);
+	outline-width: 0px;
+	transition: outline-color var(--theme-transition-duration) var(--theme-transition-easing);
+}
+.switch-dropdown .dropdown .item {
+	outline-offset: -4px;
+}
+.switch-toggle input[type=checkbox]:focus-visible + .label,
+.switch-dropdown:focus-visible .label,
+.switch-dropdown .dropdown .item:focus-visible,
+.navbar .entry:focus-visible {
+	outline-width: 2px;
 }
 .switch-right { right: 12px; }
 .switch-left { left: 12px; }
-.switch-label-right span { padding-right: 8px; }
-.switch-label-left span { padding-left: 8px; }
+.switch-right .label span { padding-right: 8px; }
+.switch-left .label span { padding-left: 8px; }
 
 
 
@@ -153,17 +194,20 @@ a {
 .switch .mousetrap {
 	display: none;
 	position: absolute;
-	top: 0px;
-	left: 0px;
-	min-width: 100%;
-	padding-top: 36px;
-	padding-left: 8px;
+	top: 40px;
+	left: 8px;
+	outline: none;
 }
-.switch .mousetrap:hover,
 .switch:active .mousetrap,
 .switch:focus .mousetrap,
 .switch:focus-within .mousetrap {
 	display: block;
+}
+@media (hover: none) {
+	/* kinda hacky, but this stops the dropdown from flickering in on iOS Safari */
+	.switch:hover .mousetrap {
+		display: block;
+	}
 }
 .switch .dropdown {
 	margin: 0;
@@ -189,7 +233,6 @@ a {
 .switch .dropdown .item:hover,
 .switch .dropdown .item:focus {
 	background: var(--dropdown-hover-color);
-	outline: none;
 }
 
 
@@ -312,7 +355,7 @@ a {
 	}
 
 	/* hide text labels for toggles on smaller screens */
-	.switch-label span {
+	.switch .label span {
 		display: none;
 	}
 
@@ -379,34 +422,34 @@ a {
 	padding: 12px 0px;
 	background: var(--main-bg-color) url('https://content.pouet.net/styles/001/gfx/trumpet.svg');
 }
-[data-theme="pouet"] .switch-theme {
+[data-theme="pouet"] #switch-theme {
 	display: none;
 }
-[data-theme="pouet"] .switch-lang svg {
+[data-theme="pouet"] #switch-lang svg {
 	display: none;
 }
-[data-theme="pouet"] .switch-lang span {
+[data-theme="pouet"] #switch-lang span {
 	opacity: 1;
 	font-weight: bold;
 	text-transform: none;
 	display: inline-block !important;
 }
-[data-theme="pouet"] .switch .mousetrap {
-	padding-top: 22px;
+[data-theme="pouet"] .switch-dropdown .mousetrap {
+	top: 100%;
 }
-[data-theme="pouet"] .switch .dropdown {
+[data-theme="pouet"] .switch-dropdown .dropdown {
 	border: 1px solid #000000;
 	border-top: none;
 	border-radius: 0px;
 	box-shadow: none;
 }
-[data-theme="pouet"] .switch .dropdown .item {
+[data-theme="pouet"] .switch-dropdown .dropdown .item {
 	color: #9FCFFF;
 	font-weight: bold;
 	padding: 4px;
 }
-[data-theme="pouet"] .switch .dropdown .item:hover,
-[data-theme="pouet"] .switch .dropdown .item:focus {
+[data-theme="pouet"] .switch-dropdown .dropdown .item:hover,
+[data-theme="pouet"] .switch-dropdown .dropdown .item:focus {
 	text-decoration: underline;
 }
 [data-theme="pouet"] .navbar {

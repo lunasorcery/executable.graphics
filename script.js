@@ -30,3 +30,12 @@ if (isAprilFoolsDay()) {
 	toggleSwitch.checked = (currentTheme === 'dark');
 	toggleSwitch.addEventListener('change', setThemeFromToggle, false);
 }
+
+document.body.addEventListener('touchstart', (e)=>{
+	// fix for dropdown getting stuck on mobile Safari
+
+	// if we're touching somewhere outside the active element, blur it
+	if (!document.activeElement.contains(e.target)) {
+		document.activeElement.blur();
+	}
+});
