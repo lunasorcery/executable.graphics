@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
 		<title>{{meta-title}}{{#meta-subtitle}} | {{meta-subtitle}}{{/meta-subtitle}}</title>
 		<meta property="og:title" content="{{meta-title}}{{#meta-subtitle}} | {{meta-subtitle}}{{/meta-subtitle}}"/>
@@ -30,10 +30,10 @@
 	</head>
 	<body>
 		{{#enable-language-dropdown}}
-		<div class="switch switch-left switch-lang" tabindex="0">
-			<label class="switch-label switch-label-left">
+		<div class="switch switch-left switch-dropdown" id="switch-lang" tabindex="0">
+			<label class="label">
 				{{{svg-globe}}}
-				<span>{{i18n.global.toggle-lang}}</span>
+				<span>{{#i18n}}global.toggle-lang{{/i18n}}</span>
 			</label>
 			<div class="mousetrap">
 				<ul class="dropdown">
@@ -53,15 +53,15 @@
 		</div>
 		{{/enable-language-dropdown}}
 		<div class="navbar">
-			<a href="." class="entry{{#page-gallery}} active{{/page-gallery}}">{{i18n.nav.gallery}}</a>
-			<a href="meteoriks.html" class="entry{{#page-meteoriks}} active{{/page-meteoriks}}">{{i18n.nav.meteoriks}}</a>
-			<a href="about.html" class="entry{{#page-about}} active{{/page-about}}">{{i18n.nav.about}}</a>
+			<a href="." class="entry{{#page-gallery}} active{{/page-gallery}}">{{#i18n}}nav.gallery{{/i18n}}</a>
+			<a href="meteoriks.html" class="entry{{#page-meteoriks}} active{{/page-meteoriks}}">{{#i18n}}nav.meteoriks{{/i18n}}</a>
+			<a href="about.html" class="entry{{#page-about}} active{{/page-about}}">{{#i18n}}nav.about{{/i18n}}</a>
 		</div>
-		<div class="switch switch-right switch-theme" tabindex="0">
-			<label class="switch-label switch-label-right" for="theme-checkbox">
-				<span>{{i18n.global.toggle-theme}}</span>
+		<div class="switch switch-right switch-toggle" id="switch-theme">
+			<input type="checkbox" id="theme-checkbox" />
+			<label class="label" for="theme-checkbox">
+				<span>{{#i18n}}global.toggle-theme{{/i18n}}</span>
 				{{{svg-moon}}}
-				<input type="checkbox" id="theme-checkbox" />
 			</label>
 		</div>
 		<script src="/script.js"></script>

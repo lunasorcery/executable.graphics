@@ -22,6 +22,7 @@ def crc32_file(filename):
 # WIP features
 enableLanguageDropdown = False
 enableDebugLanguage = False
+validateMissingLocalization = True
 
 
 
@@ -136,10 +137,11 @@ if enableDebugLanguage:
 		'enabled': False,
 		'data': {}
 	}
-	for key in i18n[0]['data'].keys():
-		devLang['data'][key] = {}
-		for key2 in i18n[0]['data'][key].keys():
-			devLang['data'][key][key2] = f"[[{key}.{key2}]]"
+	if validateMissingLocalization:
+		for key in i18n[0]['data'].keys():
+			devLang['data'][key] = {}
+			for key2 in i18n[0]['data'][key].keys():
+				devLang['data'][key][key2] = f"[[{key}.{key2}]]"
 	i18n.append(devLang)
 
 
@@ -158,18 +160,28 @@ for lang in i18n:
 sharedTemplate = {
 	'meta-title': "executable.graphics",
 	'meta-image': prods[0]['image_url'],
+
 	'current-year': datetime.datetime.now().year,
+
 	'meteoriks-juror-application-open': False,
 	'meteoriks-nominations-open': False,
+
+	'enable-language-dropdown': enableLanguageDropdown,
+	'languages': langDropdown,
+
+	'external-url-meteoriks':        'https://meteoriks.org/',
+	'external-url-meteoriks-jurors': 'https://meteoriks.org/taking_part/juror',
+	'external-url-pouet':            'https://pouet.net/',
+	'external-url-demozoo':          'https://demozoo.org/',
+
 	'hash-fonts-css':            crc32_file('fonts.css'),
 	'hash-style-css':            crc32_file('style.css'),
 	'hash-favicon-ico':          crc32_file('gen/favicon.ico'),
 	'hash-apple-touch-icon-png': crc32_file('gen/apple-touch-icon.png'),
 	'hash-manifest-json':        crc32_file('manifest.json'),
+
 	'svg-globe': open('globe.svg').read(),
-	'svg-moon':  open('moon.svg').read(),
-	'enable-language-dropdown': enableLanguageDropdown,
-	'languages': langDropdown
+	'svg-moon':  open('moon.svg').read()
 }
 
 
@@ -180,7 +192,20 @@ for lang in i18n:
 		outdir += '/' + lang['id']
 	maybe_mkdir(outdir)
 
-	langTemplate = { 'i18n': lang['data'] }
+	def template_localize(text, render):
+		keys = text.strip().split('.')
+		value = lang['data']
+		for key in keys:
+			if key not in value:
+				if validateMissingLocalization:
+					print(f"ERROR: Missing i18n key '{text}' for language '{lang['name']}'")
+					quit()
+				else:
+					return f"[[{text.strip()}]]"
+			value = value[key]
+		return render(value)
+
+	langTemplate = { 'i18n': template_localize }
 
 	with open('index.mustache', 'r') as f:
 		with open(f"{outdir}/index.html", 'w') as fout:
