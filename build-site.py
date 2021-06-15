@@ -50,11 +50,11 @@ maybe_mkdir('gen/img/')
 
 print("generating icons...")
 if not os.path.exists('gen/apple-touch-icon.png'):
-	os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png mobile-icon.svg")
+	os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png icons/mobile-icon.svg")
 if not os.path.exists('gen/favicon.ico'):
 	faviconSizes = [16,32,48]
 	for size in faviconSizes:
-		os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png favicon.svg")
+		os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png icons/favicon.svg")
 	faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
 	os.system(f"convert {' '.join(faviconPngs)} gen/favicon.ico")
 	for faviconPng in faviconPngs:
@@ -180,8 +180,8 @@ sharedTemplate = {
 	'hash-apple-touch-icon-png': crc32_file('gen/apple-touch-icon.png'),
 	'hash-manifest-json':        crc32_file('manifest.json'),
 
-	'svg-globe': open('globe.svg').read(),
-	'svg-moon':  open('moon.svg').read()
+	'svg-globe': open('icons/globe.svg').read(),
+	'svg-moon':  open('icons/moon.svg').read()
 }
 
 
@@ -207,17 +207,23 @@ for lang in i18n:
 
 	langTemplate = { 'i18n': template_localize }
 
-	with open('index.mustache', 'r') as f:
+	with open('templates/index.mustache', 'r') as f:
 		with open(f"{outdir}/index.html", 'w') as fout:
-			fout.write(chevron.render(f, sharedTemplate | langTemplate | {
+			fout.write(chevron.render(
+				template = f,
+				partials_path = 'templates/',
+				data = sharedTemplate | langTemplate | {
 				'meta-description': "A curated gallery of 4K Executable Graphics works from the demoscene.",
 				'meta-twitter-card-type': "summary_large_image",
 				'page-gallery': True,
 				'entries': prods }))
 
-	with open('meteoriks.mustache', 'r') as f:
+	with open('templates/meteoriks.mustache', 'r') as f:
 		with open(f"{outdir}/meteoriks.html", 'w') as fout:
-			fout.write(chevron.render(f, sharedTemplate | langTemplate | {
+			fout.write(chevron.render(
+				template = f,
+				partials_path = 'templates/',
+				data = sharedTemplate | langTemplate | {
 				'meta-subtitle': "Meteoriks",
 				'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
 				'meta-twitter-card-type': "summary",
@@ -225,9 +231,12 @@ for lang in i18n:
 				'page-meteoriks': True,
 				'entries': meteorikProds }))
 
-	with open('about.mustache', 'r') as f:
+	with open('templates/about.mustache', 'r') as f:
 		with open(f"{outdir}/about.html", 'w') as fout:
-			fout.write(chevron.render(f, sharedTemplate | langTemplate | {
+			fout.write(chevron.render(
+				template = f,
+				partials_path = 'templates/',
+				data = sharedTemplate | langTemplate | {
 				'meta-subtitle': "About",
 				'meta-description': "What is Executable Graphics?",
 				'meta-twitter-card-type': "summary",
