@@ -38,15 +38,7 @@
 			<div class="mousetrap">
 				<ul class="dropdown">
 				{{#languages}}
-					{{#page-gallery}}
-						<a href="{{lang-root}}/" class="item" tabindex="0">{{lang-name}}</a>
-					{{/page-gallery}}
-					{{#page-meteoriks}}
-						<a href="{{lang-root}}/meteoriks.html" class="item" tabindex="0">{{lang-name}}</a>
-					{{/page-meteoriks}}
-					{{#page-about}}
-						<a href="{{lang-root}}/about.html" class="item" tabindex="0">{{lang-name}}</a>
-					{{/page-about}}
+					<a href="{{root}}/{{currpage-canonical-filename}}" class="item" tabindex="0">{{name}}</a>
 				{{/languages}}
 				</ul>
 			</div>

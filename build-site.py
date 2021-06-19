@@ -21,13 +21,12 @@ def crc32_file(filename):
 
 # WIP features
 enableLanguageDropdown = False
-enableDebugLanguage = False
 validateMissingLocalization = True
 
 
 
-with open('i18n.json') as file:
-	i18n = [lang for lang in json.load(file) if lang.get('enabled', True)]
+with open('languages/list.json') as file:
+	languages = json.load(file)
 
 # load prods
 with open('prods.json') as file:
@@ -128,35 +127,6 @@ for idx,prod in enumerate(prods):
 		raise hell
 
 
-
-# add debug lang
-if enableDebugLanguage:
-	devLang = {
-		'id': "i18n-debug",
-		'name': "Debug",
-		'enabled': False,
-		'data': {}
-	}
-	if validateMissingLocalization:
-		for key in i18n[0]['data'].keys():
-			devLang['data'][key] = {}
-			for key2 in i18n[0]['data'][key].keys():
-				devLang['data'][key][key2] = f"[[{key}.{key2}]]"
-	i18n.append(devLang)
-
-
-# prepare language dropdown
-langDropdown = []
-for lang in i18n:
-	dropdownEntry = {}
-	dropdownEntry['lang-name'] = lang['name']
-	if lang['id'] == 'en':
-		dropdownEntry['lang-root'] = ""
-	else:
-		dropdownEntry['lang-root'] = f"/{lang['id']}"
-	langDropdown.append(dropdownEntry)
-
-
 sharedTemplate = {
 	'meta-title': "executable.graphics",
 	'meta-image': prods[0]['image_url'],
@@ -167,7 +137,7 @@ sharedTemplate = {
 	'meteoriks-nominations-open': False,
 
 	'enable-language-dropdown': enableLanguageDropdown,
-	'languages': langDropdown,
+	'languages': languages,
 
 	'external-url-meteoriks':        'https://meteoriks.org/',
 	'external-url-meteoriks-jurors': 'https://meteoriks.org/taking_part/juror',
@@ -186,15 +156,15 @@ sharedTemplate = {
 
 
 print("applying templates...")
-for lang in i18n:
-	outdir = 'gen'
-	if lang['id'] != 'en':
-		outdir += '/' + lang['id']
+for lang in languages:
+	outdir = f"gen{lang['root']}"
 	maybe_mkdir(outdir)
+	with open(f"languages/{lang['id']}.json") as file:
+		langData = json.load(file)
 
 	def template_localize(text, render):
 		keys = text.strip().split('.')
-		value = lang['data']
+		value = langData
 		for key in keys:
 			if key not in value:
 				if validateMissingLocalization:
@@ -213,10 +183,11 @@ for lang in i18n:
 				template = f,
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
-				'meta-description': "A curated gallery of 4K Executable Graphics works from the demoscene.",
-				'meta-twitter-card-type': "summary_large_image",
-				'page-gallery': True,
-				'entries': prods }))
+					'meta-description': "A curated gallery of 4K Executable Graphics works from the demoscene.",
+					'meta-twitter-card-type': "summary_large_image",
+					'currpage-canonical-filename' : '',
+					'page-gallery': True,
+					'entries': prods }))
 
 	with open('templates/meteoriks.mustache', 'r') as f:
 		with open(f"{outdir}/meteoriks.html", 'w') as fout:
@@ -224,12 +195,13 @@ for lang in i18n:
 				template = f,
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
-				'meta-subtitle': "Meteoriks",
-				'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
-				'meta-twitter-card-type': "summary",
-				'meta-image': meteorikProds[0]['image_url'],
-				'page-meteoriks': True,
-				'entries': meteorikProds }))
+					'meta-subtitle': "Meteoriks",
+					'meta-description': "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
+					'meta-twitter-card-type': "summary",
+					'meta-image': meteorikProds[0]['image_url'],
+					'currpage-canonical-filename' : 'meteoriks.html',
+					'page-meteoriks': True,
+					'entries': meteorikProds }))
 
 	with open('templates/about.mustache', 'r') as f:
 		with open(f"{outdir}/about.html", 'w') as fout:
@@ -237,7 +209,8 @@ for lang in i18n:
 				template = f,
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
-				'meta-subtitle': "About",
-				'meta-description': "What is Executable Graphics?",
-				'meta-twitter-card-type': "summary",
-				'page-about': True }))
+					'meta-subtitle': "About",
+					'meta-description': "What is Executable Graphics?",
+					'meta-twitter-card-type': "summary",
+					'currpage-canonical-filename' : 'about.html',
+					'page-about': True }))

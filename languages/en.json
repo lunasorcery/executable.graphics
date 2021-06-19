@@ -1,0 +1,27 @@
+{
+	"global": {
+		"toggle-theme": "Toggle Theme",
+		"toggle-lang": "Language"
+	},
+	"nav": {
+		"gallery": "Gallery",
+		"meteoriks": "Meteoriks",
+		"about": "About"
+	},
+	"artwork": {
+		"platform": "{{platform}} executable"
+	},
+	"badges": {
+		"meteorik-nominee": "Meteoriks {{meteorik-year}} Nominee",
+		"meteorik-winner": "Meteoriks {{meteorik-year}} Winner"
+	},
+	"meteoriks": {
+		"what-are-meteoriks": "What are the Meteoriks?",
+		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">The Meteoriks</a> are an award to honor the best productions that the demoscene has to offer, and are presented annually at the Revision demoparty over the Easter weekend.",
+		"what-are-meteoriks-p2": "Following a surge of activity in the Executable Graphics field, the Meteoriks introduced a category for Best Executable Graphics in 2021. You can see the nominees and winner below."
+	},
+	"about": {
+		"what-is-exegfx": "What is Executable Graphics?",
+		"what-is-exe-dot-gfx": "What is executable.graphics?"
+	}
+}
