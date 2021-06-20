@@ -71,7 +71,7 @@ staticAssets = [
 	'Muli-ExtraBoldItalic.ttf',
 ]
 for asset in staticAssets:
-	shutil.copyfile(asset, f'gen/{asset}')
+	shutil.copyfile(f'static/{asset}', f'gen/{asset}')
 
 
 print("converting images...")
@@ -144,11 +144,11 @@ sharedTemplate = {
 	'external-url-pouet':            'https://pouet.net/',
 	'external-url-demozoo':          'https://demozoo.org/',
 
-	'hash-fonts-css':            crc32_file('fonts.css'),
-	'hash-style-css':            crc32_file('style.css'),
+	'hash-fonts-css':            crc32_file('gen/fonts.css'),
+	'hash-style-css':            crc32_file('gen/style.css'),
 	'hash-favicon-ico':          crc32_file('gen/favicon.ico'),
 	'hash-apple-touch-icon-png': crc32_file('gen/apple-touch-icon.png'),
-	'hash-manifest-json':        crc32_file('manifest.json'),
+	'hash-manifest-json':        crc32_file('gen/manifest.json'),
 
 	'svg-globe': open('icons/globe.svg').read(),
 	'svg-moon':  open('icons/moon.svg').read()
