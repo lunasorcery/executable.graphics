@@ -32,15 +32,6 @@
 		"platform": "Windows"
 	},
 	{
-		"slug": "fizzer-making-good-progress",
-		"demozoo_url": "https://demozoo.org/graphics/292425/",
-		"author": "Fizzer",
-		"title": "Making Good Progress",
-		"party": "Revision Online 2021",
-		"platform": "Windows",
-		"hidden": true
-	},
-	{
 		"slug": "evilryu-bull",
 		"demozoo_url": "https://demozoo.org/graphics/292424/",
 		"author": "EvilRyu / FLEX",
@@ -57,30 +48,12 @@
 		"platform": "Windows"
 	},
 	{
-		"slug": "nr4-langen-hold",
-		"demozoo_url": "https://demozoo.org/graphics/292415/",
-		"author": "NR4 / Team210",
-		"title": "Langen Hold",
-		"party": "Revision Online 2021",
-		"platform": "Windows",
-		"hidden": true
-	},
-	{
 		"slug": "alien01-inertial-ink",
 		"demozoo_url": "https://demozoo.org/graphics/292419/",
 		"author": "Alien01",
 		"title": "Inertial Ink",
 		"party": "Revision Online 2021",
 		"platform": "Windows"
-	},
-	{
-		"slug": "yx-submit",
-		"demozoo_url": "https://demozoo.org/graphics/292417/",
-		"author": "yx",
-		"title": "Submit",
-		"party": "Revision Online 2021",
-		"platform": "Windows",
-		"hidden": true
 	},
 	{
 		"slug": "fairlight-final-girl",
