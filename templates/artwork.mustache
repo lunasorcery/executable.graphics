@@ -1,12 +1,19 @@
 <a name="{{slug}}"></a>
 <div class="content-thing">
 	<a href="{{demozoo_url}}" style="display:block">
+{{#meteorik-year}}
+		<div class="meteorik {{#meteorik-nominee}}meteorik-nominee{{/meteorik-nominee}} {{#meteorik-winner}}meteorik-winner{{/meteorik-winner}}">
+			<svg class="icon">
+				<use xlink:href="#icon-meteorik" href="#icon-meteorik"/>
+			</svg>
 {{#meteorik-nominee}}
-		<div class="meteorik meteorik-nominee">{{#i18n}}badges.meteorik-nominee{{/i18n}}</div>
+			{{#i18n}}badges.meteorik-nominee{{/i18n}}
 {{/meteorik-nominee}}
 {{#meteorik-winner}}
-		<div class="meteorik meteorik-winner">{{#i18n}}badges.meteorik-winner{{/i18n}}</div>
+			{{#i18n}}badges.meteorik-winner{{/i18n}}
 {{/meteorik-winner}}
+		</div>
+{{/meteorik-year}}
 		<div class="text">
 			<span class="author">{{author}}</span>
 			<br/>

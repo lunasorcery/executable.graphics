@@ -65,6 +65,7 @@ print("copying static assets...")
 staticAssets = [
 	'fonts.css',
 	'script.js',
+	'meteorik.svg',
 	'manifest.json',
 	'Muli-Regular.ttf',
 	'Muli-Bold.ttf',

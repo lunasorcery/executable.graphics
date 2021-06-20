@@ -277,6 +277,18 @@ a {
 			color var(--theme-transition-duration) var(--theme-transition-easing),
 			background-color var(--theme-transition-duration) var(--theme-transition-easing);
 
+		.icon {
+			width: 20px;
+			height: 20px;
+			vertical-align: text-top;
+			background-color: var(--main-text-color);
+			transition: background-color var(--theme-transition-duration) var(--theme-transition-easing);
+			-webkit-mask-image: url('meteorik.svg');
+			mask-image: url('meteorik.svg');
+			-webkit-mask-size: cover;
+			mask-size: cover;
+		}
+		
 		&.meteorik-nominee {
 			background: var(--meteorik-nominee-bg-color);
 		}
