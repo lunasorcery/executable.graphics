@@ -6,16 +6,12 @@
 					<div class="answer">
 						<p>{{#i18n}}meteoriks.what-are-meteoriks-p1{{/i18n}}</p>
 						<p>{{#i18n}}meteoriks.what-are-meteoriks-p2{{/i18n}}</p>
-						{{#meteoriks-juror-application-open}}
-						<p>
-							Applications to be a juror for the {{current-year}} Meteoriks are <a href="{{external-url-meteoriks-jurors}}">now open</a>!
-						</p>
-						{{/meteoriks-juror-application-open}}
-						{{#meteoriks-nominations-open}}
-						<p>
-							Public nominations for the {{current-year}} Meteoriks are now open - you can submit entries for the jurors' consideration through both <a href="{{external-url-pouet}}">Pouët</a> and <a href="{{external-url-demozoo}}">Demozoo</a>.
-						</p>
-						{{/meteoriks-nominations-open}}
+{{#meteoriks-juror-application-open}}
+						<p>{{#i18n}}meteoriks.juror-application-open{{/i18n}}</p>
+{{/meteoriks-juror-application-open}}
+{{#meteoriks-nominations-open}}
+						<p>{{#i18n}}meteoriks.public-nominations-open{{/i18n}}</p>
+{{/meteoriks-nominations-open}}
 					</div>
 				</div>
 			</div>

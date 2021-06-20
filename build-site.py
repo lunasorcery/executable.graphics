@@ -20,14 +20,27 @@ def crc32_file(filename):
 	return f"{buf:08x}"
 
 
-# WIP features
+# WIP language feature
 enableLanguageDropdown = False
 validateMissingLocalization = True
 
 
+# Seasonal events
+meteorikJurorApplicationOpen = False
+meteorikPublicNominationsOpen = False
 
+
+# load languages
 with open('languages/list.json') as file:
-	languages = json.load(file)
+	languages = [lang for lang in json.load(file) if lang.get('visible', True)]
+
+
+# enumerate translators
+translators = []
+for lang in languages:
+	for translator in lang.get('translators', []):
+		translators.append(translator)
+
 
 # load prods
 with open('prods.json') as file:
@@ -144,11 +157,12 @@ sharedTemplate = {
 
 	'current-year': datetime.datetime.now().year,
 
-	'meteoriks-juror-application-open': False,
-	'meteoriks-nominations-open': False,
+	'meteoriks-juror-application-open': meteorikJurorApplicationOpen,
+	'meteoriks-nominations-open': meteorikPublicNominationsOpen,
 
 	'enable-language-dropdown': enableLanguageDropdown,
 	'languages': languages,
+	'translators': ', '.join(sorted(translators)),
 
 	'external-url-meteoriks':        'https://meteoriks.org/',
 	'external-url-meteoriks-jurors': 'https://meteoriks.org/taking_part/juror',
@@ -180,7 +194,7 @@ for lang in languages:
 			if key not in value:
 				if validateMissingLocalization:
 					print(f"ERROR: Missing i18n key '{text}' for language '{lang['name']}'")
-					quit()
+					quit(1)
 				else:
 					return f"[[{text.strip()}]]"
 			value = value[key]
