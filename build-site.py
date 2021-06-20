@@ -2,6 +2,7 @@
 
 import os
 import json
+import sass
 import shutil
 import chevron
 import binascii
@@ -63,7 +64,6 @@ if not os.path.exists('gen/favicon.ico'):
 print("copying static assets...")
 staticAssets = [
 	'fonts.css',
-	'style.css',
 	'script.js',
 	'manifest.json',
 	'Muli-Regular.ttf',
@@ -72,6 +72,17 @@ staticAssets = [
 ]
 for asset in staticAssets:
 	shutil.copyfile(f'static/{asset}', f'gen/{asset}')
+
+
+print("processing CSS...")
+cssFiles = [
+	'style.scss'
+]
+for asset in cssFiles:
+	with open(asset) as fIn:
+		print(f"gen/{asset.replace('.scss','.css')}")
+		with open(f"gen/{asset.replace('.scss','.css')}", 'w') as fOut:
+			fOut.write(sass.compile(string=fIn.read()))
 
 
 print("converting images...")
