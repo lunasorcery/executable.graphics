@@ -35,6 +35,14 @@ with open('languages/list.json') as file:
 	languages = [lang for lang in json.load(file) if lang.get('visible', True)]
 
 
+# ensure no overlapping root folders
+for a in languages:
+	for b in languages:
+		if a != b and a['root'] == b['root']:
+			print(f"language root folders must be unique, but '{a['id']}' and '{b['id']}' both use '{a['root']}'")
+			quit(1)
+
+
 # enumerate translators
 translators = []
 for lang in languages:
