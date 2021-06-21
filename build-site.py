@@ -35,6 +35,14 @@ with open('languages/list.json') as file:
 	languages = [lang for lang in json.load(file) if lang.get('visible', True)]
 
 
+# ensure no overlapping root folders
+for a in languages:
+	for b in languages:
+		if a != b and a['root'] == b['root']:
+			print(f"language root folders must be unique, but '{a['id']}' and '{b['id']}' both use '{a['root']}'")
+			quit(1)
+
+
 # enumerate translators
 translators = []
 for lang in languages:
@@ -69,7 +77,7 @@ if not os.path.exists('gen/favicon.ico'):
 	for size in faviconSizes:
 		os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png icons/favicon.svg")
 	faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
-	os.system(f"convert {' '.join(faviconPngs)} gen/favicon.ico")
+	os.system(f"magick convert {' '.join(faviconPngs)} gen/favicon.ico")
 	for faviconPng in faviconPngs:
 		os.remove(faviconPng)
 
@@ -122,19 +130,19 @@ for idx,prod in enumerate(prods):
 		#shutil.copyfile(src_jpg, dst_jpg)
 
 		# actually, let's make sure it's progressive
-		os.system(f"convert -interlace Plane -quality 95 {src_jpg} {dst_jpg}")
+		os.system(f"magick convert -interlace Plane -quality 95 {src_jpg} {dst_jpg}")
 		prods[idx]['image_url'] = f"img/{slug}.jpg"
 
 		# if we've made it bigger, ditch the quality=95 flag
 		if os.path.getsize(dst_jpg) > os.path.getsize(src_jpg):
-			os.system(f"convert -interlace Plane {src_jpg} {dst_jpg}")
+			os.system(f"magick convert -interlace Plane {src_jpg} {dst_jpg}")
 
 		print(f"   src_jpg: {os.path.getsize(src_jpg): 10,}b")
 		print(f"   dst_jpg: {os.path.getsize(dst_jpg): 10,}b")
 
 	elif os.path.exists(src_png):
 		# if the source is a png, resave it as a jpg
-		os.system(f"convert -interlace Plane -quality 95 {src_png} {dst_jpg}")
+		os.system(f"magick convert -interlace Plane -quality 95 {src_png} {dst_jpg}")
 
 		# ...and use the smaller one
 		print(f"   src_png: {os.path.getsize(src_png): 10,}b")
@@ -162,7 +170,7 @@ sharedTemplate = {
 
 	'enable-language-dropdown': enableLanguageDropdown,
 	'languages': languages,
-	'translators': ', '.join(sorted(translators)),
+	'translators': ', '.join(sorted(set(translators), key=str.casefold)),
 
 	'external-url-meteoriks':        'https://meteoriks.org/',
 	'external-url-meteoriks-jurors': 'https://meteoriks.org/taking_part/juror',
