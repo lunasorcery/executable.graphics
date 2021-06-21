@@ -12,5 +12,15 @@
 		"translators": [
 			"YOUR HANDLE HERE"
 		]
+	},
+	{
+		"id": "es",
+		"name": "Español",
+		"root": "/es",
+		"visible": true,
+		"translators": [
+			"bitnenfer",
+			"vekid"
+		]
 	}
 ]
