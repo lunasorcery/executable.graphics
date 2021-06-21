@@ -21,7 +21,7 @@ def crc32_file(filename):
 
 
 # WIP language feature
-enableLanguageDropdown = False
+enableLanguageDropdown = True
 validateMissingLocalization = True
 
 
