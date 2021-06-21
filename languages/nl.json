@@ -1,0 +1,41 @@
+{
+	"global": {
+		"toggle-theme": "Thema wijzigen",
+		"toggle-lang": "Language"
+	},
+	"nav": {
+		"gallery": "Galerij",
+		"meteoriks": "Meteoriks",
+		"about": "Over"
+	},
+	"artwork": {
+		"platform": "{{platform}}-programma"
+	},
+	"badges": {
+		"meteorik-nominee": "Genomineerd voor de Meteoriks {{meteorik-year}}",
+		"meteorik-winner": "Winnaar Meteoriks {{meteorik-year}}"
+	},
+	"meteoriks": {
+		"what-are-meteoriks": "Wat is The Meteoriks?",
+		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">The Meteoriks</a> is een bekroning om de beste demosceneproducties te eren, en wordt jaarlijks gepresenteerd tijdens de Revision demoparty, tijdens het paasweekend.",
+		"what-are-meteoriks-p2": "Na een plotse groei aan activiteit in de wereld van Executable Graphics, heeft de jury van The Meteoriks in 2021 de categorie 'Best Executable Graphics' geïntroduceerd. De nominaties en de winnaar kan je hieronder bezichtigen.",
+		"juror-application-open": "Sollicitaties om een jurylid te worden van The Meteoriks {{current-year}} kan je <a href=\"{{external-url-meteoriks-jurors}}\">nu indienen</a>!",
+		"public-nominations-open": "Indienen van publieke nominaties voor The Meteoriks {{current-year}} zijn nu beschikbaar: je kan de werken aanbevelen aan de juryleden via zowel <a href=\"{{external-url-pouet}}\">Pouët</a> als <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
+	},
+	"about": {
+		"what-is-exegfx": "Wat is Executable Graphics?",
+		"what-is-exegfx-p1": "In de meest strikte betekenis, is Executable Graphics een visuele kunstvorm gebruikmakend van het medium software. Deze kuntwerken zijn geen gewone afbeeldingsbestanden, maar programma's die, wanneer uitgevoerd, het kunstwerk genereren en opbouwen, in dat eigenste moment zelf.",
+		"what-is-exegfx-p2": "Hoewel de intro- en demoformaten in de demoscene het meest bekend zijn, en in realtime beeldanimaties en muziek produceren, hebben Executable Graphics daarintegen maar één enkel beeld als uitvoer, met meer tijd om het op te bouwen. Dit geeft ruimte voor grotere (reken)complexiteit om beelden te genereren, die te zwaar zouden zijn om in realtime te gebruiken.",
+		"what-is-exegfx-p3": "Doorheen de laatste tiental jaren hebben demoparties het '4K Executable Graphics'-formaat gestaag gepopulariseerd. Vergis je niet, '4k' slaat hier op de bestandsgrootte, en niet op de resolute: de bestandsgrootte van elke inzending voor dit soort wedstrijden mag maar ten grootste 4 kilobytes (4096 bytes) bedragen.",
+		"what-is-exe-dot-gfx": "Wat is executable.graphics?",
+		"what-is-exe-dot-gfx-p1": "Deze website is een galerij van kunstwerken van verscheidene artisten in de 'Executable Graphics'-wereld. Elk werk in de collectie werd opgebouwd door een programma niet groter dan 4096 bytes.",
+		"what-is-exe-dot-gfx-p2": "We nodigen je uit om door de collectie te neuzen zoals je met een kunstgalerij zou doen: om tijd door te nemen met elk stuk, en na te denken over de vaardigheid (zowel artistiek als technisch) erachter.",
+		"credit-curator": "Deze collectie wordt gecureerd door yx.",
+		"credit-translators": "Vertaling door {{translators}}."
+	},
+	"footer": {
+		"copyright-website": "Website © yx.",
+		"copyright-artworks": "Alle kunstwerken © hun respectievelijke eigenaars.",
+		"copyright-pouet": "Pouët-afbeeldingen © mandarine."
+	}
+}

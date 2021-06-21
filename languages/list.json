@@ -20,5 +20,14 @@
 		"translators": [
 			"YOUR HANDLE HERE"
 		]
+	},
+	{
+		"id": "nl",
+		"name": "Nederlands",
+		"root": "/nl",
+		"visible": true,
+		"translators": [
+			"PoroCYon"
+		]
 	}
 ]
