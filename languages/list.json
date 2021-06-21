@@ -5,6 +5,14 @@
 		"root": ""
 	},
 	{
+		"id": "de",
+		"name": "Deutsch",
+		"root": "",
+		"translators": [
+			"slerpy"
+		]
+	},
+	{
 		"id": "jp",
 		"name": "日本語",
 		"root": "/jp",

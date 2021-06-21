@@ -1,0 +1,36 @@
+{
+	"global": {
+		"toggle-theme": "Thema wechseln",
+		"toggle-lang": "Sprache"
+	},
+	"nav": {
+		"gallery": "Galerie",
+		"meteoriks": "Meteoriks",
+		"about": "Über uns"
+	},
+	"artwork": {
+		"platform": "{{platform}} Program"
+	},
+	"badges": {
+		"meteorik-nominee": "Meteoriks {{meteorik-year}} Nominierter",
+		"meteorik-winner": "Meteoriks {{meteorik-year}} Gewinner"
+	},
+	"meteoriks": {
+		"what-are-meteoriks": "Was sind die Meteoriks?",
+		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">Die Meteoriks</a> sind eine Auszeichnung, um die besten Produktionen zu ehren, die die Demoszene zu bieten hat. Sie werden jedes Jahr am Osterwochenende auf der Revision Demoparty präsentiert.",
+		"what-are-meteoriks-p2": "In Folge eines Anstiegs in Aktivität im Bereich ausführbare Grafiken haben die Meteoriks 2021 eine Kategorie für 'Best Executable Graphics' eingeführt. Die Nominierten und Gewinner sind unten aufgeführt.",
+		"juror-application-open": "Bewerbungen zum Juror für die Meteoriks {{current-year}} sind <a href=\"{{external-url-meteoriks-jurors}}\">ab sofort möglich</a>!",
+		"public-nominations-open": "Öffentliche Nominierungen für die Meteoriks {{current-year}} sind ab sofort möglich - Vorschläge können sowohl über <a href=\"{{external-url-pouet}}\">Pouët</a> als auch <a href=\"{{external-url-demozoo}}\">Demozoo</a> eingereicht werden."
+	},
+	"about": {
+		"what-is-exegfx": "Was sind Executable Graphics?",
+		"what-is-exegfx-p1": "Ausführbare Grafiken (oder auch 'Executable Graphics') sind im reinsten Sinne visuelle Kunstwerke durch das Medium Software. Jedes Kunstwerk wird nicht direkt als Bilddatei, sondern als ausführbares Programm erstellt, welches das Kunstwerk im Moment generiert, wenn das Program ausgeführt wird.",
+		"what-is-exegfx-p2": "Während die in der Demoszene beliebten Demo-/Intro-Formate animierte Grafiken und Musik in Echtzeit generieren, produzieren 'Executable Graphics' nur ein einzelnes Standbild, wobei mehr Zeit für das Rendern gegeben ist. Daher sind rechenintensivere Render-Techniken möglich, welche nicht in Echtzeit verwendet werden können.",
+		"what-is-exegfx-p3": "Über die letzten zehn Jahren hat das '4K Executable Graphics'-Format auf Demoparties an Beliebtheit gewonnen. Hierbei bezieht sich '4K' allerdings nicht auf die Auflösung des Renders, sondern auf die Dateigröße des Programmes - kein Beitrag zu diesen Wettbewerben darf die Grenze von 4 Kilobyte (4096 Byte) überschreiten.",
+		"what-is-exe-dot-gfx": "Was ist executable.graphics?",
+		"what-is-exe-dot-gfx-p1": "Diese Website präsentiert eine Galerie von Kunstwerken verschiedener Künstler aus der 'Executable Graphics'-Szene. Jedes Werk in der Sammlung wurde von einem Program generiert, welches nicht größer ist als 4096 Bytes.",
+		"what-is-exe-dot-gfx-p2": "Diese Sammlung kann wie in einer Kunstgalerie betrachted werden - um Zeit mit jedem Stück zu verbringen und das Handwerk (sowohl künstlerisch als auch technisch) dahinter zu betrachten.",
+		"credit-curator": "Diese Sammlung wurde von yx zusammengestellt.",
+		"credit-translators": "Übersetzung von {{translators}}."
+	}
+}
