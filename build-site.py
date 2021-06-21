@@ -170,7 +170,7 @@ sharedTemplate = {
 
 	'enable-language-dropdown': enableLanguageDropdown,
 	'languages': languages,
-	'translators': ', '.join(sorted(translators)),
+	'translators': ', '.join(sorted(set(translators), key=str.casefold)),
 
 	'external-url-meteoriks':        'https://meteoriks.org/',
 	'external-url-meteoriks-jurors': 'https://meteoriks.org/taking_part/juror',
