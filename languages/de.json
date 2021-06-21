@@ -6,7 +6,7 @@
 	"nav": {
 		"gallery": "Galerie",
 		"meteoriks": "Meteoriks",
-		"about": "Über uns"
+		"about": "Info"
 	},
 	"artwork": {
 		"platform": "{{platform}} Programm"
@@ -23,7 +23,7 @@
 		"public-nominations-open": "Öffentliche Nominierungen für die Meteoriks {{current-year}} sind ab sofort möglich - Vorschläge können sowohl über <a href=\"{{external-url-pouet}}\">Pouët</a> als auch <a href=\"{{external-url-demozoo}}\">Demozoo</a> eingereicht werden."
 	},
 	"about": {
-		"what-is-exegfx": "Was sind Executable Graphics?",
+		"what-is-exegfx": "Was ist Executable Graphics?",
 		"what-is-exegfx-p1": "Ausführbare Grafiken (oder auch 'Executable Graphics') sind im reinsten Sinne visuelle Kunstwerke durch das Medium Software. Jedes Kunstwerk wird nicht direkt als Bilddatei, sondern als ausführbares Programm erstellt, welches das Kunstwerk im Moment generiert, wenn das Programm ausgeführt wird.",
 		"what-is-exegfx-p2": "Während die in der Demoszene beliebten Demo-/Intro-Formate animierte Grafiken und Musik in Echtzeit generieren, produzieren 'Executable Graphics' nur ein einzelnes Standbild, wobei mehr Zeit für das Rendern gegeben ist. Daher sind vergleichsweise rechenintensive Render-Techniken möglich, welche nicht in Echtzeit verwendet werden können.",
 		"what-is-exegfx-p3": "Über die letzten zehn Jahren hat das '4K Executable Graphics'-Format auf Demopartys an Beliebtheit gewonnen. Hierbei bezieht sich '4K' allerdings nicht auf die Auflösung des Renders, sondern auf die Dateigröße des Programmes - kein Beitrag zu diesen Wettbewerben darf 4 Kilobyte (4096 Byte) überschreiten.",
@@ -31,8 +31,11 @@
 		"what-is-exe-dot-gfx-p1": "Diese Website präsentiert eine Galerie von Kunstwerken verschiedener Künstler aus der 'Executable Graphics'-Szene. Jedes Werk in der Sammlung wurde von einem Programm generiert, welches nicht größer ist als 4096 Bytes.",
 		"what-is-exe-dot-gfx-p2": "Sie sind eingeladen, diese Sammlung wie in einer Kunstgalerie zu durchsuchen - Verbringen Sie Zeit mit jedem Stück und beachten Sie das sowohl künstlerische als auch technische Handwerk dahinter.",
 		"credit-curator": "Diese Sammlung wurde von yx zusammengestellt.",
-		"credit-translators": "Übersetztung von {{translators}}.",
-		"copyright-p1": "Webseite © yx.",
-		"copyright-p2": "Alle Kunstwerke © ihrer jeweiligen Autoren."
+		"credit-translators": "Übersetzung von {{translators}}."
+	},
+	"footer": {
+		"copyright-website": "Webseite © yx.",
+		"copyright-artworks": "Alle Kunstwerke © ihrer jeweiligen Autoren.",
+		"copyright-pouet": "Pouët Grafiken © mandarine."
 	}
 }
