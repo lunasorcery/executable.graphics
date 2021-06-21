@@ -358,6 +358,10 @@ a {
 	padding-bottom: 24px;
 	color: var(--main-text-color);
 	transition: color var(--theme-transition-duration) var(--theme-transition-easing);
+
+	.pouet-credit {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -587,5 +591,9 @@ a {
 		&:not(.slim) .text {
 			background: #224488;
 		}
+	}
+
+	.footer .pouet-credit {
+		display: block;
 	}
 }

@@ -32,5 +32,10 @@
 		"what-is-exe-dot-gfx-p2": "You are invited to browse the collection as you would an art gallery - to spend time with each piece, and to consider the craft (both artistic and technical) behind each.",
 		"credit-curator": "This collection is curated by yx.",
 		"credit-translators": "Localization by {{translators}}."
+	},
+	"footer": {
+		"copyright-website": "Website © yx.",
+		"copyright-artworks": "All artworks © their respective authors.",
+		"copyright-pouet": "Pouët graphics © mandarine."
 	}
 }

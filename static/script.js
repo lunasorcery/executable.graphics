@@ -22,9 +22,6 @@ function isAprilFoolsDay() {
 
 if (isAprilFoolsDay()) {
 	setTheme('pouet', false);
-	window.addEventListener('load', ()=>{
-		document.querySelector('div.footer').innerHTML += "<br/>Pouët graphics © mandarine"
-	}, false);
 } else {
 	setTheme(currentTheme);
 	toggleSwitch.checked = (currentTheme === 'dark');

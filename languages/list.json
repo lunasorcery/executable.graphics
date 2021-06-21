@@ -5,12 +5,19 @@
 		"root": ""
 	},
 	{
-		"id": "jp",
-		"name": "日本語",
-		"root": "/jp",
-		"visible": false,
+		"id": "de",
+		"name": "Deutsch",
+		"root": "/de",
 		"translators": [
-			"YOUR HANDLE HERE"
+			"slerpy"
+		]
+	},
+	{
+		"id": "nl",
+		"name": "Nederlands",
+		"root": "/nl",
+		"translators": [
+			"PoroCYon"
 		]
 	},
 	{
