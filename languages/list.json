@@ -16,7 +16,6 @@
 		"id": "nl",
 		"name": "Nederlands",
 		"root": "/nl",
-		"visible": true,
 		"translators": [
 			"PoroCYon"
 		]
