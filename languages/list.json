@@ -7,7 +7,7 @@
 	{
 		"id": "de",
 		"name": "Deutsch",
-		"root": "",
+		"root": "/de",
 		"translators": [
 			"slerpy"
 		]
