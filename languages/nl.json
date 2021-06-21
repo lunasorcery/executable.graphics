@@ -32,5 +32,10 @@
 		"what-is-exe-dot-gfx-p2": "We nodigen je uit om door de collectie te neuzen zoals je met een kunstgalerij zou doen: om tijd door te nemen met elk stuk, en na te denken over de vaardigheid (zowel artistiek als technisch) erachter.",
 		"credit-curator": "Deze collectie wordt gecureerd door yx.",
 		"credit-translators": "Vertaling door {{translators}}."
+	},
+	"footer": {
+		"copyright-website": "Website © yx.",
+		"copyright-artworks": "Alle kunstwerken © hun respectievelijke eigenaars.",
+		"copyright-pouet": "Pouët-afbeeldingen © mandarine."
 	}
 }
