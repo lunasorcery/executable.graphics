@@ -1,23 +1,15 @@
 [
 	{
-		"id": "de",
-		"name": "Deutsch",
-		"root": "/de",
-		"translators": [
-			"slerpy"
-		]
-	},
-	{
 		"id": "en",
 		"name": "English",
 		"root": ""
 	},
 	{
-		"id": "pt",
-		"name": "Português",
-		"root": "/pt",
+		"id": "de",
+		"name": "Deutsch",
+		"root": "/de",
 		"translators": [
-			"ps"
+			"slerpy"
 		]
 	},
 	{
@@ -27,6 +19,13 @@
 		"translators": [
 			"PoroCYon"
 		]
+	},
+	{
+		"id": "pt",
+		"name": "Português",
+		"root": "/pt",
+		"translators": [
+			"ps"
+		]
 	}
-	
 ]
