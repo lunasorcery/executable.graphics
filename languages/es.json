@@ -24,12 +24,12 @@
     },
     "about": {
         "what-is-exegfx": "¿Qué es un Gráfico Ejecutable?",
-        "what-is-exegfx-p1": "En su sentido más puro, los Gráficos Ejecutables son arte visual proceduralmente creado con software. Las obras no son archívos de imágenes, si no que un programa que cuando es ejecutado dibuja la obra en el momento.",
-        "what-is-exegfx-p2": "While the popular demoscene demo/intro formats produce realtime animated visuals and music, Executable Graphics produces only a single still image, with more time for rendering. This allows for more computationally intensive rendering techniques that cannot be run in realtime.",
-        "what-is-exegfx-p3": "Over the last decade or so, demoparties have popularized the 4K Executable Graphics format. Make no mistake, '4K' here refers to the filesize, not the resolution - each entry to these competitions cannot exceed 4 kilobytes (4096 bytes) in size.",
+        "what-is-exegfx-p1": "En su sentido más puro, se refiere al arte visual generado por medio de un software. Cada obra es creada no como un archivo de imagen, sino como un programa ejecutable que, al correr, dibuja la obra.",
+        "what-is-exegfx-p2": "Mientras los formatos de demo/intro más populares de la demoscene producen animaciones audiovisuales en tiempo real, los Gráficos Ejecutables producen una sola imagen en un periodo de tiempo limitado. Esto permite la utilización de técnicas de dibujado, computacionalmente intensivas, que serían dificiles de lograr en tiempo real.",
+        "what-is-exegfx-p3": "Durante la última decada, las demoparties han popularizado el formato de Gráficos Ejecutables de 4K. No cometan la equivocación de pensar que '4K' se refiere la resolución, en este caso se refiere al tamaño del ejecutable. Cada obra debe pesar no más de 4 kilobytes (4096 bytes).",
         "what-is-exe-dot-gfx": "¿Qué es executable.graphics?",
-        "what-is-exe-dot-gfx-p1": "This website presents a gallery of artworks from various artists in the Executable Graphics scene. Each piece in the collection was rendered by an executable no larger than 4096 bytes.",
-        "what-is-exe-dot-gfx-p2": "You are invited to browse the collection as you would an art gallery - to spend time with each piece, and to consider the craft (both artistic and technical) behind each.",
+        "what-is-exe-dot-gfx-p1": "Esta página web es una galería de obras de arte creadas por varios artistas de la escena de los Gráficos Ejecutables. Cada obra en la colección fue dibujada por un programa que no pesaba más de 4096 bytes.",
+        "what-is-exe-dot-gfx-p2": "Te extiendo la invitación a que navegues la colección de la misma forma que lo harías en una galería de arte. Date el tiempo con cada una de las obras y toma en consideración lo que significa crearlas (desde el punto de vista artistico y técnico).",
         "credit-curator": "Esta colección está curada por yx.",
         "credit-translators": "Traducción por {{translators}}."
     },
