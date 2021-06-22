@@ -8,7 +8,7 @@ Run `./build-site.py` - the site will be built and placed into a `gen/` folder.
 
 The build script requires Python >= 3.9, and depends on the [chevron](https://github.com/noahmorrison/chevron) and [libsass](https://github.com/sass/libsass-python) modules.
 
-In addition, it requires [ImageMagick](https://imagemagick.org/) and [Inkscape](https://inkscape.org/) to be available on the system PATH.
+In addition, it requires [ImageMagick](https://imagemagick.org/) and [Inkscape >= 1.0](https://inkscape.org/) to be available on the system PATH.
 
 ## Contributing
 
