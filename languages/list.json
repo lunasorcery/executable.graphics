@@ -26,6 +26,15 @@
 		"root": "/pt",
 		"translators": [
 			"ps"
+    ]
+  },
+  {
+		"id": "es",
+		"name": "Español",
+		"root": "/es",
+		"translators": [
+			"bitnenfer",
+			"vekid"
 		]
 	}
 ]
