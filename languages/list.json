@@ -24,7 +24,6 @@
 		"id": "es",
 		"name": "Español",
 		"root": "/es",
-		"visible": true,
 		"translators": [
 			"bitnenfer",
 			"vekid"
