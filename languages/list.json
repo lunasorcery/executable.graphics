@@ -19,5 +19,14 @@
 		"translators": [
 			"PoroCYon"
 		]
+	},
+	{
+		"id": "es",
+		"name": "Español",
+		"root": "/es",
+		"translators": [
+			"bitnenfer",
+			"vekid"
+		]
 	}
 ]
