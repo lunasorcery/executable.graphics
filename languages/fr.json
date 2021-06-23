@@ -1,0 +1,41 @@
+{
+	"global": {
+		"toggle-theme": "Changer le thème",
+		"toggle-lang": "Langue"
+	},
+	"nav": {
+		"gallery": "Galerie",
+		"meteoriks": "Meteoriks",
+		"about": "À propos"
+	},
+	"artwork": {
+		"platform": "{{platform}} executable"
+	},
+	"badges": {
+		"meteorik-nominee": "Nominé aux Meteoriks {{meteorik-year}}",
+		"meteorik-winner": "Gagnant des Meteoriks {{meteorik-year}}"
+	},
+	"meteoriks": {
+		"what-are-meteoriks": "C'est quoi les Meteoriks?",
+		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">Les Meteoriks</a> récompensent les meilleurs productions de la scène démo et sont présentées tous les ans pendant la Revision demoparty le weekend de Pâques.",
+		"what-are-meteoriks-p2": "Au vu de la popularité grandissante des Exécutables Graphiques, une catégorie du Meilleur Exéutable Graphique a été créé lors des Meteoriks 2021. Vous pouvez voir les nominés et gagnants ci-dessous.",
+		"juror-application-open": "Les inscriptions pour devenir membre du jury pour les Meteoriks {{current-year}} sont <a href=\"{{external-url-meteoriks-jurors}}\">ouvertes</a>!",
+		"public-nominations-open": "Les nominations publiques pour les Meteoriks {{current-year}} sont ouvertes - vous pouvez soumettre des productions au jury, de préférence venant de <a href=\"{{external-url-pouet}}\">Pouët</a> et <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
+	},
+	"about": {
+		"what-is-exegfx": "C'est quoi un Exécutable Graphique ?",
+		"what-is-exegfx-p1": "Dans sa définition la plus stricte, un Exécutable Graphique est une oeuvre visuelle générée par un programme informatique. L'oeuvre n'est pas l'image en temps que tel, mais le programme qui va générer sur le moment l'oeuvre visuelle",
+		"what-is-exegfx-p2": "Alors que le format demo/intro, le plus populaire de la scène démo, génère des animations audiovisuelles en temps réel, les Exécutables Graphiques  ne génèrent qu'une image statique mais avec beaucoup plus de temps, ce qui permet d'utiliser des techniques de rendu plus complexes que le temps réel ne permet pas. ",
+		"what-is-exegfx-p3": "Durant ces 10 dernières années, les démoparties ont contribué à la popularité du format Exécutable Graphique 4k. Attention, ici '4k' représente la taille du fichier, et non pas la résolution de l'image. Dans cette catégorie, les programmes ne doivent pas dépasser 4 kilo-octets (4096 octets).",
+		"what-is-exe-dot-gfx": "Qu'est-ce que executable.graphics ?",
+		"what-is-exe-dot-gfx-p1": "Ce site web propose une gallerie d'oeuvre de différents artistes de la scène Exécutable Graphique. Chaque oeuvre de cette collection est le résultat d'un programme executable dont la taille ne dépasse pas 4096 octets.",
+		"what-is-exe-dot-gfx-p2": "Vous êtes invité à parcourir la collection comme une gallerie d'art, de passer du temps,d'examiner et de réfléchir sur l'aspect artistique ainsi que technique de chaque oeuvre.",
+		"credit-curator": "Sélection par yx.",
+		"credit-translators": "Traduction par {{translators}}."
+	},
+	"footer": {
+		"copyright-website": "Site web © yx.",
+		"copyright-artworks": "Toutes les oeuvres sont soumises aux © de leurs auteurs respectifs",
+		"copyright-pouet": "Visuel Pouët © mandarine."
+	}
+}
