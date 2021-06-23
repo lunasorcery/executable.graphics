@@ -475,6 +475,47 @@ a {
 }*/
 
 
+/* high-contrast theme */
+[data-theme="contrast"] {
+	--main-text-color: #fff;
+	--panel-bg-color:  #000;
+	--main-bg-color:   #000;
+
+	--meteorik-nominee-bg-color: #000;
+	--meteorik-winner-bg-color:  #000;
+
+	--dropdown-bg-color:      #000;
+	--dropdown-divider-color: #fff;
+	--dropdown-hover-color:   #000;
+
+	--outline-color: #f80;
+
+	.content-thing {
+		border: 1px solid #fff;
+
+		.meteorik {
+			border: 1px solid #0ff;
+		}
+	}
+
+	.switch .label span {
+		opacity: 1 !important;
+	}
+
+	.switch-dropdown .dropdown {
+		border: 1px solid #fff;
+
+		.item {
+			outline-offset: -6px;
+		}
+
+		.item:hover {
+			outline-width: 2px;
+		}
+	}
+}
+
+
 /* april fools theme */
 [data-theme="pouet"] {
 	--main-text-color: #ffffff;
