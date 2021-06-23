@@ -223,7 +223,7 @@ a {
 	background-color: var(--dropdown-bg-color);
 	list-style: none;
 	color: var(--main-text-color);
-	padding: 10px 14px;
+	padding: 8px 12px;
 	border-bottom: 1px solid var(--dropdown-divider-color);
 }
 .switch .dropdown .item:last-child {
@@ -392,13 +392,10 @@ a {
 	}
 }
 
-/* smaller hit area for devices with fine-grained pointer control */
-/* ideally I wanted to implement this the other way around,
-   with a (not(any-pointer: fine)) query to make larger targets,
-   but the SCSS transpiler can't parse that apparently */
-@media (any-pointer: fine) {
+/* larger hit area for devices without fine-grained pointer control (i.e. mobile touchscreens) */
+@media (any-pointer: coarse) {
 	.switch .dropdown .item {
-		padding: 8px 12px;
+		padding: 10px 14px;
 	}
 }
 
