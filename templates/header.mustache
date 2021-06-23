@@ -49,11 +49,17 @@
 			<a href="meteoriks.html" class="entry{{#page-meteoriks}} active{{/page-meteoriks}}">{{#i18n}}nav.meteoriks{{/i18n}}</a>
 			<a href="about.html" class="entry{{#page-about}} active{{/page-about}}">{{#i18n}}nav.about{{/i18n}}</a>
 		</div>
-		<div class="switch switch-right switch-toggle" id="switch-theme">
-			<input type="checkbox" id="theme-checkbox" />
-			<label class="label" for="theme-checkbox">
+		<div class="switch switch-right switch-dropdown" id="switch-theme" tabindex="0">
+			<label class="label">
 				<span>{{#i18n}}global.toggle-theme{{/i18n}}</span>
 				{{{svg-moon}}}
 			</label>
+			<div class="mousetrap">
+				<ul class="dropdown">
+					<a class="item" onclick="onThemeClick(event)" onkeydown="onThemeKeyDown(event)" data-theme-option="auto" tabindex="0">Automatic</a>
+					<a class="item" onclick="onThemeClick(event)" onkeydown="onThemeKeyDown(event)" data-theme-option="light" tabindex="0">Light</a>
+					<a class="item" onclick="onThemeClick(event)" onkeydown="onThemeKeyDown(event)" data-theme-option="dark" tabindex="0">Dark</a>
+				</ul>
+			</div>
 		</div>
 		<script src="/script.js"></script>

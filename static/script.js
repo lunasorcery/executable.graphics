@@ -1,18 +1,12 @@
 // adapted from https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8
 
-const toggleSwitch = document.querySelector('input[type="checkbox"]#theme-checkbox');
-const userDefaultTheme = (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-const currentTheme = localStorage?.getItem('theme') ?? userDefaultTheme;
+const currentTheme = localStorage?.getItem('theme') ?? 'auto';
 
 function setTheme(themeStr, shouldSave=true) {
 	document.documentElement.setAttribute('data-theme', themeStr);
 	if (shouldSave) {
 		localStorage?.setItem('theme', themeStr);
 	}
-}
-
-function setThemeFromToggle() {
-	setTheme(toggleSwitch.checked ? 'dark' : 'light');
 }
 
 function isAprilFoolsDay() {
@@ -24,8 +18,6 @@ if (isAprilFoolsDay()) {
 	setTheme('pouet', false);
 } else {
 	setTheme(currentTheme);
-	toggleSwitch.checked = (currentTheme === 'dark');
-	toggleSwitch.addEventListener('change', setThemeFromToggle, false);
 }
 
 document.body.addEventListener('touchstart', (e)=>{
@@ -36,3 +28,18 @@ document.body.addEventListener('touchstart', (e)=>{
 		document.activeElement.blur();
 	}
 });
+
+function setThemeFromElementAndDismissContextMenu(element) {
+	setTheme(element.getAttribute('data-theme-option'));
+	document.activeElement.blur();
+}
+
+function onThemeClick(e) {
+	setThemeFromElementAndDismissContextMenu(e.target);
+}
+
+function onThemeKeyDown(e) {
+	if (e.keyCode == 13) {
+		setThemeFromElementAndDismissContextMenu(e.target);
+	}
+}

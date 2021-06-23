@@ -43,6 +43,41 @@
 	--theme-transition-easing: ease-in-out;
 }
 
+/* auto dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-text-color: var(--darkmode-main-text-color);
+		--panel-bg-color:  var(--darkmode-panel-bg-color);
+		--main-bg-color:   var(--darkmode-main-bg-color);
+
+		--meteorik-nominee-bg-color:     var(--darkmode-meteorik-nominee-bg-color);
+		--meteorik-winner-bg-color:      var(--darkmode-meteorik-winner-bg-color);
+
+		--dropdown-bg-color:      var(--darkmode-dropdown-bg-color);
+		--dropdown-divider-color: var(--darkmode-dropdown-divider-color);
+		--dropdown-hover-color:   var(--darkmode-dropdown-hover-color);
+
+		--outline-color: var(--darkmode-outline-color);
+	}
+}
+
+/* explicit light theme */
+[data-theme="light"] {
+	--main-text-color: var(--lightmode-main-text-color);
+	--panel-bg-color:  var(--lightmode-panel-bg-color);
+	--main-bg-color:   var(--lightmode-main-bg-color);
+
+	--meteorik-nominee-bg-color:     var(--lightmode-meteorik-nominee-bg-color);
+	--meteorik-winner-bg-color:      var(--lightmode-meteorik-winner-bg-color);
+
+	--dropdown-bg-color:      var(--lightmode-dropdown-bg-color);
+	--dropdown-divider-color: var(--lightmode-dropdown-divider-color);
+	--dropdown-hover-color:   var(--lightmode-dropdown-hover-color);
+
+	--outline-color: var(--lightmode-outline-color);
+}
+
+/* explicit dark theme */
 [data-theme="dark"] {
 	--main-text-color: var(--darkmode-main-text-color);
 	--panel-bg-color:  var(--darkmode-panel-bg-color);
@@ -197,8 +232,13 @@ a {
 	display: none;
 	position: absolute;
 	top: 40px;
-	left: 8px;
 	outline: none;
+}
+.switch-left .mousetrap {
+	left: 8px;
+}
+.switch-right .mousetrap {
+	right: 8px;
 }
 .switch:active .mousetrap,
 .switch:focus .mousetrap,
@@ -225,6 +265,7 @@ a {
 	color: var(--main-text-color);
 	padding: 8px 12px;
 	border-bottom: 1px solid var(--dropdown-divider-color);
+	cursor: pointer;
 }
 .switch .dropdown .item:last-child {
 	border: none;
