@@ -216,17 +216,14 @@ a {
 	padding: 0;
 	border-radius: 8px;
 	overflow: hidden;
-	box-shadow:
-		0px 1px 2px rgba(0,0,0,0.3),
-		0px 2px 5px rgba(0,0,0,0.05),
-		0px 8px 12px rgba(0,0,0,0.15);
+	box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
 }
 .switch .dropdown .item {
 	display: block;
 	background-color: var(--dropdown-bg-color);
 	list-style: none;
 	color: var(--main-text-color);
-	padding: 8px 12px;
+	padding: 10px 14px;
 	border-bottom: 1px solid var(--dropdown-divider-color);
 }
 .switch .dropdown .item:last-child {
@@ -394,6 +391,17 @@ a {
 		transition: none !important;
 	}
 }
+
+/* smaller hit area for devices with fine-grained pointer control */
+/* ideally I wanted to implement this the other way around,
+   with a (not(any-pointer: fine)) query to make larger targets,
+   but the SCSS transpiler can't parse that apparently */
+@media (any-pointer: fine) {
+	.switch .dropdown .item {
+		padding: 8px 12px;
+	}
+}
+
 
 
 /* silly rounded-corner mode */
