@@ -1,4 +1,9 @@
 {
+	"meta": {
+		"desc-gallery": "Eine kuratierte Galerie von 4K Executable Graphics aus der Demoszene.",
+		"desc-meteoriks": "Nominierte und Gewinner des Meteorik Awards für 'Best Executable Graphics'.",
+		"desc-about": "Was ist Executable Graphics?"
+	},
 	"global": {
 		"toggle-theme": "Thema wechseln",
 		"toggle-lang": "Sprache"
@@ -31,7 +36,7 @@
 		"what-is-exe-dot-gfx-p1": "Diese Website präsentiert eine Galerie von Kunstwerken verschiedener Künstler aus der 'Executable Graphics'-Szene. Jedes Werk in der Sammlung wurde von einem Programm generiert, welches nicht größer ist als 4096 Bytes.",
 		"what-is-exe-dot-gfx-p2": "Sie sind eingeladen, diese Sammlung wie in einer Kunstgalerie zu durchsuchen - Verbringen Sie Zeit mit jedem Stück und beachten Sie das sowohl künstlerische als auch technische Handwerk dahinter.",
 		"credit-curator": "Diese Sammlung wurde von yx zusammengestellt.",
-		"credit-translators": "Übersetzung von {{translators}}."
+		"credit-translators": "Übersetzungen von {{translators}}."
 	},
 	"footer": {
 		"copyright-website": "Webseite © yx.",
