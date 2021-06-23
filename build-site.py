@@ -32,7 +32,9 @@ meteorikPublicNominationsOpen = False
 
 # load languages
 with open('languages/list.json') as file:
-	languages = [lang for lang in json.load(file) if lang.get('visible', True)]
+	languages = sorted(
+		[lang for lang in json.load(file) if lang.get('visible', True)],
+		key=lambda l: l['name'])
 
 
 # ensure no overlapping root folders
