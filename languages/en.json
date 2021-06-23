@@ -1,4 +1,9 @@
 {
+	"meta": {
+		"desc-gallery": "A curated gallery of 4K Executable Graphics works from the demoscene.",
+		"desc-meteoriks": "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
+		"desc-about": "What is Executable Graphics?"
+	},
 	"global": {
 		"toggle-theme": "Toggle Theme",
 		"toggle-lang": "Language"
