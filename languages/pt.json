@@ -1,4 +1,9 @@
 {
+	"meta": {
+		"desc-gallery": "Galeria curada de Gráficos Executáveis em 4Kb da demoscene.",
+		"desc-meteoriks": "Nomeados e vencedores da categoria 'Melhor Gráficos Executáveis' dos prémios Meteorik.",
+		"desc-about": "O que são Gráficos Executáveis?"
+	},
 	"global": {
 		"toggle-theme": "Mudar Tema",
 		"toggle-lang": "Lingua"
