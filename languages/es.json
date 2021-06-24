@@ -1,4 +1,9 @@
 {
+    "meta": {
+        "desc-gallery": "Una galería con obras seleccionadas de Gráficos Ejecutables de 4K de la demoscene.",
+        "desc-meteoriks": "Nominados/as y ganadores/as del premio 'Mejor Gráfico Ejecutable' de Los Meteoriks.",
+        "desc-about": "¿Qué es un Gráfico Ejecutable?"
+    },
     "global": {
         "toggle-theme": "Cambiar Tema",
         "toggle-lang": "Lenguaje"
