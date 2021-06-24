@@ -1,4 +1,9 @@
 {
+	"meta": {
+		"desc-gallery": "Een gecureerde galerij van 4K Executable Graphics-kunstwerken uit de demoscene.",
+		"desc-meteoriks": "Genomineerden en winnaars van de 'Best Executable Graphics'-Meteoriksprijsuitreiking.",
+		"desc-about": "Wat is Executable Graphics?"
+	},
 	"global": {
 		"toggle-theme": "Thema wijzigen",
 		"toggle-lang": "Language"
