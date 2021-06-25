@@ -23,7 +23,6 @@ def crc32_file(filename):
 # WIP language feature
 enableLanguageDropdown = True
 validateMissingLocalization = True
-localizedMetaDesc = False
 
 
 # Seasonal events
@@ -222,7 +221,8 @@ for lang in languages:
 				template = f,
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
-					'meta-description': localize('meta.desc-gallery') if localizedMetaDesc else "A curated gallery of 4K Executable Graphics works from the demoscene.",
+					'meta-subtitle': localize('nav.gallery'),
+					'meta-description': localize('meta.desc-gallery'),
 					'meta-twitter-card-type': "summary_large_image",
 					'currpage-canonical-filename' : '',
 					'page-gallery': True,
@@ -235,7 +235,7 @@ for lang in languages:
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
 					'meta-subtitle': localize('nav.meteoriks'),
-					'meta-description': localize('meta.desc-meteoriks') if localizedMetaDesc else "Nominees and winners of the 'Best Executable Graphics' Meteorik award.",
+					'meta-description': localize('meta.desc-meteoriks'),
 					'meta-twitter-card-type': "summary",
 					'meta-image': meteorikProds[0]['image_url'],
 					'currpage-canonical-filename' : 'meteoriks.html',
@@ -249,7 +249,7 @@ for lang in languages:
 				partials_path = 'templates/',
 				data = sharedTemplate | langTemplate | {
 					'meta-subtitle': localize('nav.about'),
-					'meta-description': localize('meta.desc-about') if localizedMetaDesc else "What is Executable Graphics?",
+					'meta-description': localize('meta.desc-about'),
 					'meta-twitter-card-type': "summary",
 					'currpage-canonical-filename' : 'about.html',
 					'page-about': True }))
