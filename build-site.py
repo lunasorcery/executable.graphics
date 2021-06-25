@@ -20,8 +20,7 @@ def crc32_file(filename):
 	return f"{buf:08x}"
 
 
-# WIP language feature
-enableLanguageDropdown = True
+# fail the build if localization strings are missing
 validateMissingLocalization = True
 
 
@@ -170,7 +169,6 @@ sharedTemplate = {
 	'meteoriks-juror-application-open': meteorikJurorApplicationOpen,
 	'meteoriks-nominations-open': meteorikPublicNominationsOpen,
 
-	'enable-language-dropdown': enableLanguageDropdown,
 	'languages': languages,
 	'translators': ', '.join(sorted(set(translators), key=str.casefold)),
 
