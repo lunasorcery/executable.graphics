@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "desc-gallery": "Une sélection de 4K Executable Graphics de la scène démo.",
+    "desc-meteoriks": "Nominé·e·s et Lauréat·e·s des Meteoriks dans la catégorie 'Meilleur Executable Graphics'.",
+    "desc-about": "C'est quoi un Executable Graphics ?"
+  },
+  "global": {
+    "toggle-theme": "Changer le thème",
+    "toggle-lang": "Langue"
+  },
+  "nav": {
+    "gallery": "Galerie",
+    "meteoriks": "Meteoriks",
+    "about": "À propos"
+  },
+  "artwork": {
+    "platform": "Exécutable {{platform}}"
+  },
+  "badges": {
+    "meteorik-nominee": "Nominé·e aux Meteoriks {{meteorik-year}}",
+    "meteorik-winner": "Lauréat·e des Meteoriks {{meteorik-year}}"
+  },
+  "meteoriks": {
+    "what-are-meteoriks": "C'est quoi les Meteoriks ?",
+    "what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">Les Meteoriks</a> récompensent chaque année les meilleures productions de la scène démo, généralement pendant la Revision demoparty le weekend de Pâques.",
+    "what-are-meteoriks-p2": "Au vu de la popularité grandissante des Executable Graphics, une catégorie du Meilleur Executable Graphics a été créée lors des Meteoriks 2021. Vous pouvez voir les nominé·e·s et les lauréat·e·s ci-dessous.",
+    "juror-application-open": "Les inscriptions pour devenir membre du jury pour les Meteoriks {{current-year}} sont <a href=\"{{external-url-meteoriks-jurors}}\">ouvertes</a>!",
+    "public-nominations-open": "Les nominations publiques pour les Meteoriks {{current-year}} sont ouvertes - vous pouvez soumettre des productions au jury, de préférence venant de <a href=\"{{external-url-pouet}}\">Pouët</a> et <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
+  },
+  "about": {
+    "what-is-exegfx": "C'est quoi un Executable Graphics ?",
+    "what-is-exegfx-p1": "Strictement parlant, le format Executable Graphics est l'art de générer une œuvre visuelle via un programme informatique. L'œuvre elle-même n'est pas l'image, mais le programme qui la génère à la volée.",
+    "what-is-exegfx-p2": "Les formats demo/intro, les plus populaires de la scène démo, génèrent des visuels animés et de la musique en temps réel. Les Executable Graphics, eux, ne produisent qu'une seule image statique, mais sans les mêmes contraintes de temps. Ils peuvent donc utiliser des techniques de rendu plus complexes.",
+    "what-is-exegfx-p3": "Au cours des 10 dernières années, les démoparties ont popularisé le format 4K Executable Graphics. Attention, '4K' désigne la taille de l'exécutable, et non pas la définition de l'image: dans cette catégorie, les programmes ne doivent pas dépasser 4 kilo-octets (4096 octets).",
+    "what-is-exe-dot-gfx": "Qu'est-ce que executable.graphics ?",
+    "what-is-exe-dot-gfx-p1": "Ce site web propose une galerie d'œuvre de différent·e·s artistes de la scène Executable Graphics. Chaque œuvre a été produite par un programme exécutable dont la taille ne dépasse pas 4096 octets.",
+    "what-is-exe-dot-gfx-p2": "Vous êtes invité·e à parcourir la collection comme une galerie d'art: prenez votre temps, et réfléchissez aux compétences artistiques et techniques impliquées dans chaque œuvre.",
+    "credit-curator": "Sélection par yx.",
+    "credit-translators": "Traduction par {{translators}}."
+  },
+  "footer": {
+    "copyright-website": "Site web © yx.",
+    "copyright-artworks": "Toutes les œuvres sont soumises aux © de leurs auteur·ice·s respectifs",
+    "copyright-pouet": "Visuel Pouët © mandarine."
+  }
+}
