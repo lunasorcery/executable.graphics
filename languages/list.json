@@ -5,15 +5,15 @@
 		"root": ""
 	},
 	{
-        "id": "fr",
-        "name": "French",
-        "root": "/fr",
-        "translators": [
+		"id": "fr",
+		"name": "Français",
+		"root": "/fr",
+		"translators": [
 			"lia",
-            "nnorm",
-            "totetmatt"
-        ]
-    },
+			"nnorm",
+			"totetmatt"
+		]
+	},
 	{
 		"id": "de",
 		"name": "Deutsch",
