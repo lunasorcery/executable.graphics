@@ -25,7 +25,7 @@ validateMissingLocalization = True
 
 
 # Seasonal events
-meteorikJurorApplicationOpen = False
+meteorikJurorApplicationOpen = True
 meteorikPublicNominationsOpen = False
 
 
