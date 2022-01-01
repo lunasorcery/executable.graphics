@@ -141,12 +141,21 @@ a {
 
 
 /* show the text label... */
-.switch:hover .label span, /* ...on mouseover */
+.switch:hover .label span { /* ...on mouseover */
+	opacity: 0.75;
+}
 .switch:focus-visible .label span, /* ...on tab-highlight */
 .switch-dropdown:focus-within .label span, /* ...on tab-highlight of a dropdown child */
 .switch-toggle input[type=checkbox]:focus-visible + .label span { /* ...on tab-highlight of an invisible checkbox */
 	opacity: 0.75;
 }
+/*
+a brief aside:
+"Why's the :hover one separate?", I hear you ask.
+It seems that macOS Safari doesn't support :focus-visible, at least as of version 15.1 (17612.2.9.1.20)
+And for some reason, that means the :hover doesn't work if it's part of a multi-rule block containing :focus-visible, like the above.
+*/
+
 
 
 /* hide the actual checkbox */
