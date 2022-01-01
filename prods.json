@@ -1,5 +1,29 @@
 [
 	{
+		"slug": "nr4-core",
+		"demozoo_url": "https://demozoo.org/graphics/303084/",
+		"author": "NR4 / Team210",
+		"title": "Core",
+		"party": "TokyoDemoFest 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "sinmix-kuwahara",
+		"demozoo_url": "https://demozoo.org/graphics/303082/",
+		"author": "slerpy / Sinmix",
+		"title": "Kuwaharas Painting (桑原の絵画)",
+		"party": "TokyoDemoFest 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "p_malin-caffeinate",
+		"demozoo_url": "https://demozoo.org/graphics/302080/",
+		"author": "P_Malin / Bitshifters",
+		"title": "Caffeinate",
+		"party": "Inércia Demoparty 2021",
+		"platform": "Windows"
+	},
+	{
 		"slug": "darya-nr4-take-it-or-leaf-it",
 		"demozoo_url": "https://demozoo.org/graphics/298068/",
 		"author": "Darya / 5711 ^ NR4 / Team210",
