@@ -35,7 +35,7 @@ buildFolder = "gen/"
 rootFolder = os.path.join(buildFolder, "root")
 rootImgFolder = os.path.join(rootFolder, "img")
 
-netscapeFolder = os.path.join(buildFolder, "web1")
+netscapeFolder = os.path.join(buildFolder, "throwback")
 netscapeImgFolder = os.path.join(netscapeFolder, "img")
 
 
@@ -176,7 +176,7 @@ for idx,prod in enumerate(prods):
 		raise hell
 
 
-print("converting images for web1 site")
+print("converting images for throwback site")
 for idx,prod in enumerate(prods):
 	slug = prod['slug']
 	src_jpg = f"raw-images/{slug}.jpg"
