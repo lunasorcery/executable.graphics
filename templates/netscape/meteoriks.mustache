@@ -1,0 +1,22 @@
+{{> header}}
+		<tr>
+			<td>
+				<font face="Tahoma" size="2">
+					<b>{{#i18n}}meteoriks.what-are-meteoriks{{/i18n}}</b>
+					<p>{{#i18n}}meteoriks.what-are-meteoriks-p1{{/i18n}}</p>
+					<p>{{#i18n}}meteoriks.what-are-meteoriks-p2{{/i18n}}</p>
+<!--
+{{#meteoriks-juror-application-open}}
+					<p>{{#i18n}}meteoriks.juror-application-open{{/i18n}}</p>
+{{/meteoriks-juror-application-open}}
+{{#meteoriks-nominations-open}}
+					<p>{{#i18n}}meteoriks.public-nominations-open{{/i18n}}</p>
+{{/meteoriks-nominations-open}}
+-->
+				</font>
+			</td>
+		</tr>
+{{#entries}}
+		{{> artwork}}
+{{/entries}}
+{{> footer}}

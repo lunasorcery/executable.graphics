@@ -1,0 +1,16 @@
+<tr>
+	<td bgcolor="#ffffff">
+		<font face="Tahoma" size="2">
+			{{author}}<br>
+			<font size="4"><b>{{title}}</b></font>, {{party}}<br>
+			{{#i18n}}artwork.platform{{/i18n}}<br>
+	{{#meteorik-nominee}}
+			<font color="#0000ff">{{#i18n}}badges.meteorik-nominee{{/i18n}}</font><br>
+	{{/meteorik-nominee}}
+	{{#meteorik-winner}}
+			<font color="#ff00ff">{{#i18n}}badges.meteorik-winner{{/i18n}}</font><br>
+	{{/meteorik-winner}}
+		</font>
+		<img src="/img/{{slug}}.gif" />
+	</td>
+</tr>

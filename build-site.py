@@ -25,8 +25,18 @@ validateMissingLocalization = True
 
 
 # Seasonal events
-meteorikJurorApplicationOpen = True
-meteorikPublicNominationsOpen = False
+meteorikJurorApplicationOpen = False
+meteorikPublicNominationsOpen = True
+
+
+# folder structure
+buildFolder = "gen/"
+
+rootFolder = os.path.join(buildFolder, "root")
+rootImgFolder = os.path.join(rootFolder, "img")
+
+netscapeFolder = os.path.join(buildFolder, "web1")
+netscapeImgFolder = os.path.join(netscapeFolder, "img")
 
 
 # load languages
@@ -66,19 +76,24 @@ meteorikProds = sorted(
 	reverse=True)
 
 
-maybe_mkdir('gen/')
-maybe_mkdir('gen/img/')
+maybe_mkdir(buildFolder)
+maybe_mkdir(rootFolder)
+maybe_mkdir(rootImgFolder)
+maybe_mkdir(netscapeFolder)
+maybe_mkdir(netscapeImgFolder)
 
 
 print("generating icons...")
-if not os.path.exists('gen/apple-touch-icon.png'):
-	os.system(f"inkscape -w 160 -h 160 -o gen/apple-touch-icon.png icons/mobile-icon.svg")
-if not os.path.exists('gen/favicon.ico'):
+appleTouchIconPath = os.path.join(rootFolder, 'apple-touch-icon.png')
+faviconIcoPath = os.path.join(rootFolder, 'favicon.ico')
+if not os.path.exists(appleTouchIconPath):
+	os.system(f"inkscape -w 160 -h 160 -o {appleTouchIconPath} icons/mobile-icon.svg")
+if not os.path.exists(faviconIcoPath):
 	faviconSizes = [16,32,48]
 	for size in faviconSizes:
-		os.system(f"inkscape -w {size} -h {size} -o gen/favicon-{size}.png icons/favicon.svg")
-	faviconPngs = [f"gen/favicon-{size}.png" for size in faviconSizes]
-	os.system(f"magick convert {' '.join(faviconPngs)} gen/favicon.ico")
+		os.system(f"inkscape -w {size} -h {size} -o favicon-{size}.png icons/favicon.svg")
+	faviconPngs = [f"favicon-{size}.png" for size in faviconSizes]
+	os.system(f"magick convert {' '.join(faviconPngs)} {faviconIcoPath}")
 	for faviconPng in faviconPngs:
 		os.remove(faviconPng)
 
@@ -93,7 +108,7 @@ staticAssets = [
 	'Muli-ExtraBoldItalic.ttf',
 ]
 for asset in staticAssets:
-	shutil.copyfile(f'static/{asset}', f'gen/{asset}')
+	shutil.copyfile(f'static/{asset}', os.path.join(rootFolder, asset))
 
 
 print("processing CSS...")
@@ -102,8 +117,9 @@ cssFiles = [
 ]
 for asset in cssFiles:
 	with open(asset) as fIn:
-		print(f"gen/{asset.replace('.scss','.css')}")
-		with open(f"gen/{asset.replace('.scss','.css')}", 'w') as fOut:
+		outpath = os.path.join(rootFolder, asset.replace('.scss','.css'))
+		print(outpath)
+		with open(outpath, 'w') as fOut:
 			fOut.write(sass.compile(string=fIn.read()))
 
 
@@ -112,8 +128,8 @@ for idx,prod in enumerate(prods):
 	slug = prod['slug']
 	src_jpg = f"raw-images/{slug}.jpg"
 	src_png = f"raw-images/{slug}.png"
-	dst_jpg = f"gen/img/{slug}.jpg"
-	dst_png = f"gen/img/{slug}.png"
+	dst_jpg = os.path.join(rootImgFolder, f"{slug}.jpg")
+	dst_png = os.path.join(rootImgFolder, f"{slug}.png")
 
 	print(f"- {slug}")
 
@@ -160,6 +176,35 @@ for idx,prod in enumerate(prods):
 		raise hell
 
 
+print("converting images for web1 site")
+for idx,prod in enumerate(prods):
+	slug = prod['slug']
+	src_jpg = f"raw-images/{slug}.jpg"
+	src_png = f"raw-images/{slug}.png"
+	dst_img = os.path.join(netscapeImgFolder, f"{slug}.gif")
+
+	print(f"- {slug}")
+
+	if os.path.exists(dst_img):
+		print("   already exists, skipping...")
+		continue
+
+	src_img=""
+	if os.path.exists(src_jpg):
+		src_img = src_jpg
+	elif os.path.exists(src_png):
+		src_img = src_png
+	else:
+		print("   missing raw image!")
+		raise hell
+
+	print(src_img)
+	print(dst_img)
+	os.system(f"magick convert -quality 50 -resize 640X480 -dither FloydSteinberg -remap netscape: {src_img} {dst_img}")
+	print(f"   src: {os.path.getsize(src_img): 10,}b")
+	print(f"   dst: {os.path.getsize(dst_img): 10,}b")
+
+
 sharedTemplate = {
 	'meta-title': "executable.graphics",
 	'meta-image': prods[0]['image_url'],
@@ -177,11 +222,11 @@ sharedTemplate = {
 	'external-url-pouet':            'https://pouet.net/',
 	'external-url-demozoo':          'https://demozoo.org/',
 
-	'hash-fonts-css':            crc32_file('gen/fonts.css'),
-	'hash-style-css':            crc32_file('gen/style.css'),
-	'hash-favicon-ico':          crc32_file('gen/favicon.ico'),
-	'hash-apple-touch-icon-png': crc32_file('gen/apple-touch-icon.png'),
-	'hash-manifest-json':        crc32_file('gen/manifest.json'),
+	'hash-fonts-css':            crc32_file(os.path.join(rootFolder, 'fonts.css')),
+	'hash-style-css':            crc32_file(os.path.join(rootFolder, 'style.css')),
+	'hash-favicon-ico':          crc32_file(os.path.join(rootFolder, 'favicon.ico')),
+	'hash-apple-touch-icon-png': crc32_file(os.path.join(rootFolder, 'apple-touch-icon.png')),
+	'hash-manifest-json':        crc32_file(os.path.join(rootFolder, 'manifest.json')),
 
 	'svg-globe': open('icons/globe.svg').read(),
 	'svg-moon':  open('icons/moon.svg').read()
@@ -190,8 +235,11 @@ sharedTemplate = {
 
 print("applying templates...")
 for lang in languages:
-	outdir = f"gen{lang['root']}"
-	maybe_mkdir(outdir)
+	localizedRootFolder = f"{rootFolder}{lang['root']}"
+	localizedNetscapeFolder = f"{netscapeFolder}{lang['root']}"
+	maybe_mkdir(localizedRootFolder)
+	maybe_mkdir(localizedNetscapeFolder)
+
 	with open(f"languages/{lang['id']}.json") as file:
 		langData = json.load(file)
 
@@ -213,41 +261,69 @@ for lang in languages:
 
 	langTemplate = { 'i18n': template_localize }
 
+	indexData = sharedTemplate | langTemplate | {
+		'meta-subtitle': localize('nav.gallery'),
+		'meta-description': localize('meta.desc-gallery'),
+		'meta-twitter-card-type': "summary_large_image",
+		'currpage-canonical-filename' : '',
+		'page-gallery': True,
+		'entries': prods }
+
+	meteoriksData = sharedTemplate | langTemplate | {
+		'meta-subtitle': localize('nav.meteoriks'),
+		'meta-description': localize('meta.desc-meteoriks'),
+		'meta-twitter-card-type': "summary",
+		'meta-image': meteorikProds[0]['image_url'],
+		'currpage-canonical-filename' : 'meteoriks.html',
+		'page-meteoriks': True,
+		'entries': meteorikProds }
+
+	aboutData = sharedTemplate | langTemplate | {
+		'meta-subtitle': localize('nav.about'),
+		'meta-description': localize('meta.desc-about'),
+		'meta-twitter-card-type': "summary",
+		'currpage-canonical-filename' : 'about.html',
+		'page-about': True }
+
 	with open('templates/index.mustache', 'r') as f:
-		with open(f"{outdir}/index.html", 'w') as fout:
+		with open(os.path.join(localizedRootFolder, "index.html"), 'w') as fout:
 			fout.write(chevron.render(
 				template = f,
 				partials_path = 'templates/',
-				data = sharedTemplate | langTemplate | {
-					'meta-subtitle': localize('nav.gallery'),
-					'meta-description': localize('meta.desc-gallery'),
-					'meta-twitter-card-type': "summary_large_image",
-					'currpage-canonical-filename' : '',
-					'page-gallery': True,
-					'entries': prods }))
+				data = indexData))
 
 	with open('templates/meteoriks.mustache', 'r') as f:
-		with open(f"{outdir}/meteoriks.html", 'w') as fout:
+		with open(os.path.join(localizedRootFolder, "meteoriks.html"), 'w') as fout:
 			fout.write(chevron.render(
 				template = f,
 				partials_path = 'templates/',
-				data = sharedTemplate | langTemplate | {
-					'meta-subtitle': localize('nav.meteoriks'),
-					'meta-description': localize('meta.desc-meteoriks'),
-					'meta-twitter-card-type': "summary",
-					'meta-image': meteorikProds[0]['image_url'],
-					'currpage-canonical-filename' : 'meteoriks.html',
-					'page-meteoriks': True,
-					'entries': meteorikProds }))
+				data = meteoriksData))
 
 	with open('templates/about.mustache', 'r') as f:
-		with open(f"{outdir}/about.html", 'w') as fout:
+		with open(os.path.join(localizedRootFolder, "about.html"), 'w') as fout:
 			fout.write(chevron.render(
 				template = f,
 				partials_path = 'templates/',
-				data = sharedTemplate | langTemplate | {
-					'meta-subtitle': localize('nav.about'),
-					'meta-description': localize('meta.desc-about'),
-					'meta-twitter-card-type': "summary",
-					'currpage-canonical-filename' : 'about.html',
-					'page-about': True }))
+				data = aboutData))
+
+
+	with open('templates/netscape/index.mustache', 'r') as f:
+		with open(os.path.join(localizedNetscapeFolder, "index.html"), 'w') as fout:
+			fout.write(chevron.render(
+				template = f,
+				partials_path = 'templates/netscape/',
+				data = indexData))
+
+	with open('templates/netscape/meteoriks.mustache', 'r') as f:
+		with open(os.path.join(localizedNetscapeFolder, "meteoriks.html"), 'w') as fout:
+			fout.write(chevron.render(
+				template = f,
+				partials_path = 'templates/netscape/',
+				data = meteoriksData))
+
+	with open('templates/netscape/about.mustache', 'r') as f:
+		with open(os.path.join(localizedNetscapeFolder, "about.html"), 'w') as fout:
+			fout.write(chevron.render(
+				template = f,
+				partials_path = 'templates/netscape/',
+				data = aboutData))

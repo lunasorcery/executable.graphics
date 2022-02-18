@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>{{#meta-subtitle}}{{meta-subtitle}} | {{/meta-subtitle}}{{meta-title}}</title>
+		<link rel="shortcut icon" href="/favicon.ico?cache={{hash-favicon-ico}}"/>
+		<meta name="description" content="{{meta-description}}"/>
+	</head>
+	<body bgcolor="#c0c0c0">
+		<table width="640px" border="2" align="center">
+		<tbody>
+			<tr>
+				<td align="center">
+					<font face="Tahoma" size="5"><b>executable.graphics</b></font>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<font face="Tahoma" size="3">
+						{{#page-gallery}}<b>{{/page-gallery}}
+						<a href=".">{{#i18n}}nav.gallery{{/i18n}}</a>
+						{{#page-gallery}}</b>{{/page-gallery}}
+						-
+						{{#page-meteoriks}}<b>{{/page-meteoriks}}
+						<a href="meteoriks.html">{{#i18n}}nav.meteoriks{{/i18n}}</a>
+						{{#page-meteoriks}}</b>{{/page-meteoriks}}
+						-
+						{{#page-about}}<b>{{/page-about}}
+						<a href="about.html">{{#i18n}}nav.about{{/i18n}}</a>
+						{{#page-about}}</b>{{/page-about}}
+					</font>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<font face="Tahoma" size="2">
+						{{#languages}}
+						<a href="{{root}}/{{currpage-canonical-filename}}">{{name}}</a>
+						{{/languages}}
+					</font>
+				</td>
+			</td>
