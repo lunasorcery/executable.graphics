@@ -21,7 +21,9 @@
 		"author": "P_Malin / Bitshifters",
 		"title": "Caffeinate",
 		"party": "Inércia Demoparty 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "darya-nr4-take-it-or-leaf-it",
@@ -29,7 +31,9 @@
 		"author": "Darya / 5711 ^ NR4 / Team210",
 		"title": "Take It or Leaf It!",
 		"party": "Névoke 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "sinmix-watchtower",
@@ -69,7 +73,9 @@
 		"author": "NuSan",
 		"title": "Red Crash",
 		"party": "Revision Online 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "tdhooper-you-are-here",
@@ -77,7 +83,9 @@
 		"author": "tdhooper",
 		"title": "You Are Here",
 		"party": "Revision Online 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "evilryu-bull",
@@ -85,7 +93,9 @@
 		"author": "EvilRyu / FLEX",
 		"title": "Bull",
 		"party": "Revision Online 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "pbr-autumn-years",
