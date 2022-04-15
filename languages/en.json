@@ -24,7 +24,7 @@
 	"meteoriks": {
 		"what-are-meteoriks": "What are the Meteoriks?",
 		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">The Meteoriks</a> are an award to honor the best productions that the demoscene has to offer, and are presented annually at the Revision demoparty over the Easter weekend.",
-		"what-are-meteoriks-p2": "Following a surge of activity in the Executable Graphics field, the Meteoriks introduced a category for Best Executable Graphics in 2021. You can see the nominees and winner below.",
+		"what-are-meteoriks-p2": "Following a surge of activity in the Executable Graphics field, the Meteoriks introduced a category for Best Executable Graphics in 2021. You can see the nominees and winners below.",
 		"juror-application-open": "Applications to be a juror for the {{current-year}} Meteoriks are <a href=\"{{external-url-meteoriks-jurors}}\">now open</a>!",
 		"public-nominations-open": "Public nominations for the {{current-year}} Meteoriks are now open - you can submit entries for the jurors' consideration through both <a href=\"{{external-url-pouet}}\">Pouët</a> and <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
 	},
