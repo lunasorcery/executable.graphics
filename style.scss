@@ -8,9 +8,11 @@
 	--darkmode-main-bg-color: #303030;
 
 	--lightmode-meteorik-nominee-bg-color: #e5e5e5;
-	--lightmode-meteorik-winner-bg-color:  #ffe5aa;/*#ffcc55*/;
+	--lightmode-meteorik-runnerup-bg-color: #aae5ff;
+	--lightmode-meteorik-winner-bg-color:  #ffe5aa;
 
 	--darkmode-meteorik-nominee-bg-color:  #555555;
+	--darkmode-meteorik-runnerup-bg-color:  #205064;
 	--darkmode-meteorik-winner-bg-color:   #645020;
 
 	--lightmode-dropdown-bg-color: #ffffff;
@@ -29,6 +31,7 @@
 	--main-bg-color:   var(--lightmode-main-bg-color);
 
 	--meteorik-nominee-bg-color:     var(--lightmode-meteorik-nominee-bg-color);
+	--meteorik-runnerup-bg-color:    var(--lightmode-meteorik-runnerup-bg-color);
 	--meteorik-winner-bg-color:      var(--lightmode-meteorik-winner-bg-color);
 
 	--dropdown-bg-color:      var(--lightmode-dropdown-bg-color);
@@ -49,6 +52,7 @@
 	--main-bg-color:   var(--darkmode-main-bg-color);
 
 	--meteorik-nominee-bg-color:     var(--darkmode-meteorik-nominee-bg-color);
+	--meteorik-runnerup-bg-color:    var(--darkmode-meteorik-runnerup-bg-color);
 	--meteorik-winner-bg-color:      var(--darkmode-meteorik-winner-bg-color);
 
 	--dropdown-bg-color:      var(--darkmode-dropdown-bg-color);
@@ -286,6 +290,9 @@ because the lack of support for :focus-visible invalidates the entire selector.
 
 		&.meteorik-nominee {
 			background: var(--meteorik-nominee-bg-color);
+		}
+		&.meteorik-runnerup {
+			background: var(--meteorik-runnerup-bg-color);
 		}
 		&.meteorik-winner {
 			background: var(--meteorik-winner-bg-color);

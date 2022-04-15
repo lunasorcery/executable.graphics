@@ -21,7 +21,7 @@ def crc32_file(filename):
 
 
 # fail the build if localization strings are missing
-validateMissingLocalization = True
+validateMissingLocalization = False
 
 
 # Seasonal events
@@ -58,8 +58,9 @@ with open('prods.json') as file:
 # figure out the meteorik prods
 for idx,prod in enumerate(prods):
 	if 'meteorik-type' in prod:
-		prods[idx]['meteorik-winner']  = (prod['meteorik-type'] == 'winner')
-		prods[idx]['meteorik-nominee'] = (prod['meteorik-type'] == 'nominee')
+		prods[idx]['meteorik-winner']   = (prod['meteorik-type'] == 'winner')
+		prods[idx]['meteorik-runnerup'] = (prod['meteorik-type'] == 'runnerup')
+		prods[idx]['meteorik-nominee']  = (prod['meteorik-type'] == 'nominee')
 meteorikProds = sorted(
 	[prod for prod in prods if 'meteorik-year' in prod],
 	key = lambda x: (x['meteorik-year'], x['meteorik-type']),

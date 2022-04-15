@@ -18,6 +18,7 @@
 	},
 	"badges": {
 		"meteorik-nominee": "Meteoriks {{meteorik-year}} Nominee",
+		"meteorik-runnerup": "Meteoriks {{meteorik-year}} Honorable Mention",
 		"meteorik-winner": "Meteoriks {{meteorik-year}} Winner"
 	},
 	"meteoriks": {
