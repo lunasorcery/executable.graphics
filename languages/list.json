@@ -5,6 +5,16 @@
 		"root": ""
 	},
 	{
+		"id": "fr",
+		"name": "Français",
+		"root": "/fr",
+		"translators": [
+			"lia",
+			"nnorm",
+			"totetmatt"
+		]
+	},
+	{
 		"id": "de",
 		"name": "Deutsch",
 		"root": "/de",

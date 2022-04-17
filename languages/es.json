@@ -1,41 +1,46 @@
 {
-    "global": {
-        "toggle-theme": "Cambiar Tema",
-        "toggle-lang": "Lenguaje"
-    },
-    "nav": {
-        "gallery": "Galería",
-        "meteoriks": "Meteoriks",
-        "about": "Sobre"
-    },
-    "artwork": {
-        "platform": "Ejecutable de {{platform}}"
-    },
-    "badges": {
-        "meteorik-nominee": "Nominada/o a Meteoriks {{meteorik-year}}",
-        "meteorik-winner": "Ganador/a de Meteoriks {{meteorik-year}}"
-    },
-    "meteoriks": {
-        "what-are-meteoriks": "¿Qué son Los Meteoriks?",
-        "what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">Los Meteoriks</a> son un concurso donde se eligen a las mejores producciones que la demoscene tiene para ofrecer. Se presenta en la demoparty de Revision, anualmente, durante la pascua.",
-        "what-are-meteoriks-p2": "A causa de un gran interés por parte de la comunidad para crear Gráficos Ejecutables, el 2021 Los Meteoriks agregaron una nueva categoria llamada El Mejor Gráfico Ejecutable. Los/as nominados/as y ganadores/as pueden ser vistos/as abajo.",
-        "juror-application-open": "Las postulaciones para ser jurado de Los Meteoriks {{current-year}} ya están <a href=\"{{external-url-meteoriks-jurors}}\">abiertas</a>!",
-        "public-nominations-open": "Las inscripciones para ser nominados a Los Meteoriks {{current-year}} ya están abiertas - puedes enviar tus postulaciones para que sean evaluadas por el jurado a traves de las plataformas de <a href=\"{{external-url-pouet}}\">Pouët</a> y <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
-    },
-    "about": {
-        "what-is-exegfx": "¿Qué es un Gráfico Ejecutable?",
-        "what-is-exegfx-p1": "En su sentido más puro, se refiere al arte visual generado por medio de un software. Cada obra es creada no como un archivo de imagen, sino como un programa ejecutable que, al correr, dibuja la obra.",
-        "what-is-exegfx-p2": "Mientras los formatos de demo/intro más populares de la demoscene producen animaciones audiovisuales en tiempo real, los Gráficos Ejecutables producen una sola imagen en un periodo de tiempo limitado. Esto permite la utilización de técnicas de dibujado, computacionalmente intensivas, que serían dificiles de lograr en tiempo real.",
-        "what-is-exegfx-p3": "Durante la última decada, las demoparties han popularizado el formato de Gráficos Ejecutables de 4K. No cometan la equivocación de pensar que '4K' se refiere la resolución, en este caso se refiere al tamaño del ejecutable. Cada obra debe pesar no más de 4 kilobytes (4096 bytes).",
-        "what-is-exe-dot-gfx": "¿Qué es executable.graphics?",
-        "what-is-exe-dot-gfx-p1": "Esta página web es una galería de obras de arte creadas por varios artistas de la escena de los Gráficos Ejecutables. Cada obra en la colección fue dibujada por un programa que no pesaba más de 4096 bytes.",
-        "what-is-exe-dot-gfx-p2": "Te extiendo la invitación a que navegues la colección de la misma forma que lo harías en una galería de arte. Date el tiempo con cada una de las obras y toma en consideración lo que significa crearlas (desde el punto de vista artistico y técnico).",
-        "credit-curator": "Esta colección está curada por yx.",
-        "credit-translators": "Traducción por {{translators}}."
-    },
-    "footer": {
-        "copyright-website": "Página Web © yx.",
-        "copyright-artworks": "Todos los trabajos son © de los respectivos autores.",
-        "copyright-pouet": "Gráficos de Pouët © mandarine."
-    }
+	"meta": {
+		"desc-gallery": "Una galería con obras seleccionadas de Gráficos Ejecutables de 4K de la demoscene.",
+		"desc-meteoriks": "Nominados/as y ganadores/as del premio 'Mejor Gráfico Ejecutable' de Los Meteoriks.",
+		"desc-about": "¿Qué es un Gráfico Ejecutable?"
+	},
+	"global": {
+		"toggle-theme": "Cambiar Tema",
+		"toggle-lang": "Lenguaje"
+	},
+	"nav": {
+		"gallery": "Galería",
+		"meteoriks": "Meteoriks",
+		"about": "Sobre"
+	},
+	"artwork": {
+		"platform": "Ejecutable de {{platform}}"
+	},
+	"badges": {
+		"meteorik-nominee": "Nominada/o a Meteoriks {{meteorik-year}}",
+		"meteorik-winner": "Ganador/a de Meteoriks {{meteorik-year}}"
+	},
+	"meteoriks": {
+		"what-are-meteoriks": "¿Qué son Los Meteoriks?",
+		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">Los Meteoriks</a> son un concurso donde se eligen a las mejores producciones que la demoscene tiene para ofrecer. Se presenta en la demoparty de Revision, anualmente, durante la pascua.",
+		"what-are-meteoriks-p2": "A causa de un gran interés por parte de la comunidad para crear Gráficos Ejecutables, el 2021 Los Meteoriks agregaron una nueva categoria llamada El Mejor Gráfico Ejecutable. Los/as nominados/as y ganadores/as pueden ser vistos/as abajo.",
+		"juror-application-open": "Las postulaciones para ser jurado de Los Meteoriks {{current-year}} ya están <a href=\"{{external-url-meteoriks-jurors}}\">abiertas</a>!",
+		"public-nominations-open": "Las inscripciones para ser nominados a Los Meteoriks {{current-year}} ya están abiertas - puedes enviar tus postulaciones para que sean evaluadas por el jurado a traves de las plataformas de <a href=\"{{external-url-pouet}}\">Pouët</a> y <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
+	},
+	"about": {
+		"what-is-exegfx": "¿Qué es un Gráfico Ejecutable?",
+		"what-is-exegfx-p1": "En su sentido más puro, se refiere al arte visual generado por medio de un software. Cada obra es creada no como un archivo de imagen, sino como un programa ejecutable que, al correr, dibuja la obra.",
+		"what-is-exegfx-p2": "Mientras los formatos de demo/intro más populares de la demoscene producen animaciones audiovisuales en tiempo real, los Gráficos Ejecutables producen una sola imagen en un periodo de tiempo limitado. Esto permite la utilización de técnicas de dibujado, computacionalmente intensivas, que serían dificiles de lograr en tiempo real.",
+		"what-is-exegfx-p3": "Durante la última decada, las demoparties han popularizado el formato de Gráficos Ejecutables de 4K. No cometan la equivocación de pensar que '4K' se refiere la resolución, en este caso se refiere al tamaño del ejecutable. Cada obra debe pesar no más de 4 kilobytes (4096 bytes).",
+		"what-is-exe-dot-gfx": "¿Qué es executable.graphics?",
+		"what-is-exe-dot-gfx-p1": "Esta página web es una galería de obras de arte creadas por varios artistas de la escena de los Gráficos Ejecutables. Cada obra en la colección fue dibujada por un programa que no pesaba más de 4096 bytes.",
+		"what-is-exe-dot-gfx-p2": "Te extiendo la invitación a que navegues la colección de la misma forma que lo harías en una galería de arte. Date el tiempo con cada una de las obras y toma en consideración lo que significa crearlas (desde el punto de vista artistico y técnico).",
+		"credit-curator": "Esta colección está curada por yx.",
+		"credit-translators": "Traducción por {{translators}}."
+	},
+	"footer": {
+		"copyright-website": "Página Web © yx.",
+		"copyright-artworks": "Todos los trabajos son © de los respectivos autores.",
+		"copyright-pouet": "Gráficos de Pouët © mandarine."
+	}
 }

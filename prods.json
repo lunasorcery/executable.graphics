@@ -1,5 +1,57 @@
 [
 	{
+		"slug": "nr4-core",
+		"demozoo_url": "https://demozoo.org/graphics/303084/",
+		"author": "NR4 / Team210",
+		"title": "Core",
+		"party": "TokyoDemoFest 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "sinmix-kuwahara",
+		"demozoo_url": "https://demozoo.org/graphics/303082/",
+		"author": "slerpy / Sinmix",
+		"title": "Kuwaharas Painting (桑原の絵画)",
+		"party": "TokyoDemoFest 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "p_malin-caffeinate",
+		"demozoo_url": "https://demozoo.org/graphics/302080/",
+		"author": "P_Malin / Bitshifters",
+		"title": "Caffeinate",
+		"party": "Inércia Demoparty 2021",
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
+	},
+	{
+		"slug": "darya-nr4-take-it-or-leaf-it",
+		"demozoo_url": "https://demozoo.org/graphics/298068/",
+		"author": "Darya / 5711 ^ NR4 / Team210",
+		"title": "Take It or Leaf It!",
+		"party": "Névoke 2021",
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
+	},
+	{
+		"slug": "sinmix-watchtower",
+		"demozoo_url": "https://demozoo.org/graphics/298069/",
+		"author": "Sinmix",
+		"title": "Watchtower",
+		"party": "Névoke 2021",
+		"platform": "Windows"
+	},
+	{
+		"slug": "totetmatt-ouate-zeu-feuque",
+		"demozoo_url": "https://demozoo.org/graphics/298065/",
+		"author": "totetmatt",
+		"title": "Ouate Zeu Feuque",
+		"party": "Névoke 2021",
+		"platform": "Windows"
+	},
+	{
 		"slug": "fms_cat-wooden-structure",
 		"demozoo_url": "https://demozoo.org/graphics/294427/",
 		"author": "FMS_Cat",
@@ -21,7 +73,9 @@
 		"author": "NuSan",
 		"title": "Red Crash",
 		"party": "Revision Online 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "tdhooper-you-are-here",
@@ -29,7 +83,9 @@
 		"author": "tdhooper",
 		"title": "You Are Here",
 		"party": "Revision Online 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "evilryu-bull",
@@ -37,7 +93,9 @@
 		"author": "EvilRyu / FLEX",
 		"title": "Bull",
 		"party": "Revision Online 2021",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2022,
+		"meteorik-type": "winner"
 	},
 	{
 		"slug": "pbr-autumn-years",
