@@ -18,12 +18,13 @@
 	},
 	"badges": {
 		"meteorik-nominee": "Nomeado nos Meteoriks {{meteorik-year}}",
+		"meteorik-runnerup": "Menção Honrosa nos Meteoriks {{meteorik-year}}",
 		"meteorik-winner": "Vencedor nos Meteoriks {{meteorik-year}}"
 	},
 	"meteoriks": {
 		"what-are-meteoriks": "O que são os Meteoriks?",
 		"what-are-meteoriks-p1": "Os <a href=\"{{external-url-meteoriks}}\">Meteoriks</a> são prémios honoríficos que destacam as melhores produções editadas no âmbito da demoscene durante um dado ano, são apresentados anualmente na demoparty Revision.",
-		"what-are-meteoriks-p2": "No seguimento de um aumento de actividade na categoria de Gráficos Executáveis, os Meteoriks adicionaram em 2021 uma categoria de Melhores Gráficos Executáveis. Podem ver em baixo os nomeados e o vencedor.",
+		"what-are-meteoriks-p2": "No seguimento de um aumento de actividade na categoria de Gráficos Executáveis, os Meteoriks adicionaram em 2021 uma categoria de Melhores Gráficos Executáveis. Podem ver em baixo os nomeados e vencedores.",
 		"juror-application-open": "Submissões para ser membro de juri para os Meteoriks {{current-year}} estão <a href=\"{{external-url-meteoriks-jurors}}\">agora abertas</a>!",
 		"public-nominations-open": "Nomeações públicas para os Meteoriks {{current-year}} estão agora abertas - podem submeter contribuições para consideração do juri através das páginas web <a href=\"{{external-url-pouet}}\">Pouët</a> ou <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
 	},
