@@ -6,7 +6,7 @@
 	},
 	"global": {
 		"toggle-theme": "Thema wijzigen",
-		"toggle-lang": "Language"
+		"toggle-lang": "Taal wijzigen"
 	},
 	"nav": {
 		"gallery": "Galerij",
@@ -18,10 +18,11 @@
 	},
 	"badges": {
 		"meteorik-nominee": "Genomineerd voor de Meteoriks {{meteorik-year}}",
+		"meteorik-runnerup": "Meteoriks {{meteorik-year}} Eerbare Vermelding",
 		"meteorik-winner": "Winnaar Meteoriks {{meteorik-year}}"
 	},
 	"meteoriks": {
-		"what-are-meteoriks": "Wat is The Meteoriks?",
+		"what-are-meteoriks": "Wat zijn The Meteoriks?",
 		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">The Meteoriks</a> is een bekroning om de beste demosceneproducties te eren, en wordt jaarlijks gepresenteerd tijdens de Revision demoparty, tijdens het paasweekend.",
 		"what-are-meteoriks-p2": "Na een plotse groei aan activiteit in de wereld van Executable Graphics, heeft de jury van The Meteoriks in 2021 de categorie 'Best Executable Graphics' geïntroduceerd. De nominaties en de winnaar kan je hieronder bezichtigen.",
 		"juror-application-open": "Sollicitaties om een jurylid te worden van The Meteoriks {{current-year}} kan je <a href=\"{{external-url-meteoriks-jurors}}\">nu indienen</a>!",
