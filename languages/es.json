@@ -19,7 +19,7 @@
 	"badges": {
 		"meteorik-nominee": "Nominada/o a Meteoriks {{meteorik-year}}",
 		"meteorik-winner": "Ganador/a de Meteoriks {{meteorik-year}}",
-		"meteorik-runnerup": "Mención de honor Meteoriks {{meteorik-year}}", 
+		"meteorik-runnerup": "Mención de honor Meteoriks {{meteorik-year}}"
 	},
 	"meteoriks": {
 		"what-are-meteoriks": "¿Qué son Los Meteoriks?",
