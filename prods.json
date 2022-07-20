@@ -1,5 +1,37 @@
 [
 	{
+		"slug": "yx-is-this-your-card",
+		"demozoo_url": "https://demozoo.org/graphics/307508/",
+		"author": "yx",
+		"title": "Is This Your Card?",
+		"party": "Revision 2022",
+		"platform": "Windows"
+	},
+	{
+		"slug": "pbr-dreamtime-return",
+		"demozoo_url": "https://demozoo.org/graphics/307507/",
+		"author": "Prismbeings",
+		"title": "Dreamtime Return",
+		"party": "Revision 2022",
+		"platform": "Windows"
+	},
+	{
+		"slug": "blackle-grazing",
+		"demozoo_url": "https://demozoo.org/graphics/307501/",
+		"author": "Blackle / Suricrasia Online",
+		"title": "Grazing",
+		"party": "Revision 2022",
+		"platform": "Linux"
+	},
+	{
+		"slug": "p_malin-across-the-water",
+		"demozoo_url": "https://demozoo.org/graphics/307505/",
+		"author": "P_Malin / Bitshifters",
+		"title": "Across the Water",
+		"party": "Revision 2022",
+		"platform": "Windows"
+	},
+	{
 		"slug": "nr4-core",
 		"demozoo_url": "https://demozoo.org/graphics/303084/",
 		"author": "NR4 / Team210",
