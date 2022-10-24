@@ -1,5 +1,29 @@
 [
 	{
+		"slug": "mocoo-hexaghost",
+		"demozoo_url": "https://demozoo.org/graphics/311681/",
+		"author": "Mocoo",
+		"title": "hexaghost",
+		"party": "Evoke 2022",
+		"platform": "Linux"
+	},
+	{
+		"slug": "p_malin-orders-of-magnitude",
+		"demozoo_url": "https://demozoo.org/graphics/308530/",
+		"author": "P_Malin / Bitshifters",
+		"title": "Orders of Magnitude",
+		"party": "Outline 2022",
+		"platform": "Windows"
+	},
+	{
+		"slug": "seven-dissecting-the-scene-syndrome",
+		"demozoo_url": "https://demozoo.org/graphics/308531/",
+		"author": "Seven / Fulcrum",
+		"title": "Dissecting the Scene Syndrome",
+		"party": "Outline 2022",
+		"platform": "Windows"
+	},
+	{
 		"slug": "yx-is-this-your-card",
 		"demozoo_url": "https://demozoo.org/graphics/307508/",
 		"author": "yx",
