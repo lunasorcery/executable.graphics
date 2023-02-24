@@ -1,5 +1,15 @@
 [
 	{
+		"slug": "blackwine-jok-anima",
+		"demozoo_url": "https://demozoo.org/graphics/313657/",
+		"author": "Blackwine and Jok / Dreamweb",
+		"title": "Anima",
+		"party": "Deadline 2022",
+		"platform": "Amiga OCS/ECS",
+		"meteorik-year": 2023,
+		"meteorik-type": "nominee"
+	},
+	{
 		"slug": "mocoo-hexaghost",
 		"demozoo_url": "https://demozoo.org/graphics/311681/",
 		"author": "Mocoo",
@@ -13,7 +23,9 @@
 		"author": "P_Malin / Bitshifters",
 		"title": "Orders of Magnitude",
 		"party": "Outline 2022",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2023,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "seven-dissecting-the-scene-syndrome",
@@ -21,7 +33,9 @@
 		"author": "Seven / Fulcrum",
 		"title": "Dissecting the Scene Syndrome",
 		"party": "Outline 2022",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2023,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "yx-is-this-your-card",
@@ -29,7 +43,9 @@
 		"author": "yx",
 		"title": "Is This Your Card?",
 		"party": "Revision 2022",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2023,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "pbr-dreamtime-return",
@@ -37,7 +53,9 @@
 		"author": "Prismbeings",
 		"title": "Dreamtime Return",
 		"party": "Revision 2022",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2023,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "blackle-grazing",
