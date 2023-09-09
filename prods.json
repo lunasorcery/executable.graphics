@@ -1,5 +1,157 @@
 [
 	{
+		"slug": "klos-2-fast-2-fouriers",
+		"demozoo_url": "https://demozoo.org/graphics/328761/",
+		"author": "Klos / K2",
+		"title": "2 Fast 2 Fouriers",
+		"party": "Xenium 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "maurogik-early-bird",
+		"demozoo_url": "https://demozoo.org/graphics/325420/",
+		"author": "Maurogik",
+		"title": "Early Bird",
+		"party": "Nova 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "darya-nr4-my-way-or-the-highway",
+		"demozoo_url": "https://demozoo.org/graphics/324231/",
+		"author": "Darya / Slay Bells & NR4 / Team210",
+		"title": "My Way or The Highway",
+		"party": "Outline 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "0b5vr-20230421_fillercube",
+		"demozoo_url": "https://demozoo.org/graphics/323492/",
+		"author": "0b5vr",
+		"title": "20230421_fillercube",
+		"party": "SESSIONS in C4 LAN 2023 SPRING",
+		"platform": "Windows"
+	},
+	{
+		"slug": "klos-fast-and-fouriers",
+		"demozoo_url": "https://demozoo.org/graphics/322482/",
+		"author": "Klos / K2",
+		"title": "Fast & Fouriers",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "bercon-knits-n-sips",
+		"demozoo_url": "https://demozoo.org/graphics/322480/",
+		"author": "Bercon / Half Bit Cheese",
+		"title": "Knits & Sips",
+		"party": "Revision 2023",
+		"platform": "JavaScript"
+	},
+	{
+		"slug": "maurogik-storm",
+		"demozoo_url": "https://demozoo.org/graphics/322479/",
+		"author": "Maurogik",
+		"title": "Storm",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "anat-riverscape",
+		"demozoo_url": "https://demozoo.org/graphics/322476/",
+		"author": "Anat / Razor 1911",
+		"title": "RiverScape",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "deanthecoder-retrovision",
+		"demozoo_url": "https://demozoo.org/graphics/322475/",
+		"author": "DeanTheCoder",
+		"title": "RetroVision",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "pbr-mentally",
+		"demozoo_url": "https://demozoo.org/graphics/322472/",
+		"author": "Prismbeings",
+		"title": "Mentally,",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "p_malin-demo-mode",
+		"demozoo_url": "https://demozoo.org/graphics/322471/",
+		"author": "P_Malin / Bitshifters",
+		"title": "Demo Mode",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "evilryu-fracaelid",
+		"demozoo_url": "https://demozoo.org/graphics/322470/",
+		"author": "EvilRyu",
+		"title": "Fracaelid",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "totetmatt-voyager-the-6th",
+		"demozoo_url": "https://demozoo.org/graphics/322468/",
+		"author": "totetmatt",
+		"title": "Voyager: The 6th",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "blackle-pins-and-needles",
+		"demozoo_url": "https://demozoo.org/graphics/322466/",
+		"author": "Blackle / Suricrasia Online",
+		"title": "Pins&Needles",
+		"party": "Revision 2023",
+		"platform": "Linux"
+	},
+	{
+		"slug": "zeal_-a-scream-you-can-hear-in-space",
+		"demozoo_url": "https://demozoo.org/graphics/322464/",
+		"author": "Zeal_ / CyberCat",
+		"title": "A Scream You Can Hear in Space",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "cce-la-chasse-aux-oeuf",
+		"demozoo_url": "https://demozoo.org/graphics/322463/",
+		"author": "cce / Peisik",
+		"title": "La Chasse aux œuf (The Egg Hunt)",
+		"party": "Revision 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "nr4-alea-iacta-sunt",
+		"demozoo_url": "https://demozoo.org/graphics/317835/",
+		"author": "NR4",
+		"title": "Alea Iacta Sunt",
+		"party": "Jumalauta Färjan 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "team210-stellar",
+		"demozoo_url": "https://demozoo.org/graphics/317017/",
+		"author": "Team210",
+		"title": "Stellar",
+		"party": "Zenta 2022",
+		"platform": "Windows"
+	},
+	{
+		"slug": "jurnip-return",
+		"demozoo_url": "https://demozoo.org/graphics/315431/",
+		"author": "jurnip",
+		"title": "Return",
+		"party": "Syntax 2022",
+		"platform": "Windows"
+	},
+	{
 		"slug": "blackwine-jok-anima",
 		"demozoo_url": "https://demozoo.org/graphics/313657/",
 		"author": "Blackwine and Jok / Dreamweb",
