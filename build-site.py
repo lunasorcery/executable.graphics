@@ -133,7 +133,7 @@ for idx,prod in enumerate(prods):
 
 		# actually, let's make sure it's progressive
 		os.system(f"magick convert -interlace Plane -quality 95 {src_jpg} {dst_jpg}")
-		prods[idx]['image_url'] = f"img/{slug}.jpg"
+		prods[idx]['image_url'] = f"/img/{slug}.jpg"
 
 		# if we've made it bigger, ditch the quality=95 flag
 		if os.path.getsize(dst_jpg) > os.path.getsize(src_jpg):
