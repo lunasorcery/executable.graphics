@@ -1,5 +1,15 @@
 [
 	{
+		"slug": "juvi-wan-shi-tongs-visitor-files",
+		"demozoo_url": "https://demozoo.org/graphics/330579/",
+		"author": " Juvi / epoqe",
+		"title": "Wan Shi Tong's visitor files",
+		"party": "Deadline 2023",
+		"platform": "Linux",
+		"meteorik-year": 2024,
+		"meteorik-type": "nominee"
+	},
+	{
 		"slug": "klos-2-fast-2-fouriers",
 		"demozoo_url": "https://demozoo.org/graphics/328761/",
 		"author": "Klos / K2",
@@ -13,7 +23,9 @@
 		"author": "Maurogik",
 		"title": "Early Bird",
 		"party": "Nova 2023",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2024,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "darya-nr4-my-way-or-the-highway",
@@ -37,7 +49,9 @@
 		"author": "Klos / K2",
 		"title": "Fast & Fouriers",
 		"party": "Revision 2023",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2024,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "bercon-knits-n-sips",
@@ -53,7 +67,9 @@
 		"author": "Maurogik",
 		"title": "Storm",
 		"party": "Revision 2023",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2024,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "anat-riverscape",
@@ -93,7 +109,9 @@
 		"author": "EvilRyu",
 		"title": "Fracaelid",
 		"party": "Revision 2023",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2024,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "totetmatt-voyager-the-6th",
