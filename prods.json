@@ -40,6 +40,14 @@
 		"platform": "Windows"
 	},
 	{
+		"slug": "nusan-byte-puzzle",
+		"demozoo_url": "https://demozoo.org/graphics/342286/",
+		"author": "NuSan",
+		"title": "Byte Puzzle",
+		"party": "Revision 2024",
+		"platform": "Windows"
+	},
+	{
 		"slug": "monterman-magabom",
 		"demozoo_url": "https://demozoo.org/graphics/342283/",
 		"author": "monterman",
