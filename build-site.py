@@ -57,11 +57,11 @@ def main():
 		prods = [prod for prod in json.load(file) if not prod.get('hidden', False)]
 
 	# figure out the meteorik prods
-	for idx,prod in enumerate(prods):
+	for prod in prods:
 		if 'meteorik-type' in prod:
-			prods[idx]['meteorik-winner']   = (prod['meteorik-type'] == 'winner')
-			prods[idx]['meteorik-runnerup'] = (prod['meteorik-type'] == 'runnerup')
-			prods[idx]['meteorik-nominee']  = (prod['meteorik-type'] == 'nominee')
+			prod['meteorik-winner']   = (prod['meteorik-type'] == 'winner')
+			prod['meteorik-runnerup'] = (prod['meteorik-type'] == 'runnerup')
+			prod['meteorik-nominee']  = (prod['meteorik-type'] == 'nominee')
 	meteorikProds = sorted(
 		[prod for prod in prods if 'meteorik-year' in prod],
 		key = lambda x: (x['meteorik-year'], x['meteorik-type']),
@@ -111,7 +111,7 @@ def main():
 
 
 	print("converting images...")
-	for idx,prod in enumerate(prods):
+	for prod in prods:
 		slug = prod['slug']
 		src_jpg = f"raw-images/{slug}.jpg"
 		src_png = f"raw-images/{slug}.png"
@@ -121,11 +121,11 @@ def main():
 		print(f"- {slug}")
 
 		if os.path.exists(dst_jpg):
-			prods[idx]['image_url'] = f"/img/{slug}.jpg"
+			prod['image_url'] = f"/img/{slug}.jpg"
 			print("   already exists, skipping...")
 			continue
 		elif os.path.exists(dst_png):
-			prods[idx]['image_url'] = f"/img/{slug}.png"
+			prod['image_url'] = f"/img/{slug}.png"
 			print("   already exists, skipping...")
 			continue
 
@@ -135,7 +135,7 @@ def main():
 
 			# actually, let's make sure it's progressive
 			os.system(f"convert -interlace Plane -quality 95 {src_jpg} {dst_jpg}")
-			prods[idx]['image_url'] = f"/img/{slug}.jpg"
+			prod['image_url'] = f"/img/{slug}.jpg"
 
 			# if we've made it bigger, ditch the quality=95 flag
 			if os.path.getsize(dst_jpg) > os.path.getsize(src_jpg):
@@ -151,12 +151,12 @@ def main():
 			# ...and use the smaller one
 			print(f"   src_png: {os.path.getsize(src_png): 10,}b")
 			if os.path.getsize(dst_jpg) < os.path.getsize(src_png):
-				prods[idx]['image_url'] = f"/img/{slug}.jpg"
+				prod['image_url'] = f"/img/{slug}.jpg"
 				print(f"   dst_jpg: {os.path.getsize(dst_jpg): 10,}b")
 			else:
 				os.remove(dst_jpg)
 				shutil.copyfile(src_png, dst_png)
-				prods[idx]['image_url'] = f"/img/{slug}.png"
+				prod['image_url'] = f"/img/{slug}.png"
 				print(f"   dst_png: {os.path.getsize(dst_png): 10,}b")
 		else:
 			print("   missing raw image!")
