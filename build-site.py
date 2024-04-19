@@ -2,11 +2,11 @@
 
 import os
 import json
-import sass
 import shutil
 import chevron
 import binascii
 import datetime
+import subprocess
 
 
 def maybe_mkdir(path):
@@ -102,10 +102,11 @@ cssFiles = [
 	'style.scss'
 ]
 for asset in cssFiles:
-	with open(asset) as fIn:
-		print(f"gen/{asset.replace('.scss','.css')}")
-		with open(f"gen/{asset.replace('.scss','.css')}", 'w') as fOut:
-			fOut.write(sass.compile(string=fIn.read()))
+	assetOut = f"gen/{asset.replace('.scss','.css')}"
+	print(f"{asset} -> {assetOut}")
+	# requires dart sass
+	subprocess.run(['sass', asset, assetOut])
+	os.remove(f"{assetOut}.map")
 
 
 print("converting images...")

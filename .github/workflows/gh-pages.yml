@@ -36,7 +36,7 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Install native dependencies
-        run: sudo apt install inkscape imagemagick
+        run: sudo apt install inkscape imagemagick sass
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
