@@ -26,16 +26,16 @@
 		"what-are-meteoriks-p1": "Os <a href=\"{{external-url-meteoriks}}\">Meteoriks</a> são prémios honoríficos que destacam as melhores produções editadas no âmbito da demoscene durante um dado ano, são apresentados anualmente na demoparty Revision.",
 		"what-are-meteoriks-p2": "No seguimento de um aumento de actividade na categoria de Gráficos Executáveis, os Meteoriks adicionaram em 2021 uma categoria de Melhores Gráficos Executáveis. Podem ver em baixo os nomeados e vencedores.",
 		"juror-application-open": "Submissões para ser membro de juri para os Meteoriks {{current-year}} estão <a href=\"{{external-url-meteoriks-jurors}}\">agora abertas</a>!",
-		"public-nominations-open": "Nomeações públicas para os Meteoriks {{current-year}} estão agora abertas - podem submeter contribuições para consideração do juri através das páginas web <a href=\"{{external-url-pouet}}\">Pouët</a> ou <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
+		"public-nominations-open": "Nomeações públicas para os Meteoriks {{current-year}} estão agora abertas — podem submeter contribuições para consideração do juri através das páginas web <a href=\"{{external-url-pouet}}\">Pouët</a> ou <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
 	},
 	"about": {
 		"what-is-exegfx": "O que são Gráficos Executáveis?",
 		"what-is-exegfx-p1": "No sentido mais puro, Gráficos Executáveis são obras de arte visual criadas utilizando software. Cada obra é criada não como um arquivo de imagem mas sim como um programa executável que, quando corrido, renderiza computacionalmente a obra no momento.",
 		"what-is-exegfx-p2": "Enquanto que os formatos mais populares da demoscene produzem música e animações visuais renderizadas em tempo real, Gráficos Executáveis produzem uma única imagem, com mais tempo disponivel para a renderizar. Isto permite a utilização de técnicas de renderização mais intensivas que não seriam possiveis de ser calculadas em tempo real.",
-		"what-is-exegfx-p3": "Durante esta última década, várias demoparties popularizaram o formato de Gráficos Executáveis em 4Kb. ‘4K’ refere-se ao tamanho do arquivo executável, não à resolução da tela - o arquivo executável de cada uma destas obras não pode exceder 4 kilobytes (4096 bytes) em tamanho.",
+		"what-is-exegfx-p3": "Durante esta última década, várias demoparties popularizaram o formato de Gráficos Executáveis em 4Kb. ‘4K’ refere-se ao tamanho do arquivo executável, não à resolução da tela — o arquivo executável de cada uma destas obras não pode exceder 4 kilobytes (4096 bytes) em tamanho.",
 		"what-is-exe-dot-gfx": "O que é executable.graphics?",
 		"what-is-exe-dot-gfx-p1": "Esta página web apresenta uma galeria de obras de vários artistas de Gráficos Executáveis. Cada obra da coleção foi renderizada por um executável de tamanho máximo 4096 bytes.",
-		"what-is-exe-dot-gfx-p2": "Convidamo-lo a navegar a coleção como uma galeria de arte - a passar algum tempo com cada obra, e a considerar o que está por detrás de cada uma delas em termos artisticos e técnicos.",
+		"what-is-exe-dot-gfx-p2": "Convidamo-lo a navegar a coleção como uma galeria de arte — a passar algum tempo com cada obra, e a considerar o que está por detrás de cada uma delas em termos artisticos e técnicos.",
 		"credit-curator": "Esta colecção é curada por yx.",
 		"credit-translators": "Localização por {{translators}}."
 	},

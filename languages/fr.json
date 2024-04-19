@@ -26,7 +26,7 @@
 		"what-are-meteoriks-p1": "<a href=\"{{external-url-meteoriks}}\">Les Meteoriks</a> récompensent chaque année les meilleures productions de la scène démo, généralement pendant la Revision demoparty le weekend de Pâques.",
 		"what-are-meteoriks-p2": "Au vu de la popularité grandissante des Executable Graphics, une catégorie du Meilleur Executable Graphics a été créée lors des Meteoriks 2021. Vous pouvez voir les nominé·e·s et les lauréat·e·s ci-dessous.",
 		"juror-application-open": "Les inscriptions pour devenir membre du jury pour les Meteoriks {{current-year}} sont <a href=\"{{external-url-meteoriks-jurors}}\">ouvertes</a>!",
-		"public-nominations-open": "Les nominations publiques pour les Meteoriks {{current-year}} sont ouvertes - vous pouvez soumettre des productions au jury, de préférence venant de <a href=\"{{external-url-pouet}}\">Pouët</a> et <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
+		"public-nominations-open": "Les nominations publiques pour les Meteoriks {{current-year}} sont ouvertes — vous pouvez soumettre des productions au jury, de préférence venant de <a href=\"{{external-url-pouet}}\">Pouët</a> et <a href=\"{{external-url-demozoo}}\">Demozoo</a>."
 	},
 	"about": {
 		"what-is-exegfx": "C’est quoi un Executable Graphics ?",
