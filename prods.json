@@ -1,5 +1,77 @@
 [
 	{
+		"slug": "muhmac-felid",
+		"demozoo_url": "https://demozoo.org/graphics/342293/",
+		"author": "Muhmac / Speckdrumm",
+		"title": "Felid",
+		"party": "Revision 2024",
+		"platform": "JavaScript"		
+	},
+	{
+		"slug": "juvi-chromatic-north",
+		"demozoo_url": "https://demozoo.org/graphics/342292/",
+		"author": "Juvi / epoqe",
+		"title": "Chromatic North",
+		"party": "Revision 2024",
+		"platform": "Linux"
+	},
+	{
+		"slug": "musk-heavy-metal",
+		"demozoo_url": "https://demozoo.org/graphics/342290/",
+		"author": "Musk / Brainstorm",
+		"title": "Heavy Metal",
+		"party": "Revision 2024",
+		"platform": "Windows"
+	},
+	{
+		"slug": "yx-fragments-of-self",
+		"demozoo_url": "https://demozoo.org/graphics/342289/",
+		"author": "yx",
+		"title": "Fragments of Self",
+		"party": "Revision 2024",
+		"platform": "Windows"
+	},
+	{
+		"slug": "5711-team210-twisted-hairline",
+		"demozoo_url":"https://demozoo.org/graphics/342288/",
+		"author": "5711 and Team210",
+		"title": "Twisted Hairline",
+		"party": "Revision 2024",
+		"platform": "Windows"
+	},
+	{
+		"slug": "monterman-magabom",
+		"demozoo_url": "https://demozoo.org/graphics/342283/",
+		"author": "monterman",
+		"title": "Magabom",
+		"party": "Revision 2024",
+		"platform": "Windows"
+	},
+	{
+		"slug": "silvia-astro-dream",
+		"demozoo_url": "https://demozoo.org/graphics/338621/",
+		"author": "silvia",
+		"title": "Astro Dream",
+		"party": "MountainBytes 2024",
+		"platform": "Windows"
+	},
+	{
+		"slug": "sumaleth-porcelain-army",
+		"demozoo_url": "https://demozoo.org/graphics/333957/",
+		"author": "Sumaleth / Disaster Area ^ Pearl",
+		"title": "Porcelain Army: All Fired Up",
+		"party": "Inércia Demoparty 2023",
+		"platform": "Windows"
+	},
+	{
+		"slug": "kinankomoti-bon-appetite",
+		"demozoo_url": "https://demozoo.org/graphics/331893/",
+		"author": "kinankomoti",
+		"title": "Bon appetite",
+		"party": "TDF 16ms #0 (2023)",
+		"platform": "Windows"
+	},
+	{
 		"slug": "juvi-wan-shi-tongs-visitor-files",
 		"demozoo_url": "https://demozoo.org/graphics/330579/",
 		"author": " Juvi / epoqe",
@@ -8,6 +80,14 @@
 		"platform": "Linux",
 		"meteorik-year": 2024,
 		"meteorik-type": "nominee"
+	},
+	{
+		"slug": "blackwine-jok-inanna",
+		"demozoo_url": "https://demozoo.org/graphics/330577/",
+		"author": "Blackwine and Jok / Dreamweb",
+		"title": "Inanna",
+		"party": "Deadline 2023",
+		"platform": "Amiga OCS/ECS"
 	},
 	{
 		"slug": "klos-2-fast-2-fouriers",
