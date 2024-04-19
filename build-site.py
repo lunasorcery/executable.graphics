@@ -7,6 +7,7 @@ import chevron
 import binascii
 import datetime
 import subprocess
+from PIL import Image
 
 
 # fail the build if localization strings are missing
@@ -27,6 +28,84 @@ def crc32_file(filename):
 	buf = open(filename,'rb').read()
 	buf = (binascii.crc32(buf) & 0xffffffff)
 	return f"{buf:08x}"
+
+
+def get_ext(path: str):
+    return os.path.splitext(path)[1]
+
+
+def find_raw_image_for_prod(prod):
+	slug = prod['slug']
+	src_jpg = f"raw-images/{slug}.jpg"
+	src_png = f"raw-images/{slug}.png"
+	
+	if os.path.exists(src_jpg):
+		return src_jpg
+	if os.path.exists(src_png):
+		return src_png
+	print(f"failed to find raw image for prod '{slug}'")
+	exit(1)
+
+
+def check_transcode_result(result, dst_path):
+    if result.returncode != 0 or not os.path.exists(dst_path) or os.stat(dst_path).st_size == 0:
+        print(f"- transcode failed!")
+        print(f"- return code: {result.returncode}")
+        print(f"- output file exists: {os.path.exists(dst_path)}")
+        print(f"- output file size: {os.path.getsize(dst_path)}")
+        sys.exit(1)
+
+
+def transcode_to_jpg(src_path: str, dst_path: str):
+	result = subprocess.run(['convert', '-interlace', 'Plane', '-quality', '95', src_path, dst_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	check_transcode_result(result, dst_path)
+
+    # if we've made it bigger, just copy the original instead
+	if get_ext(src_path) in ['.jpg','.jpeg'] and os.path.getsize(dst_path) > os.path.getsize(src_path):
+		shutil.copyfile(src_path, dst_path)
+
+
+def transcode_to_avif(src_path: str, dst_path: str):
+    result = subprocess.run(['avifenc', '-q', '90', src_path, '-o', dst_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    check_transcode_result(result, dst_path)
+
+
+def transcode_to_webp(src_path: str, dst_path: str):
+	result = subprocess.run(['cwebp', '-metadata', 'all', '-q', '90', src_path, '-o', dst_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	check_transcode_result(result, dst_path)
+
+
+def get_image_dimensions(local_img_path: str):
+    img = Image.open(local_img_path)
+    return img.size
+
+
+def convert_image_for_prod(prod):
+	slug = prod['slug']
+	print(f"- {slug}")
+
+	src = find_raw_image_for_prod(prod)
+	width,height = get_image_dimensions(src)
+	prod['image_width'] = width
+	prod['image_height'] = height
+
+	if not prod.get('transcode',True):
+		dst_filename = f"img/{slug}{get_ext(src)}"
+		print(f"  -> {dst_filename}")
+		shutil.copy(src, f"gen/{dst_filename}")
+		prod[f"image_url"] = f"/{dst_filename}"
+	else:
+		transcodes = [
+			('image_url', transcode_to_jpg, f"img/{slug}.jpg"),
+			('image_url_avif', transcode_to_avif, f"img/{slug}.avif"),
+			('image_url_webp', transcode_to_webp, f"img/{slug}.webp"),
+		]
+		for field, transcode_func, dst_filename in transcodes:
+			print(f"  -> {dst_filename}")
+			dst_filepath = f"gen/{dst_filename}"
+			if not os.path.exists(dst_filepath):
+				transcode_func(src, dst_filepath)
+			prod[field] = f"/{dst_filename}"
 
 
 def main():
@@ -112,55 +191,7 @@ def main():
 
 	print("converting images...")
 	for prod in prods:
-		slug = prod['slug']
-		src_jpg = f"raw-images/{slug}.jpg"
-		src_png = f"raw-images/{slug}.png"
-		dst_jpg = f"gen/img/{slug}.jpg"
-		dst_png = f"gen/img/{slug}.png"
-
-		print(f"- {slug}")
-
-		if os.path.exists(dst_jpg):
-			prod['image_url'] = f"/img/{slug}.jpg"
-			print("   already exists, skipping...")
-			continue
-		elif os.path.exists(dst_png):
-			prod['image_url'] = f"/img/{slug}.png"
-			print("   already exists, skipping...")
-			continue
-
-		if os.path.exists(src_jpg):
-			# if the source is a jpg, use that
-			#shutil.copyfile(src_jpg, dst_jpg)
-
-			# actually, let's make sure it's progressive
-			os.system(f"convert -interlace Plane -quality 95 {src_jpg} {dst_jpg}")
-			prod['image_url'] = f"/img/{slug}.jpg"
-
-			# if we've made it bigger, ditch the quality=95 flag
-			if os.path.getsize(dst_jpg) > os.path.getsize(src_jpg):
-				os.system(f"convert -interlace Plane {src_jpg} {dst_jpg}")
-
-			print(f"   src_jpg: {os.path.getsize(src_jpg): 10,}b")
-			print(f"   dst_jpg: {os.path.getsize(dst_jpg): 10,}b")
-
-		elif os.path.exists(src_png):
-			# if the source is a png, resave it as a jpg
-			os.system(f"convert -interlace Plane -quality 95 {src_png} {dst_jpg}")
-
-			# ...and use the smaller one
-			print(f"   src_png: {os.path.getsize(src_png): 10,}b")
-			if os.path.getsize(dst_jpg) < os.path.getsize(src_png):
-				prod['image_url'] = f"/img/{slug}.jpg"
-				print(f"   dst_jpg: {os.path.getsize(dst_jpg): 10,}b")
-			else:
-				os.remove(dst_jpg)
-				shutil.copyfile(src_png, dst_png)
-				prod['image_url'] = f"/img/{slug}.png"
-				print(f"   dst_png: {os.path.getsize(dst_png): 10,}b")
-		else:
-			print("   missing raw image!")
-			raise hell
+		convert_image_for_prod(prod)
 
 
 	sharedTemplate = {

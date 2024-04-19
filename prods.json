@@ -87,7 +87,8 @@
 		"author": "Blackwine and Jok / Dreamweb",
 		"title": "Inanna",
 		"party": "Deadline 2023",
-		"platform": "Amiga OCS/ECS"
+		"platform": "Amiga OCS/ECS",
+		"transcode": false
 	},
 	{
 		"slug": "klos-2-fast-2-fouriers",
@@ -256,6 +257,7 @@
 		"title": "Anima",
 		"party": "Deadline 2022",
 		"platform": "Amiga OCS/ECS",
+		"transcode": false,
 		"meteorik-year": 2023,
 		"meteorik-type": "nominee"
 	},
@@ -629,7 +631,8 @@
 		"author": "BoyC",
 		"title": "Leap of Faith",
 		"party": "Revision 2019",
-		"platform": "Windows"
+		"platform": "Windows",
+		"transcode": false
 	},
 	{
 		"slug": "pbr-devour",

@@ -18,7 +18,11 @@
 			<span class="subtitle">{{#i18n}}artwork.platform{{/i18n}}</span>
 		</div>
 		<div class="image">
-			<img src="{{image_url}}" loading="lazy"/>
+			<picture>
+				{{#image_url_avif}}<source srcset="{{image_url_avif}}" type="image/avif" />{{/image_url_avif}}
+				{{#image_url_webp}}<source srcset="{{image_url_webp}}" type="image/webp" />{{/image_url_webp}}
+				<img src="{{image_url}}" width="{{image_width}}" height="{{image_height}}" loading="lazy"/>
+			</picture>
 		</div>
 	</a>
 </div>
