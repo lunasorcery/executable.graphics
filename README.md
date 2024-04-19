@@ -4,11 +4,26 @@ A gallery of 4K Executable Graphics artworks from the demoscene.
 
 ## Building
 
-Run `./build-site.py` - the site will be built and placed into a `gen/` folder.
+The build script requires Python >= 3.9.
 
-The build script requires Python >= 3.9, and depends on the [chevron](https://github.com/noahmorrison/chevron) and [libsass](https://github.com/sass/libsass-python) modules.
+Ensure you have the following available on the system PATH:
+* [ImageMagick](https://imagemagick.org/)
+* [Inkscape](https://inkscape.org/) >= 1.0
+* [libavif](https://github.com/AOMediaCodec/libavif) >= 1.0.0
+* [WebP](https://developers.google.com/speed/webp/download)
 
-In addition, it requires [ImageMagick](https://imagemagick.org/) and [Inkscape >= 1.0](https://inkscape.org/) to be available on the system PATH.
+Install the Python dependencies:
+```
+$ pip install -r requirements.txt
+```
+
+Build the site:
+```
+$ ./build-site.py
+```
+
+The site will be built and placed into a `gen/` folder.
+
 
 ## Contributing
 
