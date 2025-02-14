@@ -1,11 +1,33 @@
 [
 	{
+		"slug": "darya-nr4-dandy",
+		"demozoo_url": "https://demozoo.org/graphics/361296/",
+		"author": "Darya & NR4 / Team210",
+		"title": "Dandy",
+		"party": " Comparade 2024",
+		"platform": "Windows",
+		"meteorik-year": 2025,
+		"meteorik-type": "nominee"
+	},
+	{
+		"slug": "juvi-wired-goddess",
+		"demozoo_url": "https://demozoo.org/graphics/361296/",
+		"author": " Juvi / epoqe",
+		"title": "ワイヤードの女神 (Wired Goddess)",
+		"party": " Nova 2024",
+		"platform": "Linux",
+		"meteorik-year": 2025,
+		"meteorik-type": "nominee"
+	},
+	{
 		"slug": "muhmac-felid",
 		"demozoo_url": "https://demozoo.org/graphics/342293/",
 		"author": "Muhmac / Speckdrumm",
 		"title": "Felid",
 		"party": "Revision 2024",
-		"platform": "JavaScript"		
+		"platform": "JavaScript",
+		"meteorik-year": 2025,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "juvi-chromatic-north",
@@ -13,7 +35,9 @@
 		"author": "Juvi / epoqe",
 		"title": "Chromatic North",
 		"party": "Revision 2024",
-		"platform": "Linux"
+		"platform": "Linux",
+		"meteorik-year": 2025,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "musk-heavy-metal",
@@ -61,7 +85,9 @@
 		"author": "silvia",
 		"title": "Astro Dream",
 		"party": "MountainBytes 2024",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2025,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "sumaleth-porcelain-army",
