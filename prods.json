@@ -161,7 +161,7 @@
 	},
 	{
 		"slug": "5711-team210-twisted-hairline",
-		"demozoo_url":"https://demozoo.org/graphics/342288/",
+		"demozoo_url": "https://demozoo.org/graphics/342288/",
 		"author": "5711 and Team210",
 		"title": "Twisted Hairline",
 		"party": "Revision 2024",
@@ -212,7 +212,7 @@
 	{
 		"slug": "juvi-wan-shi-tongs-visitor-files",
 		"demozoo_url": "https://demozoo.org/graphics/330579/",
-		"author": " Juvi / epoqe",
+		"author": "Juvi / epoqe",
 		"title": "Wan Shi Tong’s visitor files",
 		"party": "Deadline 2023",
 		"platform": "Linux",
@@ -626,7 +626,7 @@
 		"platform": "Windows"
 	},
 	{
-		"slug": "wrigher-siaphalis",
+		"slug": "wrighter-siaphalis",
 		"demozoo_url": "https://demozoo.org/graphics/280516/",
 		"author": "Wrighter",
 		"title": "Siaphalis",
