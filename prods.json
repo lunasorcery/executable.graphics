@@ -1,5 +1,109 @@
 [
 	{
+		"slug": "pro-las-velocity",
+		"demozoo_url": "https://demozoo.org/graphics/376637/",
+		"author": "Pro & las",
+		"title": "velocity",
+		"party": "Evoke 2025",
+		"platform": "Windows"
+	},
+	{
+		"slug": "p_malin-void-main",
+		"demozoo_url": "https://demozoo.org/graphics/373498/",
+		"author": "P_Malin / Bitshifters",
+		"title": "void main",
+		"party": "Nova 2025",
+		"platform": "Windows"
+	},
+	{
+		"slug": "juvi-choix",
+		"demozoo_url": "https://demozoo.org/graphics/373497/",
+		"author": "Juvi / ?",
+		"title": "Choix",
+		"party": "Nova 2025",
+		"platform": "Linux"
+	},
+	{
+		"slug": "juvi-connexion",
+		"demozoo_url": "https://demozoo.org/graphics/372801/",
+		"author": "Juvi / epoqe",
+		"title": "Connexion",
+		"party": "Outline 2025",
+		"platform": "Linux"
+	},
+	{
+		"slug": "klos-quattro",
+		"demozoo_url": "https://demozoo.org/graphics/371225/",
+		"author": "Klos / K2",
+		"title": "Quattro",
+		"party": "Revision 2025",
+		"platform": "Windows"
+	},
+	{
+		"slug": "iapafoto-heritages",
+		"demozoo_url": "https://demozoo.org/graphics/371224/",
+		"author": "iapafoto",
+		"title": "Heritages",
+		"party": "Revision 2025",
+		"platform": "Windows"
+	},
+	{
+		"slug": "bercon-feenikslintu",
+		"demozoo_url": "https://demozoo.org/graphics/371222/",
+		"author": "Bercon / Half Bit Cheese",
+		"title": "Feenikslintu",
+		"party": "Revision 2025",
+		"platform": "PowerShell+JavaScript"
+	},
+	{
+		"slug": "musk-burn",
+		"demozoo_url": "https://demozoo.org/graphics/371220/",
+		"author": "Musk / Abberation Creations",
+		"title": "Burn",
+		"party": "Revision 2025",
+		"platform": "Windows"
+	},
+	{
+		"slug": "p_malin-cold-awakening",
+		"demozoo_url": "https://demozoo.org/graphics/371218/",
+		"author": "P_Malin / Bitshifters",
+		"title": "Cold Awakening",
+		"party": "Revision 2025",
+		"platform": "Windows"
+	},
+	{
+		"slug": "totetmatt-mondrian-3d",
+		"demozoo_url": "https://demozoo.org/graphics/371217/",
+		"author": "totetmatt",
+		"title": "Mondrian 3D",
+		"party": "Revision 2025",
+		"platform": "Windows"
+	},
+	{
+		"slug": "wrighter-halcyon",
+		"demozoo_url": "https://demozoo.org/graphics/362452/",
+		"author": "wrighter / Moonbase",
+		"title": "halcyon",
+		"party": "Inércia 2024",
+		"platform": "Windows"
+	},
+	{
+		"slug": "namelessfractals-stupidvolumetrics",
+		"demozoo_url": "https://demozoo.org/graphics/362450/",
+		"author": "NamelessFractals",
+		"title": "Stupidvolumetrics",
+		"party": "Inércia 2024",
+		"platform": "Windows"
+	},
+	{
+		"slug": "kinankomoti-block",
+		"demozoo_url": "https://demozoo.org/graphics/361796/",
+		"author": "kinankomoti",
+		"title": "Block",
+		"party": "SESSIONS 2024",
+		"platform": "Windows"
+	},
+	{
 		"slug": "darya-nr4-dandy",
 		"demozoo_url": "https://demozoo.org/graphics/361296/",
 		"author": "Darya & NR4 / Farbrausch",
