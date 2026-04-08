@@ -1,5 +1,25 @@
 [
 	{
+		"slug": "farbrausch-fjrd",
+		"demozoo_url": "https://demozoo.org/graphics/378327/",
+		"author": "Farbrausch",
+		"title": "FJRD",
+		"party": "Deadline 2025",
+		"platform": "Windows",
+		"meteorik-year": 2026,
+		"meteorik-type": "nominee"
+	},
+	{
+		"slug": "iapafoto-the-firefly-effect",
+		"demozoo_url": "https://demozoo.org/graphics/376927/",
+		"author": "iapafoto",
+		"title": "The Firefly Effect",
+		"party": "Xenium 2025",
+		"platform": "Windows",
+		"meteorik-year": 2026,
+		"meteorik-type": "nominee"
+	},
+	{
 		"slug": "pro-las-velocity",
 		"demozoo_url": "https://demozoo.org/graphics/376637/",
 		"author": "Pro & las",
@@ -37,7 +57,9 @@
 		"author": "Klos / K2",
 		"title": "Quattro",
 		"party": "Revision 2025",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2026,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "iapafoto-heritages",
@@ -45,7 +67,9 @@
 		"author": "iapafoto",
 		"title": "Heritages",
 		"party": "Revision 2025",
-		"platform": "Windows"
+		"platform": "Windows",
+		"meteorik-year": 2026,
+		"meteorik-type": "winner"
 	},
 	{
 		"slug": "bercon-feenikslintu",
@@ -78,6 +102,15 @@
 		"title": "Mondrian 3D",
 		"party": "Revision 2025",
 		"platform": "Windows"
+	},
+	{
+		"slug": "sensenstahl-byteropolis-subway-map",
+		"demozoo_url": "https://demozoo.org/graphics/365230/",
+		"author": "Sensenstahl",
+		"title": "Byteropolis Subway Map",
+		"platform": "MS-DOS",
+		"meteorik-year": 2026,
+		"meteorik-type": "nominee"
 	},
 	{
 		"slug": "wrighter-halcyon",
